@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://z-fly-faded.github.io/portfolio/sitemap.xml
