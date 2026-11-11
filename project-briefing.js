@@ -1,3 +1,5 @@
+import {imageZoomMarkup, mountImageZoom} from './image-zoom.js';
+
 const brEscape = value => String(value ?? '').replace(/[&<>"']/g, character =>
   ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 
@@ -87,7 +89,7 @@ export function projectBriefingMarkup() {
     </div>
     <dialog class="br-dialog" aria-label="放大图档">
       <button type="button" data-br-close autofocus>关闭</button>
-      <img alt=""><p></p>
+      ${imageZoomMarkup('<img alt="">')}<p></p>
     </dialog>
   </section>`;
 }
@@ -108,6 +110,7 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
   let disposeModel;
   let disposePlayback;
   let disposeVideo;
+  let disposeImageZoom;
   let opener;
 
   tabs.innerHTML = stages.map((stage, i) => `<button type="button" role="tab" id="br-stage-${i}" aria-controls="project-briefing-slide" data-br-stage="${i}"><span>${brNumber(i)}</span>${e(stage.label)}</button>`).join('');
@@ -267,6 +270,7 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
       caption.hidden = !caption.textContent;
       opener = button;
       dialog.showModal();
+      disposeImageZoom = mountImageZoom(dialog);
     }
     if (button.hasAttribute('data-br-close')) dialog.close();
     if (button === full) {
@@ -293,6 +297,8 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
     full.textContent = document.fullscreenElement === root ? '退出全屏' : '全屏讲解';
   };
   dialog.addEventListener('close', () => {
+    disposeImageZoom?.();
+    disposeImageZoom = undefined;
     dialog.querySelector('img').removeAttribute('src');
     opener?.focus({ preventScroll: true });
   });
@@ -302,6 +308,7 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
   showStage(0);
   return () => {
     stopVisual();
+    disposeImageZoom?.();
     root.removeEventListener('click', onClick);
     tabs.removeEventListener('keydown', onKey);
     document.removeEventListener('fullscreenchange', fullscreenLabel);

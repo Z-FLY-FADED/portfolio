@@ -1,3 +1,5 @@
+import {imageZoomMarkup,mountImageZoom} from './image-zoom.js';
+
 // BlueLab components: independently implemented from the design references in 设计参考与改进.md.
 export const isEditorialPlaceholder=value=>/^\s*\[(?:在此|填写|基础[：:]|应用[：:]|沉淀[：:]|项目介绍占位|项目经历待补充)/.test(String(value??''))||/占位\s*·\s*替换/.test(String(value??''));
 export const publicProjects=projects=>projects.filter(project=>
@@ -96,7 +98,7 @@ export function enhanceExperience(data,{e,img,icon},project) {
 
   // One native dialog covers project previews and image lightboxes, with built-in focus trapping and Escape.
   document.body.insertAdjacentHTML('beforeend',`<dialog id="viewer-dialog" class="viewer-dialog" aria-labelledby="viewer-title"><div class="dialog-toolbar"><div><span id="viewer-kicker"></span><h2 id="viewer-title"></h2></div><button class="dialog-close" aria-label="关闭弹窗" autofocus>×</button></div><div class="dialog-body"></div></dialog>`);
-  const dialog=document.querySelector('#viewer-dialog'),body=dialog.querySelector('.dialog-body');let opener;
+  const dialog=document.querySelector('#viewer-dialog'),body=dialog.querySelector('.dialog-body');let opener,disposeImageZoom;
   const open=(title,kicker,content,kind)=>{
     opener=document.activeElement;dialog.querySelector('#viewer-title').textContent=title;dialog.querySelector('#viewer-kicker').textContent=kicker;body.innerHTML=content;dialog.classList.toggle('image-dialog',kind==='image');dialog.showModal();document.body.classList.add('dialog-open');
   };
@@ -108,7 +110,7 @@ export function enhanceExperience(data,{e,img,icon},project) {
     if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}
     else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}
   });
-  dialog.addEventListener('close',()=>{document.body.classList.remove('dialog-open');body.innerHTML='';if(opener?.isConnected)opener.focus({preventScroll:true});});
+  dialog.addEventListener('close',()=>{disposeImageZoom?.();disposeImageZoom=undefined;document.body.classList.remove('dialog-open');body.innerHTML='';if(opener?.isConnected)opener.focus({preventScroll:true});});
   dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();});
   document.addEventListener('click',event=>{
     const preview=event.target.closest('[data-preview]');
@@ -121,7 +123,12 @@ export function enhanceExperience(data,{e,img,icon},project) {
       return;
     }
     const image=event.target.closest('[data-lightbox]');
-    if(image){const angle=Number(image.dataset.imageRotation)||0;const turn=[-90,90].includes(angle)?' award-rotated':angle===180?' award-half':'';open(image.dataset.imageCaption||'图片预览','图片预览',`<div class="lightbox-image${turn}" style="--award-angle:${[-90,90,180].includes(angle)?angle:0}deg">${img(image.dataset.lightbox,image.dataset.imageAlt||'工程图片')}</div><div class="lightbox-caption">${project?'':`<p>${e(image.dataset.imageAlt)}</p>`}${newTab('新标签页查看原图',image.dataset.lightbox)}</div>`,'image');}
+    if(image){
+      const angle=Number(image.dataset.imageRotation);
+      const picture=imageZoomMarkup(img(image.dataset.lightbox,image.dataset.imageAlt||'工程图片'));
+      open(image.dataset.imageCaption||'图片预览','图片预览',`${picture}<div class="lightbox-caption">${project?'':`<p>${e(image.dataset.imageAlt)}</p>`}${newTab('新标签页查看原图',image.dataset.lightbox)}</div>`,'image');
+      disposeImageZoom=mountImageZoom(dialog,[-90,90,180].includes(angle)?angle:0);
+    }
   });
   function safeImage(value){return e(value||'/portfolio/assets/assembly.svg');}
 }

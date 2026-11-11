@@ -570,9 +570,6 @@ a.home-contact-item:hover, button.home-contact-item:hover { border-color: #b7cbb
 .home-awards-arrows button { width: 44px; height: 44px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); color: var(--accent); font-size: 18px; cursor: pointer; }
 .home-awards-arrows button:hover:not(:disabled) { background: var(--pale); border-color: var(--accent); }
 .home-awards-arrows button:disabled { opacity: .35; cursor: default; }
-.lightbox-image.award-rotated { height: min(65dvh,700px); position: relative; }
-.lightbox-image.award-rotated > img { position: absolute; left: 50%; top: 50%; width: min(65dvh,700px); height: min(90vw,1030px); max-width: none; max-height: none; object-fit: contain; transform: translate(-50%,-50%) rotate(var(--award-angle)); }
-.lightbox-image.award-half > img { transform: rotate(180deg); }
 @media(max-width:900px) { .home-awards-track { --award-picture-height: 280px; } .home-awards-hint { display: none; } .home-awards.is-expanded .home-awards-track { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media(max-width:540px) { .home-awards-heading-actions { gap: 10px; } .home-awards-heading-actions .home-awards-total { display: none; } .home-awards.is-expanded .home-awards-track { grid-template-columns: 1fr; } }
 @media(max-width:540px) { .home-award-caption { padding: 15px; } .home-award-caption h3 { min-height: 0; } .home-award-filters button { padding: 6px 10px; } }

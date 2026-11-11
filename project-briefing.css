@@ -45,8 +45,7 @@
   background: var(--br-panel);
 }
 .project-briefing :is(.br-stages, .br-navigation, .br-visual-choices, .br-model-controls, .br-caption) > button,
-.project-briefing [data-br-fullscreen],
-.project-briefing [data-br-close] {
+.project-briefing [data-br-fullscreen] {
   border: 1px solid transparent;
   border-radius: var(--radius);
   padding: 6px 11px;
@@ -64,8 +63,7 @@
 .project-briefing [data-br-fullscreen],
 .project-briefing [data-br-model-mode],
 .project-briefing [data-br-video],
-.project-briefing [data-br-playback],
-.project-briefing [data-br-close] { border-color: var(--br-rule); }
+.project-briefing [data-br-playback] { border-color: var(--br-rule); }
 .project-briefing button:disabled { opacity: .4; cursor: default; }
 .project-briefing .br-layout {
   display: grid;
@@ -144,7 +142,7 @@
 .project-briefing .br-dialog {
   position: fixed;
   width: min(94vw, 1280px);
-  max-height: 94vh;
+  max-height: 94dvh;
   padding: 12px;
   border: 1px solid var(--br-rule);
   border-radius: var(--frame-radius);
@@ -153,9 +151,20 @@
   overflow: auto;
 }
 .project-briefing .br-dialog::backdrop { background: #182720aa; }
-.project-briefing .br-dialog img { display: block; width: 100%; max-height: 78vh; object-fit: contain; }
 .project-briefing .br-dialog > p { margin: 8px 0 0; font-size: .9rem; }
-.project-briefing .br-dialog button { display: block; margin: 0 0 8px auto; }
+.project-briefing .br-dialog > [data-br-close] {
+  display: block;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0 0 8px auto;
+  padding: 4px 10px;
+  border: 1px solid var(--accent-line);
+  border-radius: var(--radius);
+  background: var(--br-paper);
+  color: var(--br-accent);
+  font-size: .875rem;
+}
+.project-briefing .br-dialog > [data-br-close]:hover { border-color: var(--accent); background: var(--pale); }
 .project-briefing:fullscreen {
   margin: 0;
   border: 0;
