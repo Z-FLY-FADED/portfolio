@@ -6,7 +6,7 @@ const brNumber = index => String(index + 1).padStart(2, '0');
 export function projectBriefingMarkup() {
   return `<section id="project-briefing" class="project-briefing" aria-labelledby="project-briefing-title">
     <div class="br-heading">
-      <div><p class="br-eyebrow" data-br-tool></p><h2 id="project-briefing-title">项目汇报</h2></div>
+      <h2 id="project-briefing-title">项目汇报</h2>
       <button type="button" data-br-fullscreen hidden>全屏讲解</button>
     </div>
     <div class="br-stages" role="tablist" aria-label="汇报章节"></div>
@@ -40,7 +40,6 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
   let disposePlayback;
   let opener;
 
-  root.querySelector('[data-br-tool]').textContent = briefing.tool;
   tabs.innerHTML = stages.map((stage, i) => `<button type="button" role="tab" id="br-stage-${i}" aria-controls="project-briefing-slide" data-br-stage="${i}"><span>${brNumber(i)}</span>${e(stage.label)}</button>`).join('');
   full.hidden = !document.fullscreenEnabled;
 
@@ -61,6 +60,10 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
     const animation = view.animation && (imageUrl ? imageUrl(view.animation) : view.animation);
     const modelAvailable = view.scene && loadScene && mountModel;
     const interactive = view.playback && mountPlayback;
+    const description = view.caption?.trim() === view.label?.trim() ? '' : view.caption?.trim();
+    const details = description || view.source;
+    const mediaActions = `${modelAvailable ? `<button type="button" data-br-model-mode>${modelMode ? '图示' : '旋转模型'}</button>` : ''}
+      ${interactive ? '<button type="button" data-br-interactive aria-expanded="false">查看动态曲线</button>' : animation && !modelAvailable ? '<button type="button" data-br-playback>播放 GIF</button>' : ''}`.trim();
     media.innerHTML = `
       <div class="br-visual-choices" role="group" aria-label="汇报图档">
         ${stage.visuals.length > 1 ? stage.visuals.map((item, i) => `<button type="button" data-br-visual="${i}" aria-pressed="${i === visualIndex}">${e(item.label)}</button>`).join('') : ''}
@@ -68,11 +71,10 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
       <div class="br-media-model" data-br-model>
         <button class="br-picture" type="button" data-br-zoom aria-label="放大图档 ${e(view.alt)}"><img src="${e(path)}" alt="${e(view.alt)}"></button>
       </div>
-      <div class="br-caption">
-        <div><p>${e(view.caption)}</p><small>${e(view.source)}</small></div>
-        ${modelAvailable ? `<button type="button" data-br-model-mode>${modelMode ? '图示' : '旋转模型'}</button>` : ''}
-        ${interactive ? '<button type="button" data-br-interactive aria-expanded="false">查看动态曲线</button>' : animation && !modelAvailable ? '<button type="button" data-br-playback>播放 GIF</button>' : ''}
-      </div>
+      ${details || mediaActions ? `<div class="br-caption">
+        ${details ? `<div>${description ? `<p>${e(description)}</p>` : ''}${view.source ? `<small>${e(view.source)}</small>` : ''}</div>` : ''}
+        ${mediaActions}
+      </div>` : ''}
       ${interactive ? '<div class="trace-slot" hidden></div>' : ''}
       <p class="br-model-status" data-br-status aria-live="polite" hidden></p>`;
     if (interactive) {
@@ -125,7 +127,8 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
       cachedScenes.get(view.scene).then(scene => {
         if (ticket !== request || !root.isConnected) return;
         disposeModel = mountModel(media.querySelector('[data-br-model]'), scene);
-        status.textContent = disposeModel ? '拖动模型旋转，使用视角按钮查看局部。' : '当前浏览器显示模型图示。';
+        status.textContent = disposeModel ? '' : '当前浏览器显示模型图示。';
+        status.hidden = Boolean(disposeModel);
       }).catch(() => {
         if (ticket === request) status.textContent = '三维视图暂不可用，可查看模型图示。';
       });
@@ -150,11 +153,10 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
     panel.innerHTML = `<div class="br-layout">
       <div class="br-media" data-br-media></div>
       <div class="br-copy">
-        <p class="br-eyebrow">${brNumber(stageIndex)} / ${e(stage.label)}</p>
         <h3>${e(stage.title)}</h3>
-        <p class="br-lead">${e(stage.lead)}</p>
+        ${stage.lead ? `<p class="br-lead">${e(stage.lead)}</p>` : ''}
         ${stage.facts?.length ? `<dl class="br-facts">${stage.facts.map(([label, value]) => `<div><dt>${e(label)}</dt><dd>${e(value)}</dd></div>`).join('')}</dl>` : ''}
-        <ul class="br-points">${stage.points.map(point => `<li>${e(point)}</li>`).join('')}</ul>
+        ${stage.points?.length ? `<ul class="br-points">${stage.points.map(point => `<li>${e(point)}</li>`).join('')}</ul>` : ''}
       </div>
     </div>`;
     root.querySelector('[data-br-page]').textContent = brNumber(stageIndex) + ' / ' + String(stages.length).padStart(2, '0');
@@ -182,7 +184,10 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
       const fullImage = dialog.querySelector('img');
       fullImage.src = image.src;
       fullImage.alt = image.alt;
-      dialog.querySelector('p').textContent = stages[stageIndex].visuals[visualIndex].caption;
+      const caption = dialog.querySelector('p');
+      const view = stages[stageIndex].visuals[visualIndex];
+      caption.textContent = view.caption?.trim() === view.label?.trim() ? '' : view.caption || '';
+      caption.hidden = !caption.textContent;
       opener = button;
       dialog.showModal();
     }

@@ -45,7 +45,7 @@ export function enhanceExperience(data,{e,img,icon},project) {
   // These controls are native anchors; opening a new tab happens only on a visitor's click.
   const newTab=(label,href)=>{let url;try{url=new URL(href,location.origin);if(!['http:','https:'].includes(url.protocol))return '';}catch{return '';}return `<a class="utility-link" href="${e(url.href)}" target="_blank" rel="noopener noreferrer">${icon('up')}${e(label)}<span class="sr-only">（新标签页）</span></a>`;};
   if(project){
-    document.querySelector('.breadcrumb').insertAdjacentHTML('afterend',`<div class="detail-utilities"><span>${icon('grid')} 项目档案 / ${e(project.category)}</span>${newTab('新标签页打开本项目',location.pathname)}</div>`);
+    document.querySelector('.breadcrumb').insertAdjacentHTML('afterend',`<div class="detail-utilities">${newTab('新标签页打开本项目',location.pathname+location.search)}</div>`);
     const hasPlayback=project.simulations.some(item=>item.playback);
     const simulations=['module-5','sim',hasPlayback?'数据回放':'仿真展示'];
     const quickLinks=[...(hasPlayback?[simulations]:[]),['project-briefing','grid','项目汇报'],['module-3','cube','三维模型'],['module-4','grid','项目图档'],...(!hasPlayback?[simulations]:[]),['module-6','code','技术实现']]
@@ -90,11 +90,11 @@ export function enhanceExperience(data,{e,img,icon},project) {
       const category=new URLSearchParams(location.search).get('category');
       const href=projectHref(p.slug,category===p.category?category:'');
       const facts=[['项目时间',p.time],['个人角色',p.role],['使用工具',p.tools]].filter(([,value])=>String(value??'').trim());
-      open(p.title,'PROJECT PREVIEW / 项目预览',`<div class="preview-layout"><div class="preview-cover${p.coverCaption?' project-evidence-image':''}">${img(p.cover,p.coverAlt)}</div><div class="preview-copy"><span class="preview-category">${e(p.category)}</span>${isEditorialPlaceholder(p.summary)?'':`<p>${e(p.summary)}</p>`}<div class="tags">${p.tags.map(t=>`<span>${e(t)}</span>`).join('')}</div><dl>${facts.map(([label,value])=>`<div><dt>${label}</dt><dd>${e(value)}</dd></div>`).join('')}</dl></div></div><div class="dialog-actions"><a class="button" href="${e(href)}">查看完整详情 ${icon('arrow')}</a>${newTab('新标签页打开',href)}</div>`,'project');
+      open(p.title,'项目预览',`<div class="preview-layout"><div class="preview-cover${p.coverCaption?' project-evidence-image':''}">${img(p.cover,p.coverAlt)}</div><div class="preview-copy"><span class="preview-category">${e(p.category)}</span>${isEditorialPlaceholder(p.summary)?'':`<p>${e(p.summary)}</p>`}<div class="tags">${p.tags.map(t=>`<span>${e(t)}</span>`).join('')}</div><dl>${facts.map(([label,value])=>`<div><dt>${label}</dt><dd>${e(value)}</dd></div>`).join('')}</dl></div></div><div class="dialog-actions"><a class="button" href="${e(href)}">查看完整详情 ${icon('arrow')}</a>${newTab('新标签页打开',href)}</div>`,'project');
       return;
     }
     const image=event.target.closest('[data-lightbox]');
-    if(image){const angle=Number(image.dataset.imageRotation)||0;const turn=[-90,90].includes(angle)?' award-rotated':angle===180?' award-half':'';open(image.dataset.imageCaption||'图片预览','IMAGE VIEWER / 图片预览',`<div class="lightbox-image${turn}" style="--award-angle:${[-90,90,180].includes(angle)?angle:0}deg">${img(image.dataset.lightbox,image.dataset.imageAlt||'工程图片')}</div><div class="lightbox-caption"><p>${e(image.dataset.imageAlt)}</p>${newTab('新标签页查看原图',image.dataset.lightbox)}</div>`,'image');}
+    if(image){const angle=Number(image.dataset.imageRotation)||0;const turn=[-90,90].includes(angle)?' award-rotated':angle===180?' award-half':'';open(image.dataset.imageCaption||'图片预览','图片预览',`<div class="lightbox-image${turn}" style="--award-angle:${[-90,90,180].includes(angle)?angle:0}deg">${img(image.dataset.lightbox,image.dataset.imageAlt||'工程图片')}</div><div class="lightbox-caption">${project?'':`<p>${e(image.dataset.imageAlt)}</p>`}${newTab('新标签页查看原图',image.dataset.lightbox)}</div>`,'image');}
   });
   function safeImage(value){return e(value||'/portfolio/assets/assembly.svg');}
 }

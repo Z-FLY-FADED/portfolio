@@ -455,6 +455,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px s
 .detail-toc > a { align-items: center; font-size: 14px; color: var(--muted); }
 .detail-toc > a.current-section { color: var(--blue); background: var(--pale); }
 .detail-toc > p, .meta-grid > div > span, .detail-utilities, .detail-utilities .utility-link { font-size: 13px; color: var(--muted); }
+.project-case .detail-utilities { justify-content: flex-end; }
 .meta-grid p { font-size: 14px; }
 .detail-section .body-copy { font-size: 16px; line-height: 1.85; }
 .detail-section h2 { font-size: clamp(24px, 2.3vw, 33px); }

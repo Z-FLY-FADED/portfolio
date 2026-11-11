@@ -47,7 +47,7 @@ function galleryMarkup(items){
   return [...groups].map(([topic,group])=>{
     const figures=group.map(item=>{
       const description=item.analysis||item.source
-        ?`<figcaption class="evidence-caption"><strong data-evidence-title>${e(item.caption||item.alt)}</strong>${detailCopy(item.analysis)}${item.source?`<small>${e(item.source)}</small>`:''}</figcaption>`
+        ?`<figcaption class="evidence-caption">${item.caption?`<strong data-evidence-title>${e(item.caption)}</strong>`:''}${detailCopy(item.analysis)}${item.source?`<small>${e(item.source)}</small>`:''}</figcaption>`
         :caption(item.caption);
       return `<figure${item.wide?' class="gallery-wide"':''}>${img(item.src,item.alt)}${description}</figure>`;
     }).join('');
@@ -71,7 +71,6 @@ function detail(p){
   const template=!publicRecords.includes(p);
   const hasPlayback=p.simulations.some(item=>item.playback);
   const records=template?data.projects:publicRecords;
-  const index=records.indexOf(p);
   const category=!template&&new URLSearchParams(location.search).get('category')===p.category?p.category:'';
   const archive=projectArchiveHref(category);
   const neighbors=category?records.filter(record=>record.category===category):records;
@@ -79,36 +78,36 @@ function detail(p){
   const returnLabel=`返回${category||'项目'}列表`;
   const number=i=>String(i+1).padStart(2,'0');
   const modules=[];
-  const add=(id,title,short,kicker,body)=>modules.push({id:`module-${id}`,title,short,kicker,body});
-  const note=(i,id,short,kicker='ENGINEERING NOTES')=>{
+  const add=(id,title,short,body)=>modules.push({id:`module-${id}`,title,short,body});
+  const note=(i,id,short)=>{
     const section=p.sections[i];
-    if(section?.title)add(id,section.title,section.shortTitle||short,kicker,detailCopy(section.body));
+    if(section?.title)add(id,section.title,section.shortTitle||short,detailCopy(section.body));
   };
-  const addSimulation=()=>add(5,p.simulationTitle||'仿真结果展示',hasPlayback?'仿真数据回放':'仿真展示','SIMULATION STUDY',simulationMarkup(p.simulations));
+  const addSimulation=()=>add(5,p.simulationTitle||'仿真结果展示',hasPlayback?'仿真数据回放':'仿真展示',simulationMarkup(p.simulations));
   if(hasPlayback)addSimulation();
   note(0,0,'项目背景');
   note(1,1,'目标与约束');
   note(2,2,'实施过程');
-  if(p.modelImage||safeUrl(p.viewerUrl,true))add(3,'三维模型展示','三维模型','MODEL EXPLORATION',model(p));
-  if(p.gallery.length)add(4,p.galleryTitle||'工程图与设计过程',template?'工程图与过程':'项目图档','PROJECT DOCUMENTATION',galleryMarkup(p.gallery));
+  if(p.modelImage||safeUrl(p.viewerUrl,true))add(3,'三维模型','三维模型',model(p));
+  if(p.gallery.length)add(4,p.galleryTitle||'工程图与设计过程',template?'工程图与过程':'项目图档',galleryMarkup(p.gallery));
   if(p.simulations.length&&!hasPlayback)addSimulation();
   if(template||p.repository||detailCopy(p.codeDescription)){
     const repository=(template||safeUrl(p.repository))?`<div class="repo-card">${icon('code')}<div><h3>公开代码仓库</h3><p>源代码、使用说明与运行环境</p></div>${external('查看仓库',p.repository,'text-link')}</div>`:'';
-    add(6,p.implementationTitle||'代码与技术实现','技术实现','TECHNICAL IMPLEMENTATION',detailCopy(p.codeDescription)+repository);
+    add(6,p.implementationTitle||'代码与技术实现','技术实现',detailCopy(p.codeDescription)+repository);
   }
-  note(3,7,'成果与验证','RESULTS');
-  note(4,8,'个人贡献','CONTRIBUTION');
-  if(template||p.links.length||p.attachments?.length)add(9,'相关资料','相关资料','PROJECT RESOURCES',`<div class="resource-links">${p.links.length?p.links.map(l=>external(l.label,l.url,'text-link')).join(''):template?unavailable('暂无公开资料','link'):''}</div>`);
-  const facts=[['项目时间',p.time],['个人角色',p.role],['使用工具',p.tools],['展示内容',p.status||(template?'编辑模板':'')]].filter(([,value])=>String(value??'').trim());
+  note(3,7,'成果与验证');
+  note(4,8,'个人贡献');
+  if(template||p.links.length||p.attachments?.length)add(9,'相关资料','相关资料',`<div class="resource-links">${p.links.length?p.links.map(l=>external(l.label,l.url,'text-link')).join(''):template?unavailable('暂无公开资料','link'):''}</div>`);
+  const facts=[['项目时间',p.time],['个人角色',p.role],['使用工具',p.tools]].filter(([,value])=>String(value??'').trim());
   const adjacent=(record,label)=>record?`<a href="${e(projectHref(record.slug,category))}"><small>${label}</small><span>${e(record.title)}</span></a>`:'';
   return `<main id="main" class="container detail${template?'':' project-case'}">
     <a class="breadcrumb" href="${e(archive)}">← ${e(returnLabel)}</a>
-    <section class="detail-heading hero" data-enter><div><p class="eyebrow">PROJECT ${number(index)} / ${e(p.category)}</p><h1 data-enter-whole>${e(p.title)}</h1>${prose(p.summary)}<div class="tags">${p.tags.map(t=>`<span>${e(t)}</span>`).join('')}</div></div><span class="detail-index" aria-hidden="true">${number(index)}</span></section>
+    <section class="detail-heading hero" data-enter><div><p class="eyebrow">${e(p.category)}</p><h1 data-enter-whole>${e(p.title)}</h1>${prose(p.summary)}<div class="tags">${p.tags.map(t=>`<span>${e(t)}</span>`).join('')}</div></div></section>
     ${p.briefing?.stages?.length?projectBriefingMarkup():p.cover?`<figure class="detail-cover reveal">${img(p.cover,p.coverAlt)}${caption(p.coverCaption)}</figure>`:''}
     ${facts.length?`<section class="meta-grid reveal" aria-label="项目信息">${facts.map(([label,value])=>`<div><span>${label}</span><p>${e(value)}</p></div>`).join('')}</section>`:''}
     <div class="detail-layout">
-      <aside class="detail-toc" aria-label="项目目录"><p>项目目录 / CONTENTS</p>${modules.map((item,i)=>`<a href="#${item.id}"><span>${number(i)}</span>${e(item.short)}</a>`).join('')}</aside>
-      <div class="detail-body">${modules.map((item,i)=>`<section class="detail-section reveal" id="${item.id}"><p class="eyebrow">${number(i)} / ${item.kicker}</p><h2>${e(item.title)}</h2>${item.body}</section>`).join('')}</div>
+      <aside class="detail-toc" aria-label="项目目录"><p>项目目录</p>${modules.map((item,i)=>`<a href="#${item.id}"><span>${number(i)}</span>${e(item.short)}</a>`).join('')}</aside>
+      <div class="detail-body">${modules.map(item=>`<section class="detail-section reveal" id="${item.id}"><h2>${e(item.title)}</h2>${item.body}</section>`).join('')}</div>
     </div>
     <nav class="project-pagination" aria-label="相邻项目">${adjacent(neighbors[neighborIndex-1],'← 上一个项目')||'<span></span>'}${adjacent(neighbors[neighborIndex+1],'下一个项目 →')||`<a href="${e(archive)}"><span>${e(returnLabel)} →</span></a>`}</nav>
   </main>`;

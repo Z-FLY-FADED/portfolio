@@ -64,64 +64,64 @@
           "alt": "四缸缸体与缸孔基准",
           "topic": "缸孔与被装件",
           "caption": "四缸缸体与缸孔基准",
-          "analysis": "四个缸孔的入口与中心线是总装中的参照。核对设备时，以缸孔位置反查托板和变距机构的工位关系，再检查压装方向与孔口的对中。",
-          "source": "SolidWorks 文件内嵌视图 / 四缸发动机.SLDASM"
+          "analysis": "基准取四个缸孔的入口和中心线。",
+          "source": "SolidWorks · 四缸发动机.SLDASM"
         },
         {
           "src": "/portfolio/assets/projects/piston-ring-station/piston-rod-reference.webp",
           "alt": "活塞与连杆装配",
           "topic": "缸孔与被装件",
           "caption": "活塞与连杆装配",
-          "analysis": "局部视图保留了活塞外周的环槽、活塞销附近的连接区及连杆大端。夹持检查可分别针对外周压环空间和下方连杆让位，避免把两个动作混作同一套定位。",
-          "source": "SolidWorks 文件内嵌视图 / piston y biela.SLDASM"
+          "analysis": "活塞环槽、活塞销连接区及连杆大端。",
+          "source": "SolidWorks · piston y biela.SLDASM"
         },
         {
           "src": "/portfolio/assets/projects/piston-ring-station/ring-tool.webp",
           "alt": "装气环组件的原始 CAD 视图",
-          "caption": "装气环组件的子装配视图",
+          "caption": "四工位装气环组件",
           "topic": "压环与夹持",
-          "analysis": "四个带环槽的被装件沿托板排布。把该组件与缸体图对照，可以沿四工位逐一检查被装件、夹具与入口的对应位置。",
-          "source": "SolidWorks 文件内嵌视图 / 装气环组件.SLDASM"
+          "analysis": "四个带环槽工件沿托板布置。",
+          "source": "SolidWorks · 装气环组件.SLDASM"
         },
         {
           "src": "/portfolio/assets/projects/piston-ring-station/ring-compressor.webp",
           "alt": "活塞环压缩器装配模型",
           "caption": "活塞环压缩器",
           "topic": "压环与夹持",
-          "analysis": "筒状约束件与侧边的执行、导向结构构成压环部位。该视图用于核查活塞入缸前环的收拢空间，以及驱动件与被装件的相对位置。",
-          "source": "SolidWorks 文件内嵌视图 / 活塞环压缩器.SLDASM"
+          "analysis": "筒状约束件与侧置驱动、导向结构。",
+          "source": "SolidWorks · 活塞环压缩器.SLDASM"
         },
         {
           "src": "/portfolio/assets/projects/piston-ring-station/ring-jaw-tool.webp",
           "alt": "气环工装的弧形钳口与连杆",
           "topic": "压环与夹持",
           "caption": "气环工装的弧形钳口与连杆",
-          "analysis": "工装由多片弧形板和带铰点的杆件组成。弧面、销轴和开口位置在同一视图中可见，便于核对钳口开合时的通过空间和受力路径。",
-          "source": "SolidWorks 文件内嵌视图 / 气环工装.SLDASM"
+          "analysis": "弧形板、销轴和带铰点的杆件。",
+          "source": "SolidWorks · 气环工装.SLDASM"
         },
         {
           "src": "/portfolio/assets/projects/piston-ring-station/ring-clamp.webp",
           "alt": "卡钳钳口、转轴与手柄",
           "topic": "压环与夹持",
           "caption": "卡钳钳口、转轴与手柄",
-          "analysis": "从钳口到手柄可看到两侧运动件围绕中部转轴布置。该子装配可单独检查开口形态、夹持面与操作让位。",
-          "source": "SolidWorks 文件内嵌视图 / 卡钳.SLDASM"
+          "analysis": "两侧钳口绕中部转轴开合。",
+          "source": "SolidWorks · 卡钳.SLDASM"
         },
         {
           "src": "/portfolio/assets/projects/piston-ring-station/rod-clamp.webp",
           "alt": "连杆压紧机构的原始 CAD 视图",
           "caption": "连杆压紧机构",
           "topic": "压环与夹持",
-          "analysis": "两块侧板通过杆件与中间结构连接。和活塞连杆图一起看，可以检查连杆位置是否留出了压装所需的空间。",
-          "source": "SolidWorks 文件内嵌视图 / 连杆压紧机构.SLDASM"
+          "analysis": "两侧板经杆件连接中部夹持结构。",
+          "source": "SolidWorks · 连杆压紧机构.SLDASM"
         },
         {
           "src": "/portfolio/assets/projects/piston-ring-station/lift.webp",
           "alt": "升降机构的原始 CAD 视图",
-          "caption": "升降机构的支撑框架",
+          "caption": "升降机构支撑框架",
           "topic": "升降、调距与导向",
-          "analysis": "框架、驱动件和作业侧布置集中在同一子装配中。装回总装后，可沿升降行程检查工具和托板与上下层结构的间隙。",
-          "source": "SolidWorks 文件内嵌视图 / 升降机构.SLDASM"
+          "analysis": "支撑框架、驱动件与作业侧布置。",
+          "source": "SolidWorks · 升降机构.SLDASM"
         },
         {
           "src": "/portfolio/assets/projects/piston-ring-station/pitch-adjustment.webp",
@@ -129,31 +129,31 @@
           "caption": "变距机构的多工位接口",
           "wide": true,
           "topic": "升降、调距与导向",
-          "analysis": "顶板开槽、下方滑动件及调节位置在图中对应可见。校核的重点是调距后各工位仍与缸孔中心对应。",
-          "source": "SolidWorks 文件内嵌视图 / 变距机构.SLDASM"
+          "analysis": "顶板开槽与下方滑动件对应。",
+          "source": "SolidWorks · 变距机构.SLDASM"
         },
         {
           "src": "/portfolio/assets/projects/piston-ring-station/front-slider.webp",
           "alt": "前下滑块与弧形上件",
           "topic": "升降、调距与导向",
           "caption": "前下滑块与弧形上件",
-          "analysis": "视图把底部通孔、端部安装面和上方弧形件放在一起，便于核对前侧子装配与导向件的连接关系。",
-          "source": "SolidWorks 文件内嵌视图 / 前下滑块装配bottoma.SLDASM"
+          "analysis": "底部通孔、端部安装面及弧形上件。",
+          "source": "SolidWorks · 前下滑块装配bottoma.SLDASM"
         },
         {
           "src": "/portfolio/assets/projects/piston-ring-station/side-slider.webp",
           "alt": "侧下滑块与上方连板",
           "topic": "升降、调距与导向",
           "caption": "侧下滑块与上方连板",
-          "analysis": "侧滑块的连板和销孔布局与前滑块有可见差异。按各自在总装中的安装位置检查，便于区分相似子装配和定位接口。",
-          "source": "SolidWorks 文件内嵌视图 / 下滑块装配sidega.SLDASM"
+          "analysis": "侧下滑块的连板与销孔布局。",
+          "source": "SolidWorks · 下滑块装配sidega.SLDASM"
         },
         {
           "src": "/portfolio/assets/projects/piston-ring-station/guide-drive-assemblies.webp",
           "alt": "两套丝杠组件与下滑块装配 GA",
           "topic": "导向与传动",
-          "caption": "两套丝杠组件与下滑块装配 GA",
-          "analysis": "两套丝杠分别按 BSS1505-500、BSS1205-450 的归档型号追溯。与下滑块图并列，可核对丝杠支承端、螺母端和移动件的安装界面。",
+          "caption": "丝杠与下滑块装配",
+          "analysis": "BSS1505-500、BSS1205-450 丝杠的支承端、螺母端及移动件接口。",
           "source": "SolidWorks 三个原始 SLDASM 内置预览",
           "wide": true
         }
@@ -176,34 +176,34 @@
         "升降与变距",
         "装配工装"
       ],
-      "summary": "围绕活塞入缸，把气环收拢、连杆夹持、升降和调距组织成可逐级核对的 SolidWorks 总装，并从 STEP 实体复核钳臂叠层和销轴尺寸。",
+      "summary": "以四个缸孔为基准，设计集压环、夹持、升降和调距于一体的 SolidWorks 工作台，完成钳臂与销轴的 STEP 尺寸核对。",
       "cover": "/portfolio/assets/projects/piston-ring-station/workstation.webp",
       "coverAlt": "SolidWorks 活塞环安装工作台总装，显示缸体、上方执行机构和移动底架",
-      "coverCaption": "SolidWorks 总装内嵌视图。四个缸孔给出位置基准，可对照上部执行件、作业区和导向机构。",
+      "coverCaption": "四工位活塞环安装工作台总装",
       "time": "",
       "role": "机械结构与装配设计",
       "tools": "SolidWorks",
       "status": "总装与子装配",
       "sections": [
         {
-          "title": "用缸孔位置组织总装",
-          "body": "活塞入缸前，外张的气环要收进环槽，压环工装与活塞还要对准缸孔。总装用四个缸孔建立位置参照，把活塞连杆、工装和工作台的关系放在同一模型中检查。"
+          "title": "总装基准",
+          "body": "以四个缸孔的入口和中心线为基准布置活塞连杆、压环工装及工作台。"
         },
         {
-          "title": "分开核对夹持、调距和升降",
-          "body": "连杆压紧机构控制被装件的姿态，变距机构调整工装的横向位置，升降机构处理作业高度。检查导向部分时，从滑块与导轨的接口追到上方连接件，结合缸孔位置核对各运动方向上的让位。"
+          "title": "夹持、升降与调距",
+          "body": "连杆压紧机构固定工件姿态，变距机构调整横向工位，升降机构调整作业高度。滑块、导轨及上部连接件按缸孔位置校核运动间隙。"
         },
         {
-          "title": "从子装配追到可量测的接口",
-          "body": "归档包含 36 个装配文件和 162 个零件文件，涵盖工作台、压环器、连杆压紧机构、升降和变距模块，以及气缸、丝杠、导向件和紧固件等引用件。\n\n气环工装的 STEP 内有 11 个实体。六个钳臂分成三对，层中心沿 Y 向相隔 20 mm，单层厚 10 mm。圆柱面与实体包络给出两根 Ø8 × 45 mm 和一根 Ø10 × 60 mm 轴销。可以结合三维分组和销轴投影图检查装配位置。\n\n传动复核时分别查看两套 BSS 丝杠和下滑块子装配。沿支承端、螺母座、移动台三个接口查找零件，可把总装里的行程和让位问题追到具体装配。"
+          "title": "子装配与工装尺寸",
+          "body": "归档含 36 个装配文件及 162 个零件文件，涵盖压环、连杆压紧、升降、变距与标准件。\n\n气环工装 STEP 含 11 个实体。六个钳臂分三层，每层厚 10 mm，层中心沿 Y 向间距 20 mm。两根轴销为 Ø8 × 45 mm，中央轴销为 Ø10 × 60 mm。BSS1505-500 与 BSS1205-450 丝杠装配涉及支承端、螺母座及移动台三个接口。"
         },
         {
-          "title": "把试装检查落实到动作",
-          "body": "试装从空载开始，核对升降行程、调距极限和让位。装入活塞连杆后复查夹持姿态，最后检查气环能否连续通过缸孔入口。配合公差、入缸力和节拍需要图纸或实物记录支持。"
+          "title": "试装方案",
+          "body": "空载核对升降行程、调距极限和运动间隙。带件核对夹持姿态、入缸对中和气环通过性。配合公差、入缸力和节拍待图纸或实测确认。"
         },
         {
-          "title": "个人工作｜结构拆分与总装集成",
-          "body": "将压环、夹持、升降和调距分成子装配，统一到缸体基准下核对模块接口。通过总装定位图和零件细节图，把需要复查的孔位、安装面与运动间隙交代到具体零件。"
+          "title": "个人贡献",
+          "body": "完成压环、夹持、升降和调距的子装配划分及总装集成，核对孔位、安装面和运动间隙。"
         }
       ],
       "galleryTitle": "从定位基准到执行机构",
@@ -212,8 +212,8 @@
         "stages": [
           {
             "label": "任务与总装",
-            "title": "从四个缸孔基准组织总装",
-            "lead": "活塞、压环工装与缸孔对中后，才能检查连杆在升降和入缸动作中的让位。总装把这些接口放在同一参照下。",
+            "title": "四工位工作台总装",
+            "lead": "四个缸孔确定压环工装及活塞连杆的入缸位置。",
             "facts": [
               [
                 "缸孔参考位",
@@ -229,30 +229,29 @@
               ]
             ],
             "points": [
-              "沿定位图看上部执行件、活塞连杆位置、缸孔和滑动平台。",
-              "工作台、压环、夹持、升降与变距按子装配组织，便于分别检查接口。"
+              "压环、夹持、升降和变距采用独立子装配。"
             ],
             "visuals": [
               {
                 "src": "/portfolio/assets/projects/piston-ring-station/station-index.webp",
                 "label": "总装定位",
                 "alt": "总装定位",
-                "caption": "沿编号查看上部执行件、活塞连杆、缸孔基准、弧形工装和导轨平台。",
+                "caption": "上部执行件、活塞连杆、缸孔、弧形工装与导轨平台。",
                 "source": "SolidWorks 零件与装配文件内嵌视图"
               },
               {
                 "label": "原始总装",
                 "src": "/portfolio/assets/projects/piston-ring-station/workstation.webp",
                 "alt": "SolidWorks 活塞环安装工作台总装，显示缸体、上方执行机构和移动底架",
-                "caption": "工作台原始总装视图，保留上下层板、立柱、工位及缸体的相对位置。",
-                "source": "项目归档图档"
+                "caption": "上下层板、立柱、工位及缸体布置。",
+                "source": ""
               }
             ]
           },
           {
             "label": "定位与导向",
-            "title": "用装配图核对定位与导向",
-            "lead": "从四缸缸体和活塞连杆找到入缸方向，再追到变距机构以及前、侧滑块的安装接口。",
+            "title": "缸孔对中与滑块导向",
+            "lead": "变距机构通过前、侧滑块与工装连接。",
             "facts": [
               [
                 "对中参照",
@@ -264,22 +263,22 @@
               ]
             ],
             "points": [
-              "前滑块图将零件和前下滑块装配并排，可对照安装面与孔位。",
-              "侧滑块图用于核对连板、工装座和连接轴的相对位置。"
+              "前滑块对应通孔和安装面。",
+              "侧滑块对应连板、工装座和连接轴。"
             ],
             "visuals": [
               {
                 "src": "/portfolio/assets/projects/piston-ring-station/front-slider-assembly-detail.webp",
                 "label": "前滑块装配",
                 "alt": "前滑块装配",
-                "caption": "左图为前滑块零件，右图为前下滑块子装配，可对照通孔、安装面和上部弧形件。",
+                "caption": "前滑块通孔、安装面与弧形上件。",
                 "source": "SolidWorks 零件与装配文件内嵌视图"
               },
               {
                 "src": "/portfolio/assets/projects/piston-ring-station/workholding-interfaces.webp",
                 "label": "侧滑块及安装件",
                 "alt": "侧滑块及安装件",
-                "caption": "侧滑块、工装座和连接轴各用原件视角展示，便于辨认定位面、孔和轴段。",
+                "caption": "侧滑块、工装座与连接轴。",
                 "source": "SolidWorks 零件与装配文件内嵌视图"
               },
               {
@@ -287,35 +286,35 @@
                 "src": "/portfolio/assets/projects/piston-ring-station/four-cylinder-reference.webp",
                 "alt": "四缸缸体与缸孔基准",
                 "caption": "四缸缸体与缸孔基准",
-                "source": "SolidWorks 文件内嵌视图 / 四缸发动机.SLDASM"
+                "source": "SolidWorks · 四缸发动机.SLDASM"
               },
               {
                 "label": "活塞连杆",
                 "src": "/portfolio/assets/projects/piston-ring-station/piston-rod-reference.webp",
                 "alt": "活塞与连杆装配",
                 "caption": "活塞与连杆装配",
-                "source": "SolidWorks 文件内嵌视图 / piston y biela.SLDASM"
+                "source": "SolidWorks · piston y biela.SLDASM"
               },
               {
                 "label": "变距机构",
                 "src": "/portfolio/assets/projects/piston-ring-station/pitch-adjustment.webp",
                 "alt": "变距机构的原始 CAD 视图",
                 "caption": "变距机构的多工位接口",
-                "source": "SolidWorks 文件内嵌视图 / 变距机构.SLDASM"
+                "source": "SolidWorks · 变距机构.SLDASM"
               },
               {
                 "label": "丝杠与下滑块",
                 "src": "/portfolio/assets/projects/piston-ring-station/guide-drive-assemblies.webp",
                 "alt": "两套丝杠组件与下滑块装配 GA",
-                "caption": "两套丝杠分别按 BSS1505-500、BSS1205-450 的归档型号追溯。与下滑块图并列，可核对丝杠支承端、螺母端和移动件的安装界面。",
+                "caption": "BSS1505-500 与 BSS1205-450 丝杠及下滑块接口。",
                 "source": "SolidWorks 原始子装配"
               }
             ]
           },
           {
             "label": "工装分解",
-            "title": "量出三层钳臂与三根轴销",
-            "lead": "用 STEP 分离座体及端部件、钳臂和轴销，再以圆柱面量直径、以轴向包络量长度。旋转模型可核对叠层被遮挡的部位。",
+            "title": "三层钳臂与三根轴销",
+            "lead": "STEP 实体按座体、钳臂和轴销分组。",
             "facts": [
               [
                 "STEP 实体",
@@ -331,15 +330,15 @@
               ]
             ],
             "points": [
-              "三个钳臂层中心沿 Y 向相隔 20 mm，各层厚 10 mm。",
-              "两根 Ø8 轴销长 45 mm，中央 Ø10 轴销长 60 mm。尺寸来自 STEP 实体，配合等级需查工程图。"
+              "钳臂每层厚 10 mm，层中心沿 Y 向间距 20 mm。",
+              "两根 Ø8 × 45 mm 轴销及一根 Ø10 × 60 mm 轴销。配合等级待工程图确认。"
             ],
             "visuals": [
               {
                 "src": "/portfolio/assets/projects/piston-ring-station/ring-tool-step-model.webp",
                 "label": "气环工装三维",
                 "alt": "气环工装三维",
-                "caption": "可分别显示座体及端部件、六个钳臂和三根轴销，观察叠装及连接位置。",
+                "caption": "座体及端部件、六个钳臂与三根轴销。",
                 "source": "SolidWorks 2024 导出的气环工装 STEP",
                 "scene": "/portfolio/assets/projects/piston-ring-station/ring-tool-step.scene.json"
               },
@@ -347,7 +346,7 @@
                 "label": "销轴与叠层",
                 "src": "/portfolio/assets/projects/piston-ring-station/ring-tool-pin-layout.webp",
                 "alt": "气环工装中层钳臂及三个销轴位置，右侧为销轴长度和三个钳臂层的真实轴向范围",
-                "caption": "左图定位三个销轴，右图沿 Y 向对照销轴长度和钳臂叠层。A、C 为 Ø8 × 45 mm，B 为 Ø10 × 60 mm。",
+                "caption": "A、C 轴销为 Ø8 × 45 mm，B 轴销为 Ø10 × 60 mm。",
                 "source": "SolidWorks 导出的 123.STEP · 实体投影与量测"
               },
               {
@@ -355,28 +354,28 @@
                 "src": "/portfolio/assets/projects/piston-ring-station/ring-jaw-tool.webp",
                 "alt": "气环工装的弧形钳口与连杆",
                 "caption": "气环工装的弧形钳口与连杆",
-                "source": "SolidWorks 文件内嵌视图 / 气环工装.SLDASM"
+                "source": "SolidWorks · 气环工装.SLDASM"
               },
               {
                 "label": "连杆压紧",
                 "src": "/portfolio/assets/projects/piston-ring-station/rod-clamp.webp",
                 "alt": "连杆压紧机构的原始 CAD 视图",
                 "caption": "连杆压紧机构",
-                "source": "SolidWorks 文件内嵌视图 / 连杆压紧机构.SLDASM"
+                "source": "SolidWorks · 连杆压紧机构.SLDASM"
               },
               {
                 "label": "活塞环压缩器",
                 "src": "/portfolio/assets/projects/piston-ring-station/ring-compressor.webp",
                 "alt": "活塞环压缩器装配模型",
-                "caption": "活塞环压缩器",
-                "source": "SolidWorks 文件内嵌视图 / 活塞环压缩器.SLDASM"
+                "caption": "",
+                "source": "SolidWorks · 活塞环压缩器.SLDASM"
               }
             ]
           },
           {
             "label": "试装检查",
-            "title": "按空载、带件和入缸安排试装",
-            "lead": "把总装中最容易受空间限制的动作拆开检查。先确认机构本身的行程，再确认装入工件后的对中和放行。",
+            "title": "试装方案",
+            "lead": "试装分为空载、带件与连续入缸三阶段。",
             "facts": [
               [
                 "已有交付",
@@ -388,8 +387,8 @@
               ]
             ],
             "points": [
-              "空载看升降和调距极限，带件看连杆夹持后是否仍留有通行空间。",
-              "连续入缸阶段记录环通过入口的状态、节拍与重复定位。"
+              "空载核对行程极限，带件核对夹持和通过空间。",
+              "连续入缸记录气环通过性、节拍及重复定位。"
             ],
             "visuals": [
               {
@@ -397,20 +396,20 @@
                 "src": "/portfolio/assets/projects/piston-ring-station/lift.webp",
                 "alt": "升降机构的原始 CAD 视图",
                 "caption": "升降机构的支撑框架",
-                "source": "SolidWorks 文件内嵌视图 / 升降机构.SLDASM"
+                "source": "SolidWorks · 升降机构.SLDASM"
               },
               {
                 "label": "装气环组件",
                 "src": "/portfolio/assets/projects/piston-ring-station/ring-tool.webp",
                 "alt": "装气环组件的原始 CAD 视图",
                 "caption": "四工位装气环组件",
-                "source": "SolidWorks 文件内嵌视图 / 装气环组件.SLDASM"
+                "source": "SolidWorks · 装气环组件.SLDASM"
               },
               {
                 "src": "/portfolio/assets/projects/piston-ring-station/station-index.webp",
                 "label": "总装定位",
                 "alt": "总装定位",
-                "caption": "沿编号查看上部执行件、活塞连杆、缸孔基准、弧形工装和导轨平台。",
+                "caption": "上部执行件、活塞连杆、缸孔、弧形工装与导轨平台。",
                 "source": "SolidWorks 零件与装配文件内嵌视图"
               }
             ]
@@ -428,17 +427,17 @@
           "src": "/portfolio/assets/projects/aerospace-logistics-car/qt-tcp-io.svg",
           "alt": "Qt 与车端的双向数据流",
           "topic": "上位机、感知与导航",
-          "caption": "Qt 与车端的双向数据流",
-          "analysis": "下发链处理运动指令，回传链处理设备状态和传感器信息。按这两个方向拆开看，可以在联调时分别确认命令是否送达、返回内容是否解析和显示。",
-          "source": "根据简历中的 Qt / TCP 工作整理",
+          "caption": "Qt 与车端双向数据流",
+          "analysis": "下发运动指令，回传设备状态及传感器数据。",
+          "source": "个人简历 · Qt / TCP",
           "wide": true
         },
         {
           "src": "/portfolio/assets/projects/aerospace-logistics-car/perception-navigation.svg",
           "alt": "信号灯识别与激光导航流程",
           "topic": "上位机、感知与导航",
-          "caption": "信号灯识别与激光导航流程",
-          "analysis": "识别工作覆盖样本增强、YOLOv5 训练、参数调优和部署。导航工作覆盖激光雷达 SLAM 建图与 A* 全局路径规划，调试时分别看检测输出、地图与规划路径。",
+          "caption": "信号灯识别与激光导航",
+          "analysis": "YOLOv5 信号灯检测、激光雷达 SLAM 与 A* 全局路径规划。",
           "source": "根据简历中的感知和导航工作整理",
           "wide": true
         },
@@ -446,8 +445,8 @@
           "src": "/portfolio/assets/projects/aerospace-logistics-car/resume-contribution.webp",
           "alt": "项目负责人经历摘录",
           "topic": "上位机、感知与导航",
-          "caption": "项目负责人经历摘录",
-          "analysis": "摘录对应 2021 年 1 月至 2023 年 6 月的项目经历，包含负责人身份及上位机、目标检测、激光建图和全局路径规划的分工。",
+          "caption": "项目负责人经历",
+          "analysis": "2021 年 1 月至 2023 年 6 月，负责上位机、目标检测、激光建图与全局路径规划。",
           "source": "个人简历 / 智能汽车竞赛项目段落",
           "wide": true
         },
@@ -456,7 +455,7 @@
           "alt": "第十六届全国大学生智能汽车竞赛全国总决赛获奖证书",
           "caption": "第十六届全国总决赛二等奖",
           "topic": "两届竞赛记录",
-          "analysis": "证书对应第十六届航天智慧物流组全国总决赛成绩。",
+          "analysis": "",
           "source": "第十六届全国大学生智能汽车竞赛证书"
         },
         {
@@ -464,7 +463,7 @@
           "alt": "第十六届全国大学生智能汽车竞赛北区赛获奖证书",
           "caption": "第十六届北区赛一等奖",
           "topic": "两届竞赛记录",
-          "analysis": "证书记录该届航天智慧物流组北区赛成绩。",
+          "analysis": "",
           "source": "第十六届全国大学生智能汽车竞赛证书"
         },
         {
@@ -472,21 +471,21 @@
           "alt": "第十七届全国大学生智能汽车竞赛中国南区赛获奖证书",
           "caption": "第十七届中国南区赛二等奖",
           "topic": "两届竞赛记录",
-          "analysis": "证书记录下一届同组别的中国南区赛成绩。",
+          "analysis": "",
           "source": "第十七届全国大学生智能汽车竞赛证书"
         },
         {
           "src": "/portfolio/assets/projects/aerospace-logistics-car/integration-workstreams.webp",
           "alt": "智慧物流车的整车联调任务图",
           "topic": "团队开发与整车联调",
-          "caption": "智慧物流车的整车联调任务图",
-          "analysis": "上位机核对指令与状态回传，视觉核对信号灯识别，导航核对建图、定位和路径输出。",
-          "source": "按个人项目履历整理",
+          "caption": "整车联调分工",
+          "analysis": "上位机联调指令与状态回传，感知联调信号灯识别，导航联调建图、定位和路径输出。",
+          "source": "个人项目履历",
           "wide": true
         }
       ],
       "simulations": [],
-      "codeDescription": "控制侧把上位机界面、TCP 双向通信、协议封装和数据解析拆开，运动指令向车端发送，回传状态和传感器数据在 Qt 界面查看。联调可从指令、设备响应和可视化三处逐级定位。\n\n感知侧对应数据集增强、信号灯检测训练、后处理调整和部署。导航侧对应激光雷达建图与 A* 搜索策略调整。按模块组织观察项，可以把识别、地图和路径问题分别定位，再做整车联调。",
+      "codeDescription": "Qt 上位机封装运动指令、车辆状态与传感器数据的 TCP 双向通信。感知与导航链路分别输出信号灯检测结果、激光地图和 A* 全局路径。",
       "repository": "",
       "links": [],
       "attachments": [],
@@ -500,34 +499,34 @@
         "SLAM",
         "A*"
       ],
-      "summary": "担任两届全国大学生智能汽车竞赛项目负责人，完成 Qt 上位机与车端双向通信，推进信号灯识别和激光导航上车调试。",
+      "summary": "担任两届全国大学生智能汽车竞赛项目负责人，完成 Qt 上位机与车端通信、信号灯识别及激光导航联调。",
       "cover": "/portfolio/assets/projects/aerospace-logistics-car/system-map.svg",
       "coverAlt": "航天智慧物流智能车的通信、视觉识别和激光导航分工",
-      "coverCaption": "根据简历中的项目经历整理。图示对应软件功能，竞赛成果见下方证书。",
+      "coverCaption": "智能车控制、感知与导航架构",
       "time": "2021.01–2023.06",
       "role": "项目负责人",
       "tools": "Qt / TCP / YOLOv5 / 激光雷达 SLAM / A*",
       "status": "竞赛开发与实车调试",
       "sections": [
         {
-          "title": "一辆车要同时完成控制、感知和导航",
-          "body": "项目面向第十六、十七届全国大学生智能汽车竞赛航天智慧物流组。上位机需要能向车端发送运动指令并观察回传状态；视觉模块处理赛道信号灯，导航模块负责激光建图与路径搜索。"
+          "title": "竞赛任务",
+          "body": "第十六、十七届全国大学生智能汽车竞赛航天智慧物流组。整车系统负责运动控制、赛道信号灯识别、激光建图与路径规划。"
         },
         {
-          "title": "先把接口跑通，再做实车联调",
-          "body": "把可观察性放进上位机：运动指令下发、车辆状态接收、传感器数据显示都放在同一界面。这样调车时可以把通信异常、识别异常与路径规划问题分开定位。"
+          "title": "上位机与车端通信",
+          "body": "Qt 上位机下发运动指令，接收车辆状态并显示传感器数据。TCP 模块负责协议封装和数据解析。"
         },
         {
-          "title": "分别完成通信、识别与路径规划的开发调试",
-          "body": "开发 Qt 上位机，封装 TCP 通信协议与数据解析模块；使用 YOLOv5 训练信号灯检测模型，调整数据增强、参数与后处理并完成工程部署；调试激光雷达 SLAM，并调整 A* 搜索策略以减少冗余路径。"
+          "title": "感知与导航",
+          "body": "使用 YOLOv5 训练并部署信号灯检测模型，调整数据增强、模型参数和后处理。调试激光雷达 SLAM，优化 A* 搜索策略以减少冗余路径。"
         },
         {
-          "title": "两届竞赛成果",
-          "body": "第十六届获航天智慧物流组北区赛一等奖、全国总决赛二等奖；第十七届获同组别中国南区赛二等奖。下方可查看并放大证书。"
+          "title": "竞赛成绩",
+          "body": "第十六届航天智慧物流组北区赛一等奖、全国总决赛二等奖。第十七届同组别中国南区赛二等奖。"
         },
         {
-          "title": "个人工作：负责项目并完成多模块联调",
-          "body": "作为项目负责人，工作覆盖 Qt 人机界面、通信协议、视觉模型训练部署和导航调试。从单模块调通到整车联调，需要同时核对指令、状态回传、识别结果和路径输出。\n\n资料中可以核实项目负责人及三类技术工作的范围。竞赛证书对应赛事成绩，简历摘录对应职责和实施内容，功能图将这些工作按数据方向和调试环节展开。\n\n作为 4 人团队的项目负责人，编写需求文档，组织方案评审和进度跟踪。整车联调围绕指令是否到达、感知结果能否读取、导航是否输出路径逐项排查。"
+          "title": "个人贡献",
+          "body": "负责 4 人团队的需求文档、方案评审与进度跟踪，开发 Qt 上位机和通信协议，完成检测模型训练部署、导航调试及整车联调。"
         }
       ],
       "galleryTitle": "联调分工与竞赛凭证",
@@ -543,8 +542,8 @@
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-boundary-views.webp",
           "alt": "燃烧算例表面与剖开视图",
           "topic": "表面边界与活塞碗口",
-          "caption": "燃烧算例表面与剖开视图",
-          "analysis": "从 77,273 个顶点和 154,548 个三角面重建样例表面，按边界编号区分缸套与顶面、活塞、进气和排气。剖开视图可以定位活塞与阀面的关系。",
+          "caption": "燃烧室表面与剖面",
+          "analysis": "77,273 个顶点，154,548 个三角面。",
           "source": "CONVERGE 样例 / surface.dat、boundary.in",
           "wide": true
         },
@@ -552,26 +551,26 @@
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/piston-bowl-section.webp",
           "alt": "活塞碗口的 Y = 0 截线",
           "topic": "表面边界与活塞碗口",
-          "caption": "活塞碗口的 Y = 0 截线",
-          "analysis": "从活塞边界截取中心平面，保留碗底、喉口和中央凸台的实际轮廓。此截线与交接图中的参数定义一起用于说明改动位置。",
+          "caption": "活塞碗口 Y = 0 截线",
+          "analysis": "",
           "source": "CONVERGE 样例 / surface.dat 的 BND_piston@",
           "wide": true
         },
         {
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/handover-1.webp",
           "alt": "交接文档标注的燃烧室剖面，显示喉口半径和凸台深度",
-          "caption": "喉口半径和凸台深度定义",
+          "caption": "喉口半径、凸台深度与斜面",
           "wide": true,
           "topic": "表面边界与活塞碗口",
-          "analysis": "原图把喉口半径、凸台深度和斜面标在同一剖面。方案对照应同时记录轮廓改动与容积控制条件。",
+          "analysis": "",
           "source": "燃烧室计算交接说明 / 几何参数图"
         },
         {
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/valve-lift-input.webp",
           "alt": "720° 循环内的进排气阀升程",
           "topic": "输入定时与样例喷油",
-          "caption": "720° 循环内的进排气阀升程",
-          "analysis": "输入文件中进气阀最大升程 15.70 mm，排气阀 14.35 mm。以曲轴角为横轴，可核对两组边界的开启区间和峰值。",
+          "caption": "进排气阀升程",
+          "analysis": "进气阀最大升程 15.70 mm，排气阀 14.35 mm。",
           "source": "CONVERGE 样例 / intake_lift.in、exhaust_lift.in",
           "wide": true
         },
@@ -579,26 +578,26 @@
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-injection-event.webp",
           "alt": "样例的喷油质量与喷射压力",
           "topic": "输入定时与样例喷油",
-          "caption": "样例的喷油质量与喷射压力",
-          "analysis": "134 个记录点覆盖 −13.30° 至 −8.30°，累计喷油质量到 31.50 mg，喷射压力峰值约 75.69 MPa。两条曲线分别核对喷油质量和压力的角度历程。",
+          "caption": "喷油质量与压力",
+          "analysis": "134 点，−13.30°CA 至 −8.30°CA。累计喷油 31.50 mg，喷射压力峰值 75.69 MPa。",
           "source": "CONVERGE 样例 / spray_rate_inj0.out",
           "wide": true
         },
         {
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/handover-2.webp",
           "alt": "CONVERGE Case Setup 截图及反应机理、边界、喷油与网格加密的批注",
-          "caption": "CONVERGE 算例设置与网格加密",
+          "caption": "基础网格与 AMR",
           "wide": true,
           "topic": "输入定时与样例喷油",
-          "analysis": "样例基础网格为 5 mm，输入中启用 AMR。几何替换后，交接说明要求同步核对热物性、反应机理、边界、初始条件、喷油器与固定加密对象。",
+          "analysis": "基础网格 5 mm。",
           "source": "燃烧室计算交接说明、inputs.in 与 amr.in"
         },
         {
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-pressure-volume.webp",
           "alt": "样例缸压–容积轨迹",
           "topic": "样例几何与边界核查",
-          "caption": "样例缸压–容积轨迹",
-          "analysis": "曲线用缸内同一区域的压力、容积和转角绘制。几何排量 2.46793 L，归档容积极差 2.46638 L，相差约 0.063%。",
+          "caption": "缸压–容积轨迹",
+          "analysis": "几何排量与归档容积极差相差约 0.063%。",
           "source": "engine.echo 与 thermo_region0.out",
           "wide": true
         },
@@ -606,8 +605,8 @@
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-wall-heat.webp",
           "alt": "三处缸内壁面的累计传热",
           "topic": "样例几何与边界核查",
-          "caption": "三处缸内壁面的累计传热",
-          "analysis": "以边界编号对照缸套、燃烧室顶面和活塞，逐角度比对传热累积。保留初段的负值及其原始符号。",
+          "caption": "缸套、顶面与活塞累计传热",
+          "analysis": "",
           "source": "CONVERGE 壁面日志和 boundary.echo",
           "wide": true
         }
@@ -616,35 +615,35 @@
         {
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-thermodynamics.webp",
           "alt": "缸内和全域压力对照及缸内累计放热",
-          "caption": "缸内峰值 29.91 MPa，超出 25 MPa 比较条件 4.91 MPa。",
+          "caption": "缸压峰值 29.91 MPa，高出比较条件 4.91 MPa。",
           "label": "缸压与放热",
           "playback": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-pressure-heat.playback.json"
         },
         {
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-temperature.webp",
           "alt": "缸内平均温度随曲轴转角变化",
-          "caption": "缸内平均温度峰值约 2,212 K，出现在 +15.23°CA。",
+          "caption": "平均温度峰值 2,212 K。",
           "label": "平均温度",
           "playback": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-temperature.playback.json"
         },
         {
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-injection-event.webp",
           "alt": "累计喷油质量与喷射压力",
-          "caption": "样例喷油输出末点累计 31.50 mg，喷射压力峰值 75.69 MPa。",
+          "caption": "累计喷油 31.50 mg，喷射压力峰值 75.69 MPa。",
           "label": "喷油历程",
           "playback": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-injection.playback.json"
         },
         {
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-regional-mesh.webp",
           "alt": "全域与三个分区单元数随曲轴转角变化",
-          "caption": "用 4,654 个采样核对三个区域单元数之和，逐点与全域计数一致。",
+          "caption": "三域单元数逐点相加等于全域计数。",
           "label": "分区网格",
           "playback": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-mesh.playback.json"
         },
         {
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-wall-heat.webp",
           "alt": "缸套、燃烧室顶面和活塞的累计壁面传热",
-          "caption": "样例记录末点，缸套 166.78 J、燃烧室顶面 185.32 J、活塞 376.89 J。",
+          "caption": "缸套 166.78 J，燃烧室顶面 185.32 J，活塞 376.89 J。",
           "label": "壁面传热",
           "playback": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-wall-heat.playback.json"
         }
@@ -661,34 +660,34 @@
         "三维 CFD",
         "燃烧室线形"
       ],
-      "summary": "围绕喉口半径、凸台深度和压缩比组织对比算例，按缸内区域复核 CONVERGE 输出，并梳理放热数据转入 GT-Power 的校核步骤。",
+      "summary": "比较喉口半径、凸台深度与压缩比，复核 CONVERGE 缸内结果与 GT-Power 放热输入。",
       "cover": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-thermodynamics.webp",
       "coverAlt": "归档样例上止点附近的缸内压力、全域压力与缸内累计放热曲线",
-      "coverCaption": "按缸内区域输出绘制压力和累计放热，虚线对照全域压力列，点线标出交接方案的 250 bar 比较条件。",
+      "coverCaption": "缸压与累计放热 · 25 MPa 比较线",
       "time": "2025.03（样例运行记录）",
       "role": "燃烧室建模与仿真分析",
       "tools": "CONVERGE 3.0.17 / GT-Power",
       "status": "算例、参数方案与交接说明",
       "sections": [
         {
-          "title": "把燃烧室几何拆成可比变量",
-          "body": "交接说明以 1,500 r/min、89% 氨气替代率组织研究工况。改变喉口半径或凸台深度时同步调整斜面，以保持该轮比较的燃烧室容积；压缩比另设一轮。"
+          "title": "工况与几何变量",
+          "body": "研究工况为 1,500 r/min、89% 氨气替代率。改变喉口半径或凸台深度时，以斜面调整保持燃烧室容积。压缩比单独比较。"
         },
         {
-          "title": "按两种边界组织对比",
-          "body": "第一轮固定控制参数，观察几何变化带来的差异。第二轮调整喷油正时，把峰值压力对齐到 250 bar，再用同一约束比较各喉口方案。归档样例的缸压峰值约 299 bar，对应样例本身的设置。"
+          "title": "对比方案",
+          "body": "第一轮固定控制参数。第二轮调整喷油正时，以 25 MPa 峰值缸压对比喉口方案。归档样例峰值为 29.91 MPa。"
         },
         {
-          "title": "检查几何替换是否传到边界和喷油",
-          "body": "更新 surface.dat 后，对照 boundary.in 和两份气门升程输入，检查阀面编号、运动与边界是否仍指向正确表面。同步核对初始条件、燃料物性、反应机理和喷油器，并确认局部加密绑定到新对象。\n\n样例的缸径为 138 mm、行程为 165 mm。两者推算排量约 2.468 L，缸内输出的最大、最小容积之差约 2.466 L，可用来复核取数区域。"
+          "title": "边界与网格",
+          "body": "几何更新涉及 surface.dat、boundary.in、阀面编号、气门升程、燃料物性、反应机理、喷油器和局部加密区域。缸径 138 mm、行程 165 mm，几何排量 2.46793 L，样例容积极差 2.46638 L，相差约 0.063%。"
         },
         {
-          "title": "从分区输出读压力、温度与放热",
-          "body": "thermo_region0.out 对应 cylinder 区域。按同一曲轴转角读数，样例缸压在 7.71°CA 处达 29.91 MPa，缸内平均温度在 15.23°CA 处达 2,212 K，归档记录末的累计放热约为 12.48 kJ。thermo.out 的全域压力列峰值为 4.97 MPa。\n\n样例归档覆盖 −360°CA 至 +159.35°CA，共 4,654 点。三域单元数逐行相加都与全域总数一致；网格独立性需由不同网格方案的结果对比。完整循环的 IMEP 和指示热效率需用相应的 GT-Power 工况复核。\n\n从壁面日志取出缸套、燃烧室顶面和活塞的累计传热，按曲轴转角与缸内输出对齐。样例采用 433 K、523 K 和 553 K 的固定壁温设置，适合回查边界条件对热损失的影响。"
+          "title": "仿真结果",
+          "body": "缸内峰值压力 29.91 MPa（+7.71°CA），平均温度峰值 2,212 K（+15.23°CA），末点累计放热 12.48 kJ。全域压力峰值 4.97 MPa。\n\n归档 4,654 点，范围 −360°CA 至 +159.35°CA。三域单元数之和逐点等于全域单元数。缸套、燃烧室顶面和活塞的壁温分别为 433 K、523 K 和 553 K。网格独立性、完整循环 IMEP 和指示热效率待验证。"
         },
         {
-          "title": "个人工作｜算例组织与模型交接",
-          "body": "在交接说明中记录每轮固定项、要替换的几何与输入、以及要比较的性能量。三维结果提供放热率和累计放热，传入 GT-Power 前按实际喷油量和燃料热值对齐能量输入，并复查一维、三维缸压。38.3 和 39.3 两组几何已保留，边界、喷油和机理设置仍需按交接记录同步。"
+          "title": "算例与模型交接",
+          "body": "整理 38.3 和 39.3 两组几何、控制变量与交接设置。按实际喷油量和燃料热值校核 GT-Power 放热输入及一维、三维缸压。"
         }
       ],
       "galleryTitle": "燃烧室几何、运动与喷油设置",
@@ -698,8 +697,8 @@
         "stages": [
           {
             "label": "研究任务",
-            "title": "先隔离几何影响，再做等爆压比较",
-            "lead": "喉口半径、凸台深度和压缩比分开安排。喉口先按相同控制参数比较，再调整喷油正时，把压力约束对齐。",
+            "title": "几何变量与等爆压对比",
+            "lead": "",
             "facts": [
               [
                 "研究转速",
@@ -715,30 +714,30 @@
               ]
             ],
             "points": [
-              "变更喉口或凸台时同步调整斜面，控制该轮比较的燃烧室容积。",
-              "交接资料保留几何与待同步设置，便于按同一边界续算。"
+              "喉口与凸台方案保持燃烧室容积。",
+              "固定控制参数比较后，调整喷油正时开展等爆压比较。"
             ],
             "visuals": [
               {
                 "label": "参数定义",
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/handover-1.webp",
                 "alt": "交接文档标注的燃烧室剖面，显示喉口半径和凸台深度",
-                "caption": "喉口半径和凸台深度定义",
+                "caption": "",
                 "source": "燃烧室计算交接说明 / 几何参数图"
               },
               {
                 "label": "碗口截线",
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/piston-bowl-section.webp",
                 "alt": "活塞碗口的 Y = 0 截线",
-                "caption": "活塞碗口的 Y = 0 截线",
+                "caption": "",
                 "source": "CONVERGE 样例 / surface.dat 的 BND_piston@"
               }
             ]
           },
           {
             "label": "模型边界",
-            "title": "从表面编号追到进排气边界",
-            "lead": "把样例三角面按边界编号着色。旋转或隐藏缸套后，可以检查活塞、进排气道和阀面的空间关系。",
+            "title": "表面分区与网格",
+            "lead": "",
             "facts": [
               [
                 "表面顶点",
@@ -754,15 +753,14 @@
               ]
             ],
             "points": [
-              "缸径 138 mm、行程 165 mm，对应几何排量约 2.468 L。",
-              "替换燃烧室几何时，边界编号、喷油器与固定加密对象要随之复核。"
+              "缸径 138 mm，行程 165 mm，几何排量 2.468 L。"
             ],
             "visuals": [
               {
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/combustion-domain-model.webp",
                 "label": "计算域三维",
                 "alt": "计算域三维",
-                "caption": "按表面编号着色，可分别观察缸套与顶面、活塞和进排气通道。",
+                "caption": "缸套、顶面、活塞及进排气道。",
                 "source": "CONVERGE 样例 surface.dat、boundary.in",
                 "scene": "/portfolio/assets/projects/ammonia-diesel-combustion/combustion-domain.scene.json"
               },
@@ -770,22 +768,22 @@
                 "label": "整体与剖开",
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-boundary-views.webp",
                 "alt": "燃烧算例表面与剖开视图",
-                "caption": "燃烧算例表面与剖开视图",
+                "caption": "",
                 "source": "CONVERGE 样例 / surface.dat、boundary.in"
               },
               {
                 "label": "算例设置",
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/handover-2.webp",
                 "alt": "CONVERGE Case Setup 截图及反应机理、边界、喷油与网格加密的批注",
-                "caption": "CONVERGE 算例设置与网格加密",
+                "caption": "",
                 "source": "燃烧室计算交接说明、inputs.in 与 amr.in"
               }
             ]
           },
           {
             "label": "工况输入",
-            "title": "按曲轴转角核对气门和喷油",
-            "lead": "升程输入定义气门运动，喷油输出记录这一算例的喷油质量和压力。两者用曲轴转角对齐，便于检查事件顺序。",
+            "title": "气门升程与喷油",
+            "lead": "",
             "facts": [
               [
                 "进气阀最大升程",
@@ -801,22 +799,22 @@
               ]
             ],
             "points": [
-              "气门升程输入覆盖 720°CA。",
-              "喷油输出在 −13.30°CA 至 −8.30°CA 有喷油，喷射压力列最高 75.69 MPa。"
+              "气门升程覆盖 720°CA。",
+              "喷油记录为 −13.30°CA 至 −8.30°CA，峰值压力 75.69 MPa。"
             ],
             "visuals": [
               {
                 "label": "气门升程",
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/valve-lift-input.webp",
                 "alt": "720° 循环内的进排气阀升程",
-                "caption": "720° 循环内的进排气阀升程",
+                "caption": "",
                 "source": "CONVERGE 样例 / intake_lift.in、exhaust_lift.in"
               },
               {
                 "label": "喷油历程",
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-injection-event.webp",
                 "alt": "样例的喷油质量与喷射压力",
-                "caption": "样例的喷油质量与喷射压力",
+                "caption": "",
                 "source": "CONVERGE 样例 / spray_rate_inj0.out",
                 "playback": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-injection.playback.json"
               }
@@ -824,8 +822,8 @@
           },
           {
             "label": "结果与比较",
-            "title": "按缸内区域读取峰值",
-            "lead": "缸内数据取自 Region 0。样例缸压峰值约 299 bar，高于交接方案的 250 bar 等爆压比较条件。",
+            "title": "缸内结果",
+            "lead": "",
             "facts": [
               [
                 "样例缸压峰值",
@@ -841,8 +839,7 @@
               ]
             ],
             "points": [
-              "缸内容积跨度约 2.466 L，与几何排量相符。记录末累计放热约 12.48 kJ。",
-              "三域单元数逐点加总与全域一致。三维放热转入 GT-Power 前，还需核对燃料热值、喷油量和缸压。"
+              "累计放热 12.48 kJ。三域单元数之和逐点等于全域单元数。"
             ],
             "visuals": [
               {
@@ -850,7 +847,7 @@
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-thermodynamics.webp",
                 "animation": "/portfolio/assets/projects/ammonia-diesel-combustion/cylinder-combustion-playback.gif",
                 "alt": "归档样例上止点附近的缸内压力和累计放热曲线",
-                "caption": "点线为 250 bar 比较条件。静态图的虚线另列全域压力，便于对照缸内曲线。",
+                "caption": "缸压峰值高出 25 MPa 比较条件 4.91 MPa。",
                 "source": "CONVERGE 样例 thermo_region0.out、thermo.out · 250 bar 来自交接说明",
                 "playback": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-pressure-heat.playback.json"
               },
@@ -858,14 +855,14 @@
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-pressure-volume.webp",
                 "label": "缸压–容积轨迹",
                 "alt": "按曲轴转角着色的缸内压力与缸内容积轨迹",
-                "caption": "压力与容积均取自 cylinder 区域。归档从 −360°CA 到 +159.35°CA，图中保留真实起止点。",
+                "caption": "",
                 "source": "CONVERGE 样例 thermo_region0.out · Pressure、Volume"
               },
               {
                 "label": "平均温度",
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-temperature.webp",
                 "alt": "缸内平均温度随曲轴转角变化，峰值 2212 K",
-                "caption": "按全段归档记录绘制缸内平均温度，在 +15.23°CA 达到约 2,212 K。",
+                "caption": "平均温度峰值 2,212 K（+15.23°CA）。",
                 "source": "CONVERGE 样例 thermo_region0.out · Mean_Temp",
                 "playback": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-temperature.playback.json"
               },
@@ -873,7 +870,7 @@
                 "label": "分区网格",
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-regional-mesh.webp",
                 "alt": "缸内、进气与排气三个区域的单元数堆叠图，全域峰值为 1,583,531 个",
-                "caption": "全域单元数从 306,357 个起步，在 −185.03°CA 达 1,583,531 个。逐行核对后三域之和与全域总数相同。",
+                "caption": "全域单元数从 306,357 增至峰值 1,583,531。",
                 "source": "CONVERGE 样例 cell_count_regions.out 与 initialize.echo",
                 "playback": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-mesh.playback.json"
               },
@@ -881,7 +878,7 @@
                 "label": "壁面传热",
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-wall-heat.webp",
                 "alt": "缸套、燃烧室顶面和活塞的累计壁面传热",
-                "caption": "样例记录末点，缸套 166.78 J、燃烧室顶面 185.32 J、活塞 376.89 J。",
+                "caption": "缸套 166.78 J，燃烧室顶面 185.32 J，活塞 376.89 J。",
                 "source": "CONVERGE bound2/3/4-wall.out",
                 "playback": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-wall-heat.playback.json"
               }
@@ -899,9 +896,9 @@
         {
           "src": "/portfolio/assets/projects/bms-thermal-model/altium-board-preview.webp",
           "alt": "Altium PCB 文件保存的局部走线与元件布局预览",
-          "caption": "Altium 局部走线与元件布局",
+          "caption": "Altium 走线与器件布局",
           "topic": "板卡与安装接口",
-          "analysis": "板图预览用于辨认器件相对位置与板面走线。导入后的精确点位可用 B.brd 的放置坐标复核。",
+          "analysis": "",
           "source": "Altium / PcbDocPreview 内嵌视图"
         },
         {
@@ -909,7 +906,7 @@
           "alt": "从 PCB STEP 工程外形读取并渲染的板卡外形",
           "caption": "STEP 板边与开孔",
           "topic": "板卡与安装接口",
-          "analysis": "视图保留板轮廓和孔位，方便交叉检查导入后 XY 方位、板边范围及机械安装位置。",
+          "analysis": "",
           "source": "BMS 电路板 STEP 外形"
         },
         {
@@ -917,7 +914,7 @@
           "alt": "12V BMS 外形与通讯插件",
           "topic": "板卡与安装接口",
           "caption": "12V BMS 外形与通讯插件",
-          "analysis": "外形图给出通讯插件位置、安装孔和外包络。它对应包内的机械接口资料，建模时应与板卡 STEP 和 IDF 的版本分别核对。",
+          "analysis": "",
           "source": "12V BMS-2 外形图 PDF / 图面摘录",
           "wide": true
         },
@@ -926,7 +923,7 @@
           "alt": "预充与大电流开关区",
           "topic": "功率器件与采样链",
           "caption": "预充与大电流开关区",
-          "analysis": "图中预充支路包含 T1 和 D8，右侧是大电流开关区。D8 同时出现在 Icepak 封装缺高警告中，可以按位号从原理图追到导入对象。",
+          "analysis": "预充支路包含 T1 和 D8，D8 封装缺高。",
           "source": "BMS 电路原理图 PDF / 第 3 页局部",
           "wide": true
         },
@@ -935,7 +932,7 @@
           "alt": "电流采样和 MOSFET 驱动",
           "topic": "功率器件与采样链",
           "caption": "电流采样和 MOSFET 驱动",
-          "analysis": "原图保留电流采样的运放输出、MCU 相关信号以及 U10 驱动连接。U8、U10 也出现在导入替代记录中，适合用来核对位号、封装高度和建模对象。",
+          "analysis": "U8、U10 封装缺高。",
           "source": "BMS 电路原理图 PDF / 第 3 页局部",
           "wide": true
         },
@@ -943,8 +940,8 @@
           "src": "/portfolio/assets/projects/bms-thermal-model/idf-source-substitutions.webp",
           "alt": "31 处封装缺高位置",
           "topic": "导入与层叠复核",
-          "caption": "31 处封装缺高位置",
-          "analysis": "日志点名的 31 个器件均与板文件中的位号匹配，正面 24 处，背面 7 处。圈出的点对应 Icepak 使用 source 表示的对象，器件功耗需结合分析工况单独核对。",
+          "caption": "31 处封装缺高",
+          "analysis": "正面 24 处，背面 7 处，Icepak 对象类型为 source。",
           "source": "Icepak 导入日志 / messages.log、B.brd",
           "wide": true
         },
@@ -952,8 +949,8 @@
           "src": "/portfolio/assets/projects/bms-thermal-model/anf-copper-stack.webp",
           "alt": "四个铜层及厚度字段",
           "topic": "导入与层叠复核",
-          "caption": "四个铜层及厚度字段",
-          "analysis": "ANF 记录 Top、GND、PWR 和 Bottom。外层铜厚字段为 1.400 mil，两个内层为 1.417 mil。这些数据可用于核对层名与铜层厚度，介质和材料参数需要另行核查。",
+          "caption": "四层铜厚",
+          "analysis": "外层 1.400 mil，内层 1.417 mil。",
           "source": "Altium 导出 / A.anf 的 StackupLayer",
           "wide": true
         },
@@ -961,8 +958,8 @@
           "src": "/portfolio/assets/projects/bms-thermal-model/pcb-layout-artwork.webp",
           "alt": "BMS 原理图归档中的 PCB 版图页",
           "topic": "版图与热源定位",
-          "caption": "BMS 原理图归档中的 PCB 版图页",
-          "analysis": "结合版图里的铜区、板边与安装区域回查机械外形及布置。器件功耗和材料等效参数来自独立输入。",
+          "caption": "BMS PCB 版图",
+          "analysis": "",
           "source": "《2024.1.11-原理图软件开发反馈版》PDF 第 4 页",
           "wide": true
         }
@@ -981,34 +978,34 @@
         "ANF",
         "PCB 热管理"
       ],
-      "summary": "用 IDF 与封装库重建 BMS 板卡，并把 Altium 位号、Icepak 导入警告和保存模型的器件对象逐一对应，为后续功耗与热边界设置准备可复查的输入。",
+      "summary": "用 IDF 与封装库重建 BMS 板卡，按位号匹配 Altium 原理图、Icepak 导入日志及热模型对象。",
       "cover": "/portfolio/assets/projects/bms-thermal-model/idf-placement.webp",
       "coverAlt": "由 IDF 坐标绘制的 BMS 电路板正反面 334 处器件点位图",
-      "coverCaption": "由 Icepak 导入所用 IDF 重绘，正面 258 处、背面 76 处。点位用于核对布局与热源位置。",
+      "coverCaption": "器件点位 · 正面 258 处，背面 76 处",
       "time": "2024.08–2025.01",
       "role": "独立完成热仿真建模",
       "tools": "Ansys Icepak / Altium Designer",
       "status": "板卡导入记录与模型",
       "sections": [
         {
-          "title": "从电子设计文件建立热分析输入",
-          "body": "以约 90.17 × 115.57 mm 的 BMS 板卡为对象。Altium 原理图用于辨认电流路径、采样和驱动，STEP 用于核对外形、孔位和安装接口，板面器件由 IDF 及封装库给出。"
+          "title": "板卡与输入文件",
+          "body": "板卡外形约 90.17 × 115.57 mm。输入包括 Altium 原理图、STEP 外形、IDF 坐标和封装库。"
         },
         {
-          "title": "分别处理板级外形与铜层",
-          "body": "B.brd 和 B.pro 配对保存轮廓、板厚、贴装面和封装高度。A.anf 另存 Top、GND、PWR、Bottom 四个铜层及厚度字段。板级包络用于检查空间关系，等效导热参数需要结合层叠和材料来定。"
+          "title": "板厚、封装与铜层",
+          "body": "B.brd 和 B.pro 记录轮廓、板厚、贴装面和封装高度，IDF 板厚 0.778 mm。A.anf 记录 Top、GND、PWR、Bottom 四层铜厚。等效导热参数取决于层叠与材料。"
         },
         {
-          "title": "把导入警告追到具体器件",
-          "body": "334 个 IDF 器件位号均可在保存模型中定位。31 个缺高位号与 source 对象逐个匹配，其余 303 个器件位号对应 block。正面 24 处缺高、背面 7 处。\n\nD8、U8、U10 可用位号从原理图追到板面坐标，再到保存模型中的对象类型。日志中的 323 个 inactive 是导入时的状态，核对热模型时还要确认目标工况启用了哪些对象。"
+          "title": "Icepak 导入结果",
+          "body": "334 个 IDF 位号全部匹配。31 个缺高器件对应 source（正面 24 个、背面 7 个），其余 303 个对应 block。导入时有 323 个对象处于 inactive 状态。D8、U8、U10 已完成位号、坐标和对象类型核对。"
         },
         {
-          "title": "交付到可复查的热模型输入",
-          "body": "归档保存了板卡模型、导入日志、铜层字段及稳态设置。温升与热点判断需要相应工况下的器件功耗、实际启用状态、板材与换热边界，以及可回读的温度场和收敛记录。\n\n复查热源时先用版图和原理图确认器件位号及铜区，再从 IDF 查贴装面与坐标，最后到 Icepak 对照 block 或 source 类型。三处资料按同一位号交叉核对。"
+          "title": "稳态热分析",
+          "body": "归档包含板卡模型、导入日志、铜层字段与稳态设置。温升和热点待结合工况功耗、对象启用状态、板材、换热边界及收敛温度场验证。"
         },
         {
-          "title": "个人工作｜从板级数据到热模型",
-          "body": "完成板级模型建立、芯片功耗输入和边界设置工作。以器件位号为索引，把原理图、板面坐标、封装几何和 Icepak 对象连起来，便于逐项复查热源该落在哪个对象上。"
+          "title": "热模型建立",
+          "body": "完成板级模型、芯片功耗输入和热边界设置，按位号关联原理图、坐标、封装与 Icepak 对象。"
         }
       ],
       "galleryTitle": "原理图、板卡几何与导入复核",
@@ -1017,8 +1014,8 @@
         "stages": [
           {
             "label": "任务与输入",
-            "title": "把 BMS 设计文件转成板级热输入",
-            "lead": "用板文件确定外形与位置，用封装库补上器件包络，再从原理图和 STEP 分别核对电气功能与安装接口。",
+            "title": "板卡尺寸与器件数据",
+            "lead": "",
             "facts": [
               [
                 "板面尺寸",
@@ -1034,37 +1031,36 @@
               ]
             ],
             "points": [
-              "B.brd 保存轮廓、坐标、旋转和贴装面。",
-              "B.pro 给出封装定义，原始 STEP 可查板边与安装孔。"
+              "B.brd 记录轮廓、坐标、旋转和贴装面。B.pro 记录封装定义。"
             ],
             "visuals": [
               {
                 "label": "正背面点位",
                 "src": "/portfolio/assets/projects/bms-thermal-model/idf-placement.webp",
                 "alt": "由 IDF 坐标绘制的 BMS 电路板正反面 334 处器件点位图",
-                "caption": "由 Icepak 导入所用 IDF 重绘，正面 258 处、背面 76 处。点位用于核对布局与热源位置。",
-                "source": "项目归档图档"
+                "caption": "正面 258 处，背面 76 处。",
+                "source": ""
               },
               {
                 "label": "原始板图",
                 "src": "/portfolio/assets/projects/bms-thermal-model/altium-board-preview.webp",
                 "alt": "Altium PCB 文件保存的局部走线与元件布局预览",
-                "caption": "Altium 局部走线与元件布局",
+                "caption": "",
                 "source": "Altium / PcbDocPreview 内嵌视图"
               },
               {
                 "label": "STEP 外形",
                 "src": "/portfolio/assets/projects/bms-thermal-model/step-outline.webp",
                 "alt": "从 PCB STEP 工程外形读取并渲染的板卡外形",
-                "caption": "STEP 板边与开孔",
+                "caption": "",
                 "source": "BMS 电路板 STEP 外形"
               }
             ]
           },
           {
             "label": "板级模型",
-            "title": "拆看正背面封装与缺高标记",
-            "lead": "以封装库的有效高度拉伸器件外形，并按 IDF 记录布置在对应板面。缺高器件保留位置标记，便于返回原理图。",
+            "title": "正背面封装",
+            "lead": "",
             "facts": [
               [
                 "正面封装",
@@ -1079,16 +1075,13 @@
                 "31 处"
               ]
             ],
-            "points": [
-              "切到俯视或仰视可分面检查，也可以隐藏板基材查看遮挡处。",
-              "机械外形和孔位另用 STEP 视图核对。"
-            ],
+            "points": [],
             "visuals": [
               {
                 "src": "/portfolio/assets/projects/bms-thermal-model/idf-board-model.webp",
                 "label": "IDF 板级三维",
                 "alt": "IDF 板级三维",
-                "caption": "按 IDF 轮廓、坐标和封装高度重建。可切换板基材、正背面封装和缺高标记。",
+                "caption": "板基材、正背面封装与缺高器件。",
                 "source": "Altium 导出 B.brd 与 B.pro / IDF 3.0",
                 "scene": "/portfolio/assets/projects/bms-thermal-model/idf-board.scene.json"
               },
@@ -1096,22 +1089,22 @@
                 "label": "缺高分布",
                 "src": "/portfolio/assets/projects/bms-thermal-model/idf-source-substitutions.webp",
                 "alt": "31 处封装缺高位置",
-                "caption": "31 处封装缺高位置",
+                "caption": "",
                 "source": "Icepak 导入日志 / messages.log、B.brd"
               },
               {
                 "label": "机械外形",
                 "src": "/portfolio/assets/projects/bms-thermal-model/step-outline.webp",
                 "alt": "从 PCB STEP 工程外形读取并渲染的板卡外形",
-                "caption": "STEP 板边与开孔",
+                "caption": "",
                 "source": "BMS 电路板 STEP 外形"
               }
             ]
           },
           {
             "label": "导入复核",
-            "title": "按位号追到保存模型里的对象",
-            "lead": "把 IDF 位号、Icepak 缺高警告与保存模型逐个比对。D8、U8、U10 三个位号演示了从板面坐标找到 source 对象的过程。",
+            "title": "器件位号与 Icepak 对象",
+            "lead": "",
             "facts": [
               [
                 "缺高替代",
@@ -1127,44 +1120,43 @@
               ]
             ],
             "points": [
-              "31 个缺高位号全部匹配，正面 24 处、背面 7 处。",
-              "器件对象建立后，再按目标工况核对启用状态和耗散功率。"
+              "31 处缺高位号全部匹配，正面 24 处、背面 7 处。"
             ],
             "visuals": [
               {
                 "label": "位号追溯",
                 "src": "/portfolio/assets/projects/bms-thermal-model/icepak-reference-audit.webp",
                 "alt": "IDF 正面 D8、U8、U10 的坐标，以及各自对应的 Icepak source 对象",
-                "caption": "图中三个正面位号均出现在缺高警告和模型的 source 声明中。坐标取自 B.brd，采用原 IDF 坐标系。",
+                "caption": "D8、U8、U10 对应 source。坐标采用 B.brd 的 IDF 坐标系。",
                 "source": "B.brd、Icepak messages.log、pcb/tab/model"
               },
               {
                 "label": "导入警告位置",
                 "src": "/portfolio/assets/projects/bms-thermal-model/idf-source-substitutions.webp",
                 "alt": "31 处封装缺高位置",
-                "caption": "31 处封装缺高位置",
+                "caption": "",
                 "source": "Icepak 导入日志 / messages.log、B.brd"
               },
               {
                 "label": "预充与大电流区",
                 "src": "/portfolio/assets/projects/bms-thermal-model/schematic-power-switch.webp",
                 "alt": "预充与大电流开关区",
-                "caption": "预充与大电流开关区",
+                "caption": "",
                 "source": "BMS 电路原理图 PDF / 第 3 页局部"
               },
               {
                 "label": "采样与驱动",
                 "src": "/portfolio/assets/projects/bms-thermal-model/schematic-current-sense.webp",
                 "alt": "电流采样和 MOSFET 驱动",
-                "caption": "电流采样和 MOSFET 驱动",
+                "caption": "",
                 "source": "BMS 电路原理图 PDF / 第 3 页局部"
               }
             ]
           },
           {
             "label": "求解准备",
-            "title": "把稳态设置对到实际散热条件",
-            "lead": "保存的 problem 文件将算例设为稳态。铜层记录、器件位号和机械接口可分别用于核对导热、热源和散热边界。",
+            "title": "稳态热分析输入",
+            "lead": "",
             "facts": [
               [
                 "铜层记录",
@@ -1176,29 +1168,28 @@
               ]
             ],
             "points": [
-              "ANF 用于核对铜层名称与厚度，板厚和外形来自 IDF、STEP。",
-              "温升与热点需用目标工况的功耗、换热边界和可回读的温度场验证。"
+              "温升与热点待工况功耗、换热边界与温度场验证。"
             ],
             "visuals": [
               {
                 "label": "铜层字段",
                 "src": "/portfolio/assets/projects/bms-thermal-model/anf-copper-stack.webp",
                 "alt": "四个铜层及厚度字段",
-                "caption": "四个铜层及厚度字段",
+                "caption": "",
                 "source": "Altium 导出 / A.anf 的 StackupLayer"
               },
               {
                 "label": "机械接口",
                 "src": "/portfolio/assets/projects/bms-thermal-model/bms-mechanical-interfaces.webp",
                 "alt": "12V BMS 外形与通讯插件",
-                "caption": "12V BMS 外形与通讯插件",
+                "caption": "",
                 "source": "12V BMS-2 外形图 PDF / 图面摘录"
               },
               {
                 "label": "PCB 版图",
                 "src": "/portfolio/assets/projects/bms-thermal-model/pcb-layout-artwork.webp",
                 "alt": "BMS 原理图归档中的 PCB 版图页",
-                "caption": "结合版图里的铜区、板边与安装区域回查机械外形及布置。器件功耗和材料等效参数来自独立输入。",
+                "caption": "",
                 "source": "原理图归档 PDF 第 4 页"
               }
             ]
@@ -1216,8 +1207,8 @@
           "src": "/portfolio/assets/projects/tooling-static-fea/base-restraints.webp",
           "alt": "底座的 UX 和 UZ 约束",
           "topic": "底座",
-          "caption": "底座的 UX 和 UZ 约束",
-          "analysis": "两个方向在显示的实体表面上落在同一组 12,966 个节点，图中将重合点合并标记。结合求解日志，可核查受限方向及剩余自由度。",
+          "caption": "底座 UX、UZ 约束",
+          "analysis": "两向共用 12,966 个外表面节点。",
           "source": "ANSYS 结果网格 / 底座 file.rst 的命名节点集",
           "wide": true
         },
@@ -1225,8 +1216,8 @@
           "src": "/portfolio/assets/projects/tooling-static-fea/base-displacement.webp",
           "alt": "底座保存步的位移幅值",
           "topic": "底座",
-          "caption": "底座保存步的位移幅值",
-          "analysis": "实体表面读取到的最大位移约 0.0568 mm。颜色映射在未变形几何上，用来定位该保存步的相对响应。底座日志中记录了迭代不收敛与小主元警告。",
+          "caption": "底座位移",
+          "analysis": "外表面峰值约 0.0568 mm。",
           "source": "ANSYS 结果文件 / 底座最后保存步",
           "wide": true
         },
@@ -1234,8 +1225,8 @@
           "src": "/portfolio/assets/projects/tooling-static-fea/clamp-restraints.webp",
           "alt": "夹箍的三向位移约束",
           "topic": "夹箍",
-          "caption": "夹箍的三向位移约束",
-          "analysis": "图中同一组 709 个外表面节点同时约束 UX、UY 和 UZ。输入文件另施加绕全局 Y 轴的 1 N·m 力矩，便于对照支撑和载荷位置。",
+          "caption": "夹箍三向位移约束",
+          "analysis": "709 个外表面节点同时约束 UX、UY、UZ。",
           "source": "ANSYS 结果网格及夹箍 ds.dat",
           "wide": true
         },
@@ -1243,8 +1234,8 @@
           "src": "/portfolio/assets/projects/tooling-static-fea/clamp-stress-location.webp",
           "alt": "夹箍等效应力峰值定位",
           "topic": "夹箍",
-          "caption": "夹箍等效应力峰值定位",
-          "analysis": "最后保存步中，显示的实体表面在节点 104584 读到约 322.7 MPa。红圈标出该节点在整体和裁切视角中的投影，局部接触重叠警告需要结合这一位置复查。",
+          "caption": "夹箍等效应力",
+          "analysis": "节点 104584 约 322.7 MPa。",
           "source": "ANSYS 结果文件 / 夹箍节点等效应力",
           "wide": true
         },
@@ -1252,8 +1243,8 @@
           "src": "/portfolio/assets/projects/tooling-static-fea/ring-fixture-restraints.webp",
           "alt": "气环工装的固定支撑节点",
           "topic": "气环工装",
-          "caption": "气环工装的固定支撑节点",
-          "analysis": "输入文件的固定节点集共 177 个，当前提取的实体外表面显示其中 65 个。用同一坐标视图可核对固定区域与两组受力面之间的关系。",
+          "caption": "气环工装固定节点",
+          "analysis": "固定 177 个节点，外表面可见 65 个。",
           "source": "ANSYS 输入与结果文件 / 气环工装 _FIXEDSU",
           "wide": true
         },
@@ -1261,8 +1252,8 @@
           "src": "/portfolio/assets/projects/tooling-static-fea/ring-fixture-displacement.webp",
           "alt": "气环工装的位移分布",
           "topic": "气环工装",
-          "caption": "气环工装的位移分布",
-          "analysis": "最后保存步的实体表面位移峰值约 2.27 mm。颜色可帮助定位响应较高的部位，并与固定区域和受力面一起复查。",
+          "caption": "气环工装位移",
+          "analysis": "外表面峰值约 2.27 mm。",
           "source": "ANSYS 结果文件 / 气环工装最后保存步",
           "wide": true
         },
@@ -1270,8 +1261,8 @@
           "src": "/portfolio/assets/projects/tooling-static-fea/ring-fixture-convergence.webp",
           "alt": "气环工装力与位移判据对照",
           "topic": "求解日志",
-          "caption": "气环工装力与位移判据对照",
-          "analysis": "从每次平衡迭代后记录的收敛值和判据重新计算比值，可定位位移先于力达到判据的过程。",
+          "caption": "气环工装收敛判据",
+          "analysis": "",
           "source": "气环工装 ANSYS solve.out",
           "wide": true
         }
@@ -1280,26 +1271,26 @@
         {
           "src": "/portfolio/assets/projects/tooling-static-fea/ring-fixture-convergence.webp",
           "alt": "气环工装的力与位移收敛值相对各自判据",
-          "caption": "气环工装第 12 次迭代的力比值为 0.490，位移比值为 0.0028。横轴为平衡迭代编号。",
+          "caption": "第 12 次迭代的力比值为 0.490，位移比值为 0.0028。",
           "label": "求解收敛",
           "playback": "/portfolio/assets/projects/tooling-static-fea/ring-fixture-convergence.playback.json"
         },
         {
           "src": "/portfolio/assets/projects/tooling-static-fea/base.webp",
           "alt": "底座有限元表面网格与等效应力结果",
-          "caption": "底座｜447,537 个求解单元。PCG 未收敛，转稀疏求解后完成保存步，日志仍保留 UY 小主元警告。",
+          "caption": "447,537 个求解单元。PCG 未收敛，改用稀疏求解后完成，仍有 UY 小主元警告。",
           "label": "底座"
         },
         {
           "src": "/portfolio/assets/projects/tooling-static-fea/clamp.webp",
           "alt": "夹箍有限元表面网格与等效应力结果",
-          "caption": "夹箍｜70,047 个求解单元。等效应力用于定位外表面高值，结合接触重叠和初始间隙复查。",
+          "caption": "70,047 个求解单元。日志记录接触重叠及初始间隙。",
           "label": "夹箍"
         },
         {
           "src": "/portfolio/assets/projects/tooling-static-fea/ring-fixture.webp",
           "alt": "气环工装有限元表面网格与等效应力结果",
-          "caption": "气环工装｜5,956 个求解单元；核查载荷施加区与转接部位。",
+          "caption": "5,956 个求解单元。",
           "label": "气环工装"
         }
       ],
@@ -1320,34 +1311,34 @@
         "接触",
         "有限元后处理"
       ],
-      "summary": "分别建立底座、夹箍和气环工装的静力算例，将约束节点、受载位置、表面云图与求解日志对照，定位每套模型需要复核的部位。",
+      "summary": "建立底座、夹箍和气环工装的 ANSYS 静力算例，核对载荷、约束、峰值节点与求解日志。",
       "cover": "/portfolio/assets/projects/tooling-static-fea/cases.webp",
       "coverAlt": "底座、夹箍、气环工装三个 ANSYS 算例的真实结构表面",
-      "coverCaption": "由三套 ANSYS 结果文件的实体网格提取。三个算例的载荷与约束分别设置。",
+      "coverCaption": "底座、夹箍与气环工装实体表面网格",
       "time": "",
       "role": "静力建模与结果分析",
       "tools": "ANSYS Workbench / Mechanical / MAPDL 2024 R1",
       "status": "三套静力算例",
       "sections": [
         {
-          "title": "三种结构，三条载荷传递路径",
-          "body": "底座看面载荷如何通过板件和立柱传到支撑；夹箍看绕 Y 轴力矩如何经过接触界面传递；气环工装看两组受力面与固定支撑之间的响应。"
+          "title": "载荷路径",
+          "body": "底座面载荷经板件和立柱传至支撑。夹箍的 Y 向力矩经接触面传递。气环工装的两组载荷传至固定端。"
         },
         {
-          "title": "把载荷和约束定位到模型",
-          "body": "底座用 UX、UZ 节点集与面载荷建模。夹箍在远程点施加 1 N·m 的 Y 向力矩，三向位移约束可回查到外表面节点。气环工装输入包含 177 个固定节点及两组不同方向的受载面。"
+          "title": "载荷与约束",
+          "body": "底座采用 UX、UZ 约束及面载荷。夹箍远程点施加 1 N·m 的 Y 向力矩，外表面节点施加三向位移约束。气环工装有 177 个固定节点及两组受载面。"
         },
         {
-          "title": "按同一保存步提取可读结果",
-          "body": "从 ANSYS 结果文件提取实体外表面、命名节点集及末次保存步的节点结果。位移和等效应力均着色在未变形几何上。节点数以所提取的外表面为范围，各应力图用各自的色标。\n\n夹箍可定位的最高外表面等效应力出现在节点 104584，约 322.7 MPa。位移提取出现异常量级，因此本案展示应力定位，结合接触设置继续复查。"
+          "title": "位移与应力",
+          "body": "位移和等效应力取自末次保存步，映射至未变形外表面。三个算例采用独立色标。夹箍外表面应力峰值约 322.7 MPa（节点 104584），位移结果存在异常量级。"
         },
         {
-          "title": "用日志区分保存步完成与结果可信度",
-          "body": "三个日志均记录载荷步 1、子步 1 完成，摘要警告分别为 8、5、2 条。底座的 PCG 未收敛，自动切换稀疏求解后完成该步，仍有节点 332874 的 UY 小主元提示。\n\n夹箍日志提示接触单元重叠、接触探测半径偏小，并记录部分接触对的初始间隙。气环工装的表面应力峰值位于节点 3738，位移峰值位于节点 40，可分别在几何上定位。判定强度前需核对局部网格、接触、材料允许值及载荷工况。\n\n气环工装载荷步 1 / 子步 1 共完成 12 次平衡迭代。位移从第 3 次开始低于对应判据，力到第 12 次低于对应判据。节点高值仍需与局部网格和接触设置一起审查。"
+          "title": "求解与收敛",
+          "body": "三组算例均完成载荷步 1、子步 1，警告数依次为 8、5、2。底座 PCG 未收敛，切换稀疏求解后完成。节点 332874 的 UY 小主元警告仍在。\n\n夹箍日志记录接触单元重叠、探测半径偏小和初始间隙。气环工装位移在第 3 次达到判据，力在第 12 次达到判据。等效应力峰值约 1,591 MPa（节点 3738），位移峰值约 2.27 mm（节点 40）。强度判定待局部网格、接触、材料许用值及载荷复核。"
         },
         {
-          "title": "个人工作｜组织工况与追踪异常",
-          "body": "按算例保留输入、求解日志、网格与结果文件。用节点编号和约束集合把云图上的异常位置追回输入，使下一轮复查能集中到自由度、接触对或施加载荷的区域。"
+          "title": "工况建模与异常定位",
+          "body": "整理三个算例的输入、网格、结果与日志，按节点编号回查异常自由度、接触对和受载区域。"
         }
       ],
       "simulationTitle": "静力结果与求解收敛",
@@ -1357,8 +1348,8 @@
         "stages": [
           {
             "label": "对象与工况",
-            "title": "从载荷路径进入三套静力算例",
-            "lead": "底座看面载荷到支撑，夹箍看力矩过接触面，气环工装看两组载荷到固定端。三套结果分别与各自的输入和日志核对。",
+            "title": "三组静力工况",
+            "lead": "",
             "facts": [
               [
                 "底座求解单元",
@@ -1374,15 +1365,14 @@
               ]
             ],
             "points": [
-              "三套三维视图取自结果文件中的实体表面网格。",
-              "三个日志均完成载荷步 1、子步 1，警告摘要分别为 8、5、2 条。"
+              "三组算例的累计迭代数为 5、1、12，警告数为 8、5、2。"
             ],
             "visuals": [
               {
                 "src": "/portfolio/assets/projects/tooling-static-fea/fea-base-model.webp",
                 "label": "底座三维",
                 "alt": "底座三维",
-                "caption": "由保存的实体表面网格提取，可观察板件、立柱与连接区域。",
+                "caption": "",
                 "source": "ANSYS 底座结果网格 file.rst",
                 "scene": "/portfolio/assets/projects/tooling-static-fea/fea-base.scene.json"
               },
@@ -1390,14 +1380,14 @@
                 "label": "求解日志",
                 "src": "/portfolio/assets/projects/tooling-static-fea/solver-log-audit.webp",
                 "alt": "底座、夹箍、气环工装的求解步、累计迭代、警告和错误摘要",
-                "caption": "三套日志都记录了载荷步 1、子步 1 完成。底座、夹箍、气环工装的累计迭代数分别为 5、1、12。",
+                "caption": "",
                 "source": "三套 ANSYS Mechanical solve.out"
               },
               {
                 "src": "/portfolio/assets/projects/tooling-static-fea/fea-clamp-model.webp",
                 "label": "夹箍三维",
                 "alt": "夹箍三维",
-                "caption": "查看夹箍、筒体和相邻支撑件的空间关系。",
+                "caption": "",
                 "source": "ANSYS 夹箍结果网格 file.rst",
                 "scene": "/portfolio/assets/projects/tooling-static-fea/fea-clamp.scene.json"
               },
@@ -1405,7 +1395,7 @@
                 "src": "/portfolio/assets/projects/tooling-static-fea/fea-ring-fixture-model.webp",
                 "label": "气环工装三维",
                 "alt": "气环工装三维",
-                "caption": "从保存结果中查看工装臂、受力部位和支撑区域的空间关系。",
+                "caption": "",
                 "source": "ANSYS 气环工装结果网格 file.rst",
                 "scene": "/portfolio/assets/projects/tooling-static-fea/fea-ring-fixture.scene.json"
               },
@@ -1413,15 +1403,15 @@
                 "label": "三套结构",
                 "src": "/portfolio/assets/projects/tooling-static-fea/cases.webp",
                 "alt": "底座、夹箍、气环工装三个 ANSYS 算例的真实结构表面",
-                "caption": "由三套 ANSYS 结果文件的实体网格提取。三个算例的载荷与约束分别设置。",
-                "source": "项目归档图档"
+                "caption": "",
+                "source": ""
               }
             ]
           },
           {
             "label": "底座",
-            "title": "把底座的小主元警告追到 UY 自由度",
-            "lead": "底座的 PCG 迭代未收敛，自动切换稀疏求解后完成保存步。日志仍在节点 332874 的 UY 自由度报告小主元。",
+            "title": "底座位移与 UY 警告",
+            "lead": "",
             "facts": [
               [
                 "外表面 UX、UZ 共同节点",
@@ -1433,36 +1423,35 @@
               ]
             ],
             "points": [
-              "把警告节点的自由度与支撑约束、接触传递路径一并复核。",
-              "位移幅值着色在未变形实体上，用于定位响应。"
+              "PCG 未收敛，切换稀疏求解后完成。节点 332874 报告 UY 小主元。"
             ],
             "visuals": [
               {
                 "label": "约束节点",
                 "src": "/portfolio/assets/projects/tooling-static-fea/base-restraints.webp",
                 "alt": "底座的 UX 和 UZ 约束",
-                "caption": "底座的 UX 和 UZ 约束",
+                "caption": "",
                 "source": "ANSYS 结果网格 / 底座 file.rst 的命名节点集"
               },
               {
                 "label": "位移幅值",
                 "src": "/portfolio/assets/projects/tooling-static-fea/base-displacement.webp",
                 "alt": "底座保存步的位移幅值",
-                "caption": "底座保存步的位移幅值",
+                "caption": "",
                 "source": "ANSYS 结果文件 / 底座最后保存步"
               },
               {
                 "label": "网格与应力",
                 "src": "/portfolio/assets/projects/tooling-static-fea/base.webp",
                 "alt": "底座有限元表面网格与等效应力结果",
-                "caption": "底座｜447,537 个求解单元；日志记录过迭代不收敛与小主元警告。",
-                "source": "项目归档图档"
+                "caption": "",
+                "source": ""
               },
               {
                 "src": "/portfolio/assets/projects/tooling-static-fea/fea-base-model.webp",
                 "label": "底座三维",
                 "alt": "底座三维",
-                "caption": "由保存的实体表面网格提取，可观察板件、立柱与连接区域。",
+                "caption": "",
                 "source": "ANSYS 底座结果网格 file.rst",
                 "scene": "/portfolio/assets/projects/tooling-static-fea/fea-base.scene.json"
               }
@@ -1470,8 +1459,8 @@
           },
           {
             "label": "夹箍",
-            "title": "从节点回查夹箍接触界面",
-            "lead": "用节点 104584 对照整体图与裁切近景。求解日志记录接触重叠和初始间隙，峰值位置可用来缩小复查范围。",
+            "title": "夹箍应力与接触",
+            "lead": "",
             "facts": [
               [
                 "Y 向力矩",
@@ -1487,36 +1476,36 @@
               ]
             ],
             "points": [
-              "外表面有 709 个节点同时约束三向位移。",
-              "夹箍位移提取存在异常量级，当前图档用于应力高值定位，需结合接触对与局部网格判读。"
+              "709 个外表面节点施加三向约束。",
+              "日志记录接触重叠和初始间隙，位移结果存在异常量级。"
             ],
             "visuals": [
               {
                 "label": "峰值近景",
                 "src": "/portfolio/assets/projects/tooling-static-fea/clamp-stress-location.webp",
                 "alt": "夹箍等效应力峰值定位",
-                "caption": "夹箍等效应力峰值定位",
+                "caption": "",
                 "source": "ANSYS 结果文件 / 夹箍节点等效应力"
               },
               {
                 "label": "三向约束",
                 "src": "/portfolio/assets/projects/tooling-static-fea/clamp-restraints.webp",
                 "alt": "夹箍的三向位移约束",
-                "caption": "夹箍的三向位移约束",
+                "caption": "",
                 "source": "ANSYS 结果网格及夹箍 ds.dat"
               },
               {
                 "label": "网格与应力",
                 "src": "/portfolio/assets/projects/tooling-static-fea/clamp.webp",
                 "alt": "夹箍有限元表面网格与等效应力结果",
-                "caption": "夹箍｜70,047 个求解单元；局部应力需结合接触单元重叠警告复查。",
-                "source": "项目归档图档"
+                "caption": "",
+                "source": ""
               },
               {
                 "src": "/portfolio/assets/projects/tooling-static-fea/fea-clamp-model.webp",
                 "label": "夹箍三维",
                 "alt": "夹箍三维",
-                "caption": "查看夹箍、筒体和相邻支撑件的空间关系。",
+                "caption": "",
                 "source": "ANSYS 夹箍结果网格 file.rst",
                 "scene": "/portfolio/assets/projects/tooling-static-fea/fea-clamp.scene.json"
               }
@@ -1524,8 +1513,8 @@
           },
           {
             "label": "气环工装",
-            "title": "定位工装应力与位移峰值",
-            "lead": "把末次保存步的两个峰值标回实体外表面。等效应力峰值出现在节点 3738，位移峰值出现在节点 40。",
+            "title": "气环工装峰值与收敛",
+            "lead": "",
             "facts": [
               [
                 "输入固定节点",
@@ -1541,43 +1530,43 @@
               ]
             ],
             "points": [
-              "节点 3738 的等效应力约为 1,591 MPa，可据此返回局部网格、接触与载荷设置。",
-              "日志提示单元形状检查处于关闭状态，局部高值需要结合网格质量和材料允许值判读。"
+              "应力峰值约 1,591 MPa（节点 3738），位移峰值位于节点 40。",
+              "日志记录单元形状检查关闭。"
             ],
             "visuals": [
               {
                 "label": "峰值节点对照",
                 "src": "/portfolio/assets/projects/tooling-static-fea/ring-fixture-peak-nodes.webp",
                 "alt": "气环工装实体表面上固定支撑节点、应力峰值节点 3738 与位移峰值节点 40 的位置",
-                "caption": "应力、位移峰值分别标注在节点 3738 和 40 的投影上。紫点标出提取到的固定支撑节点。",
+                "caption": "",
                 "source": "ANSYS file.rst · 最后保存步的外表面节点结果"
               },
               {
                 "label": "位移幅值",
                 "src": "/portfolio/assets/projects/tooling-static-fea/ring-fixture-displacement.webp",
                 "alt": "气环工装的位移分布",
-                "caption": "气环工装的位移分布",
+                "caption": "",
                 "source": "ANSYS 结果文件 / 气环工装最后保存步"
               },
               {
                 "label": "固定支撑",
                 "src": "/portfolio/assets/projects/tooling-static-fea/ring-fixture-restraints.webp",
                 "alt": "气环工装的固定支撑节点",
-                "caption": "气环工装的固定支撑节点",
+                "caption": "",
                 "source": "ANSYS 输入与结果文件 / 气环工装 _FIXEDSU"
               },
               {
                 "label": "网格与应力",
                 "src": "/portfolio/assets/projects/tooling-static-fea/ring-fixture.webp",
                 "alt": "气环工装有限元表面网格与等效应力结果",
-                "caption": "气环工装｜5,956 个求解单元；核查载荷施加区与转接部位。",
-                "source": "项目归档图档"
+                "caption": "",
+                "source": ""
               },
               {
                 "src": "/portfolio/assets/projects/tooling-static-fea/fea-ring-fixture-model.webp",
                 "label": "气环工装三维",
                 "alt": "气环工装三维",
-                "caption": "从保存结果中查看工装臂、受力部位和支撑区域的空间关系。",
+                "caption": "",
                 "source": "ANSYS 气环工装结果网格 file.rst",
                 "scene": "/portfolio/assets/projects/tooling-static-fea/fea-ring-fixture.scene.json"
               },
@@ -1585,7 +1574,7 @@
                 "label": "求解收敛",
                 "src": "/portfolio/assets/projects/tooling-static-fea/ring-fixture-convergence.webp",
                 "alt": "气环工装的力与位移收敛值相对各自判据",
-                "caption": "气环工装第 12 次迭代的力比值为 0.490，位移比值为 0.0028。横轴为平衡迭代编号。",
+                "caption": "第 12 次迭代的力比值为 0.490，位移比值为 0.0028。",
                 "source": "ANSYS solve.out",
                 "playback": "/portfolio/assets/projects/tooling-static-fea/ring-fixture-convergence.playback.json"
               }
@@ -1605,7 +1594,7 @@
           "alt": "Doorstop 启动入口",
           "topic": "加载与依赖",
           "caption": "Doorstop 启动入口",
-          "analysis": "根目录保留 winhttp.dll，配置中的 target_assembly 指向实际存在的 BepInEx 预加载程序集。检查启动时可先对齐入口设置和文件布局。",
+          "analysis": "winhttp.dll 与 target_assembly 指定的 BepInEx 预加载程序集。",
           "source": "整合包 / doorstop_config.ini 与 BepInEx/core",
           "wide": true
         },
@@ -1613,8 +1602,8 @@
           "src": "/portfolio/assets/projects/peak-mod-integration/multiplayer-manifests.webp",
           "alt": "三个多人相关插件的依赖声明",
           "topic": "加载与依赖",
-          "caption": "三个多人相关插件的依赖声明",
-          "analysis": "多人扩展和重连修复声明 PEAK 专用 BepInEx 包，结算界面修复的清单写的是通用 BepInEx 包。将版本和依赖并列后，可以逐项核对兼容关系。",
+          "caption": "多人插件依赖",
+          "analysis": "多人扩展和重连修复依赖 PEAK 专用 BepInEx 包，结算界面修复声明通用 BepInEx 依赖。",
           "source": "整合包 / 三份插件 manifest.json",
           "wide": true
         },
@@ -1622,8 +1611,8 @@
           "src": "/portfolio/assets/projects/peak-mod-integration/multiplayer-version-check.webp",
           "alt": "多人配置模板与清单版本",
           "topic": "多人和中文配置",
-          "caption": "多人配置模板与清单版本",
-          "analysis": "配置注释记录模板来自 1.0.0，随包清单声明 2.4.0。版本差异适合作为升级复核项。人数上限 20 和额外道具开关是配置值。",
+          "caption": "多人插件版本与配置",
+          "analysis": "配置模板版本为 1.0.0，插件清单版本为 2.4.0。配置含人数上限 20 与额外道具开关。",
           "source": "整合包 / PeakUnlimited.cfg 与插件清单",
           "wide": true
         },
@@ -1631,8 +1620,8 @@
           "src": "/portfolio/assets/projects/peak-mod-integration/translation-source.webp",
           "alt": "中文文本类型与输出目录",
           "topic": "多人和中文配置",
-          "caption": "中文文本类型与输出目录",
-          "analysis": "目标语言设置为 zh，启用 UGUI 和 TextMeshPro，输出目录按语言分组。归档中的翻译端点与字体覆盖字段留空，复现时需要核对实际运行配置。",
+          "caption": "中文文本配置",
+          "analysis": "目标语言 zh，启用 UGUI 和 TextMeshPro，按语言划分输出目录。归档中翻译端点和字体覆盖字段留空。",
           "source": "整合包 / AutoTranslatorConfig.ini",
           "wide": true
         },
@@ -1640,14 +1629,14 @@
           "src": "/portfolio/assets/projects/peak-mod-integration/localization-resources.webp",
           "alt": "中文菜单词条和字体回退配置",
           "topic": "中文词条与字体",
-          "caption": "中文菜单词条和字体回退配置",
-          "analysis": "菜单、物品与提示的本地词条保存在 Translation 目录；zh 配置启用静态翻译，并将 lenmonziti 配为 TextMeshPro 回退字体。",
+          "caption": "中文词条与回退字体",
+          "analysis": "Translation 目录含菜单、物品和提示词条。静态翻译启用，lenmonziti 为 TextMeshPro 回退字体。",
           "source": "Menu.txt、AutoTranslatorConfig.ini 与随包字体文件",
           "wide": true
         }
       ],
       "simulations": [],
-      "codeDescription": "整合包的核查从根目录启动入口到预加载程序集，再到插件子目录、清单和配置文件。出现模块加载问题时，可以先确认入口指向的文件存在，再按多人、重连、结算修复和翻译逐项定位。\n\n多人数值、语言和 UI 文本类型来自原始配置，插件版本和依赖来自各自清单。将两类信息分开，便于判断哪些参数可直接复查，哪些还需游戏内联机或翻译测试。",
+      "codeDescription": "winhttp.dll 启动 Doorstop，target_assembly 指向 BepInEx 预加载程序集。多人和语言参数由配置文件管理，插件版本与依赖记录在各自的 manifest.json。",
       "repository": "",
       "links": [],
       "attachments": [],
@@ -1659,34 +1648,34 @@
         "XUnity.AutoTranslator",
         "模组集成"
       ],
-      "summary": "整理 PEAK 的多人扩展、重连修复和中文化配置，将加载器、插件依赖与可调整参数放进同一套归档。",
+      "summary": "整合 PEAK 多人扩展、重连及结算修复与中文翻译，统一加载入口、插件依赖和配置。",
       "cover": "/portfolio/assets/projects/peak-mod-integration/config-excerpts.svg",
       "coverAlt": "PEAK 多人和翻译插件配置摘录，包含人数上限、目标语言和界面文本设置",
-      "coverCaption": "实际配置字段摘录：人数上限为配置值，语言为中文，开启 UGUI 与 TextMeshPro 文本处理。",
+      "coverCaption": "多人上限配置为 20，中文配置启用 UGUI 和 TextMeshPro。",
       "time": "",
       "role": "模组集成与配置整理",
       "tools": "BepInEx / Unity Doorstop / XUnity.AutoTranslator",
       "status": "本地整合包与配置",
       "sections": [
         {
-          "title": "把多人扩展和中文配置放进一套安装结构",
-          "body": "资料由 BepInEx 加载器、多人相关插件、翻译插件和各自配置组成。多插件共存时，需要知道插件在哪里加载、依赖哪套运行环境、哪些参数适合保留为外部配置。"
+          "title": "模组结构",
+          "body": "整合包由 Doorstop、BepInEx 加载器、多人扩展、重连与结算修复插件、翻译插件及配置文件组成。"
         },
         {
-          "title": "通过配置控制可调参数",
-          "body": "插件放在 BepInEx 的插件目录，多人参数和语言设置分别保留在配置目录。归档还保留第三方插件的清单与说明，用于追踪依赖和版本。"
+          "title": "插件依赖与配置",
+          "body": "插件位于 BepInEx 插件目录，多人参数与语言配置分别存放在配置目录。插件清单保留版本及依赖声明。"
         },
         {
-          "title": "按加载链、插件和配置三层整理",
-          "body": "Doorstop 指向 BepInEx 预加载入口；多人扩展与重连、结算修复按功能归档；中文化配置指定 zh，并启用 UGUI 和 TextMeshPro 的文本处理。\n\n语言配置的 Endpoint 为空，静态翻译开启。归档保存 zh 和 zh-lenmon 两套词条目录；当前配置指向 zh。Menu.txt 中可追溯创建房间、离线游玩与灵敏度词条，TextMeshPro 字体回退由独立配置项控制。"
+          "title": "启动与中文化",
+          "body": "Doorstop 指向 BepInEx 预加载程序集。中文化配置选用 zh 词条，启用 UGUI、TextMeshPro 与静态翻译。Endpoint 留空，lenmonziti 为 TextMeshPro 回退字体。归档另含 zh-lenmon 词条。Menu.txt 覆盖创建房间、离线游玩及灵敏度。"
         },
         {
-          "title": "现有材料支持检查配置和版本",
-          "body": "可核对启动入口、配置项、插件依赖与清单版本。多人上限 20 来自配置；整合包没有附上游戏内实测截图或联机压力测试记录。"
+          "title": "验证范围",
+          "body": "已核对启动入口、配置与插件清单。多人上限配置为 20，联机容量与游戏内中文显示待实测。"
         },
         {
-          "title": "个人工作：集成与依赖核对",
-          "body": "将不同用途的现成插件整合成可配置的本地包，保留各插件的作者清单和配置入口。后续更新时可按模块排查，逐项核对加载与兼容性。\n\n保留第三方清单和说明后，可以顺着启动入口、依赖声明、运行参数追到具体文件。配置模板与清单版本的差异也被列出，供后续更新时复核。"
+          "title": "个人贡献",
+          "body": "整合多人扩展、修复与翻译插件，核对加载入口、依赖及配置，记录配置模板与插件清单的版本差异。"
         }
       ],
       "galleryTitle": "加载配置与第三方插件清单",
@@ -1703,34 +1692,34 @@
         "协同控制",
         "毕业课题"
       ],
-      "summary": "在 Simulink 中把车载需氢、二甲醚自热重整、三路进料控制和 PEMFC 电堆接入同一仿真链，保留原版复算与基础块版的回归记录。",
+      "summary": "建立车辆需氢、二甲醚自热重整、三路进料控制与 PEMFC 电堆的 Simulink 联合模型，完成原版与基础块版回归验证。",
       "cover": "/portfolio/assets/projects/dme-atr-simulink/result-loop.webp",
       "coverAlt": "原版 result.slx 中控制器和 DME 反应器的三路进料及温度和产氢反馈连线",
-      "coverCaption": "控制器输出 DME、Steam、O₂ 三路进料。反应器经 T_OUT、H2_OUT 标签返回温度和产氢量。",
+      "coverCaption": "三路进料及温度、产氢闭环反馈",
       "time": "",
       "role": "系统建模、控制实现与仿真验证",
       "tools": "MATLAB R2023a / Simulink / Simscape",
       "status": "毕业课题仿真模型与验证记录",
       "sections": [
         {
-          "title": "从整车负荷追到制氢闭环",
-          "body": "Graduationmodel 工程中，model.slx 保留车辆、驾驶循环、电堆和制氢模块的整车联合结构。本页用 result.slx 展示可单独核对的闭环主链。电堆的需求功率和电压进入需氢换算支路，控制器读取需氢量、产氢量和出口温度，再向反应器下发三路进料。"
+          "title": "联合仿真与闭环",
+          "body": "model.slx 集成车辆、驾驶循环、电堆与制氢。result.slx 包含闭环主链。电堆功率与电压换算为需氢量，控制器结合产氢量和出口温度调节三路进料。"
         },
         {
-          "title": "把反应动力学接进物料与能量平衡",
-          "body": "DME React 的入口速率分支用于监视，反应器内部另按当前组分与温度计算反应速率。空间积分的段数取 max(P.plant.Nseg, 120)，本次参数对应 120 段。各段更新反应进度、组分流量和温度，记录出口温度、剩余 DME、产氢量和反应热。\n\n产氢信号送入电堆链路。电堆内部保留质量流和膜水传输，再结合电流计算电压和功率。"
+          "title": "反应器与 PEMFC 电堆",
+          "body": "DME React 的入口动力学支路用于监测。反应器独立计算速率，按 120 段更新组分、流量和温度，输出温度、剩余 DME、产氢量和反应热。电堆根据质量流、膜水传输及电流计算电压和功率。"
         },
         {
-          "title": "把进料控制拆成指令、配比和温度反馈",
-          "body": "原版名为 NMPC 的子系统用需氢前馈、产氢误差和温度约束计算 DME 指令。GA+SVR 子系统在 5 × 5 个候选配比中按预测温度与配比变动筛选。ESO 根据温度观测给出增氧或减氧判据，FeedMixer 再把配比、DME 指令和氧气限幅合成为实际送往反应器的三路信号。"
+          "title": "进料控制",
+          "body": "NMPC 子系统用需氢前馈、产氢误差和温度约束生成 DME 指令。GA+SVR 从 5 × 5 个候选中筛选配比。ESO 输出增减氧信号，FeedMixer 更新 DME、蒸汽和氧气进料。"
         },
         {
-          "title": "分别核查运行输出与版本等价性",
-          "body": "原版 result.slx 的 0–300 s 复算按 0.1 s 记录反应器出口温度和产氢量，各有 3,001 点。温度等于 150 K 的 71 点、等于 1,300 K 的 91 点默认在展示曲线中留空。产氢曲线使用全量采样。需氢换算支路含 ×60 因子，计算跟踪误差前需先核对单位。\n\n原版和基础块版的 24 路归档日志按各自采样周期逐点对照。以 |基础块版 − 原版| / max(1, |原版|) < 10⁻⁸ 为回归判据，24 路均通过。最大绝对差 2.22 × 10⁻¹⁶ 出现在 PID 第一路输出，温度与产氢的版本差为 0。装置精度需用实测数据验证。"
+          "title": "限幅与版本回归",
+          "body": "出口温度与产氢量各采样 3,001 点。温度曲线默认留空 162 个限幅点（150 K 共 71 点，1,300 K 共 91 点），产氢保留全量。需氢换算含 ×60 因子，跟踪误差须统一单位。\n\n按 |基础块版 − 原版| / max(1, |原版|) < 10⁻⁸ 逐点核对 24 路信号，全部通过。PID 第一路输出最大绝对差为 2.22 × 10⁻¹⁶，温度和产氢差值为 0。装置精度待实测验证。"
         },
         {
-          "title": "个人工作｜集成模型与复现验证",
-          "body": "将反应器、电堆和车辆需求接入同一信号链，按子系统保留输入、计算与输出。整理原版的参数初始化与日志接口后，在基础块版中复核 12 个函数模块的接口、状态更新和限幅。初始化时隔离反应器总线与电堆数值变量的 Cp 命名冲突，使两套模型可以分别运行和比对。"
+          "title": "模型集成与模块替换",
+          "body": "集成反应器、电堆和车辆需氢信号，替换并验证 12 个函数模块。初始化时分别命名反应器总线和电堆 Cp 变量，两套模型可独立运行。"
         }
       ],
       "modelImage": "",
@@ -1742,56 +1731,56 @@
           "src": "/portfolio/assets/projects/dme-atr-simulink/vehicle-top.webp",
           "alt": "Graduationmodel 的 model.slx 整车联合仿真顶层",
           "topic": "整车联合仿真",
-          "caption": "整车版本保留制氢、电堆、车辆动力和驾驶循环模块。图中各控制分支可回到原工程查看。",
+          "caption": "整车联合模型",
           "source": "Simulink R2023a · Graduationmodel / model.slx 顶层",
-          "analysis": "model.slx 用于查看车辆、制氢和燃料电池之间的模块边界。"
+          "analysis": ""
         },
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/result-reactor.webp",
           "alt": "DME React 的入口动力学监视支路与反应器计算模块的实际接线",
           "topic": "反应器与电堆",
-          "caption": "入口动力学分支送入监视端。反应器并行读取进料、入口温度和参数，输出温度、剩余 DME、氢气和反应热。",
+          "caption": "DME 反应器与入口动力学",
           "source": "Simulink R2023a · result.slx / DME React",
-          "analysis": "入口速率监视和空间积分分别取用进料。反应器端口保留温度、剩余 DME、氢气与反应热。"
+          "analysis": ""
         },
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/result-stack.webp",
           "alt": "PEMFC 电堆的质量流、膜水传输和电堆电压模块",
           "topic": "反应器与电堆",
-          "caption": "电堆根据质量流、膜含水量及堆电流计算电压和功率。图中保留了各子模块的原始颜色和连线。",
+          "caption": "PEMFC 电压与功率计算",
           "source": "Simulink R2023a · result.slx / PEMFC 电堆模型",
-          "analysis": "电堆电压计算从气体分压、膜含水量和电流等信号取值。"
+          "analysis": ""
         },
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/result-controller.webp",
           "alt": "Simulink Controller 中 ESO、NMPC、GA+SVR 和 FEED 的原始连线",
           "topic": "进料与控制",
-          "caption": "温度进入 ESO 支路，需氢量和产氢量进入命令支路。配比与增减氧指令在 FEED 汇合。",
+          "caption": "ESO、命令与进料控制",
           "source": "Simulink R2023a · result.slx / Controller",
-          "analysis": "需氢、产氢与温度进入控制链。采样延时及增减氧支路可在原图上追到 FEED。"
+          "analysis": ""
         },
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/result-feed.webp",
           "alt": "原版 FeedMixer 的五个输入端口和 DME、蒸汽、氧气三个输出端口",
           "topic": "进料与控制",
-          "caption": "原版 FeedMixer 把增氧、减氧、DME 指令以及两个配比量转换成三路进料。",
+          "caption": "FeedMixer 接口",
           "source": "Simulink R2023a · result.slx / Controller / FEED",
-          "analysis": "原版进料接口给出两个增减氧信号、DME 指令及两路候选配比。"
+          "analysis": ""
         },
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/feed-mixer-basic.webp",
           "alt": "基础块版 FeedMixer 的状态延时、开关、限幅和乘积连接",
           "topic": "基础块替换与回归",
-          "caption": "把进料控制中的状态、限幅和乘积拆成可逐块核对的 Simulink 模块。",
+          "caption": "进料控制基础块",
           "source": "优化模型归档 · result.slx / FeedMixer 数学模型子系统",
-          "analysis": "图中的 Product、Switch、Saturation、Unit Delay 分别对应进料乘积、条件切换、限幅和状态保持。"
+          "analysis": "Product、Switch、Saturation、Unit Delay。"
         },
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/reactor-basic-blocks.webp",
           "alt": "反应器的物料和能量平衡基础块实现",
           "topic": "基础块实现",
-          "caption": "反应器的物料和能量平衡基础块实现",
-          "analysis": "按空间分段更新反应物和生成物流量，再根据热容及反应热、散热计算温度增量。",
+          "caption": "反应器物料与能量平衡基础块",
+          "analysis": "",
           "source": "基础块版 result.slx 的反应器归档图",
           "wide": true
         },
@@ -1799,8 +1788,8 @@
           "src": "/portfolio/assets/projects/dme-atr-simulink/stack-current-basic-blocks.webp",
           "alt": "氢气流量到电堆电流的基础块实现",
           "topic": "基础块实现",
-          "caption": "氢气流量到电堆电流的基础块实现",
-          "analysis": "电流换算依据原模型的氢气流量、堆电池数和分配系数，替换版保留原公式与输入接口。",
+          "caption": "氢气流量–电堆电流基础块",
+          "analysis": "输入包括氢气流量、电池数和分配系数。",
           "source": "基础块版 result.slx 的电流换算归档图",
           "wide": true
         }
@@ -1810,21 +1799,21 @@
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/atr-reactor-clean.webp",
           "alt": "重绘的反应器出口温度和产氢曲线",
-          "caption": "出口温度的 162 个限幅采样默认在原时间位置留空，勾选可恢复原始温度。",
+          "caption": "温度曲线默认留空 162 个限幅点。",
           "label": "温度与产氢",
           "playback": "/portfolio/assets/projects/dme-atr-simulink/atr-reactor-clean.playback.json"
         },
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/atr-feed-timeseries.webp",
           "alt": "原版 FeedMixer 的二甲醚、蒸汽和氧气出口流量",
-          "caption": "3,001 个同步采样点可逐时核对三路流量。",
+          "caption": "每路 3,001 个同步采样点。",
           "label": "三路进料",
           "playback": "/portfolio/assets/projects/dme-atr-simulink/atr-feed-timeseries.playback.json"
         },
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/atr-regression.webp",
           "alt": "原版与基础块版 PID 输出对照及容差带",
-          "caption": "24 路全量日志均通过原回归判据，出口温度和产氢的版本最大绝对差为 0。",
+          "caption": "24 路信号通过回归，出口温度与产氢的版本差值均为 0。",
           "label": "版本误差",
           "playback": "/portfolio/assets/projects/dme-atr-simulink/atr-regression.playback.json"
         }
@@ -1838,8 +1827,8 @@
         "stages": [
           {
             "label": "系统总览",
-            "title": "从需氢量到三路进料",
-            "lead": "电堆负荷转成需氢信号，控制器调节二甲醚、蒸汽和氧气。反应器的温度与产氢量反馈到控制侧。",
+            "title": "需氢量与三路进料",
+            "lead": "",
             "facts": [
               [
                 "闭环模型",
@@ -1855,30 +1844,29 @@
               ]
             ],
             "points": [
-              "看闭环主链可沿 T_OUT 和 H2_OUT 标签追到反馈端。",
-              "切到整车模型，可对照驾驶循环、动力、电堆和制氢模块的总体布置。"
+              "电堆负荷换算为需氢量。T_OUT、H2_OUT 返回出口温度和产氢量。"
             ],
             "visuals": [
               {
                 "label": "闭环主链",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/result-loop.webp",
                 "alt": "原版 result.slx 中控制器和 DME 反应器的三路进料及温度和产氢反馈连线",
-                "caption": "控制器输出 DME、Steam、O₂ 三路进料。反应器经 T_OUT、H2_OUT 标签返回温度和产氢量。",
+                "caption": "",
                 "source": "Simulink R2023a · Graduationmodel / result.slx 顶层原图局部"
               },
               {
                 "label": "整车模型",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/vehicle-top.webp",
                 "alt": "Graduationmodel 的 model.slx 整车联合仿真顶层",
-                "caption": "整车版本保留制氢、电堆、车辆动力和驾驶循环模块。图中各控制分支可回到原工程查看。",
+                "caption": "",
                 "source": "Simulink R2023a · Graduationmodel / model.slx 顶层"
               }
             ]
           },
           {
             "label": "反应器与电堆",
-            "title": "从进料求出口状态",
-            "lead": "反应器按空间分段更新组分和能量平衡。产氢量进入电堆，电堆另用质量流和膜水传输信号求电压与功率。",
+            "title": "反应器出口与电堆计算",
+            "lead": "",
             "facts": [
               [
                 "反应器分段",
@@ -1890,52 +1878,47 @@
               ]
             ],
             "points": [
-              "入口动力学块接监视支路。反应器按段更新时有独立的速率计算。",
-              "电堆图可追到质量流、膜水传输以及电压输出。"
+              "入口动力学支路用于监测。反应器分段积分独立计算速率。"
             ],
             "visuals": [
               {
                 "label": "反应器",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/result-reactor.webp",
                 "alt": "DME React 的入口动力学监视支路与反应器计算模块的实际接线",
-                "caption": "入口动力学分支送入监视端。反应器并行读取进料、入口温度和参数，输出温度、剩余 DME、氢气和反应热。",
+                "caption": "",
                 "source": "Simulink R2023a · result.slx / DME React"
               },
               {
                 "label": "PEMFC 电堆",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/result-stack.webp",
                 "alt": "PEMFC 电堆的质量流、膜水传输和电堆电压模块",
-                "caption": "电堆根据质量流、膜含水量及堆电流计算电压和功率。图中保留了各子模块的原始颜色和连线。",
+                "caption": "",
                 "source": "Simulink R2023a · result.slx / PEMFC 电堆模型"
               },
               {
                 "label": "反应器基础块",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/reactor-basic-blocks.webp",
                 "alt": "反应器的物料和能量平衡基础块实现",
-                "caption": "可回查空间分段、反应进度限制与物料平衡。",
+                "caption": "",
                 "source": "基础块版反应器归档图"
               },
               {
                 "label": "电流换算",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/stack-current-basic-blocks.webp",
                 "alt": "氢气流量到电堆电流的基础块实现",
-                "caption": "以基础模块展开流量至电流的换算公式。",
+                "caption": "",
                 "source": "基础块版电流换算归档图"
               }
             ]
           },
           {
             "label": "进料与控制",
-            "title": "三路进料如何生成",
-            "lead": "需氢前馈和产氢误差形成 DME 指令，SVR 预测用来筛选配比。进料模块按 ESO 的增减氧信号更新氧气配比上限。",
+            "title": "三路进料控制",
+            "lead": "",
             "facts": [
               [
                 "配比候选",
                 "5 × 5"
-              ],
-              [
-                "主链记录间隔",
-                "0.1 s"
               ],
               [
                 "进料输出",
@@ -1943,22 +1926,21 @@
               ]
             ],
             "points": [
-              "候选配比按预测温度和配比变化打分。",
-              "FeedMixer 接收五个输入，依次处理 DME 指令、配比和氧气上限。"
+              "SVR 根据预测温度及配比变化筛选候选配比。ESO 提供增减氧信号。"
             ],
             "visuals": [
               {
                 "label": "控制器",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/result-controller.webp",
                 "alt": "Simulink Controller 中 ESO、NMPC、GA+SVR 和 FEED 的原始连线",
-                "caption": "温度进入 ESO 支路，需氢量和产氢量进入命令支路。配比与增减氧指令在 FEED 汇合。",
+                "caption": "",
                 "source": "Simulink R2023a · result.slx / Controller"
               },
               {
                 "label": "进料接口",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/result-feed.webp",
                 "alt": "原版 FeedMixer 的五个输入端口和 DME、蒸汽、氧气三个输出端口",
-                "caption": "原版 FeedMixer 把增氧、减氧、DME 指令以及两个配比量转换成三路进料。",
+                "caption": "5 路输入，3 路进料输出。",
                 "source": "Simulink R2023a · result.slx / Controller / FEED"
               },
               {
@@ -1966,16 +1948,16 @@
                 "src": "/portfolio/assets/projects/dme-atr-simulink/atr-feed-timeseries.webp",
                 "animation": "/portfolio/assets/projects/dme-atr-simulink/atr-feed-playback.gif",
                 "alt": "原版仿真的二甲醚、蒸汽和氧气进料流量",
-                "caption": "三条进料曲线共用同一时间轴，便于对照各通道起落的时刻。",
-                "source": "MATLAB R2023a 实际复算 · FeedMixer 输出 1–3 · 每路 3,001 点",
+                "caption": "",
+                "source": "MATLAB R2023a · FeedMixer 输出 1–3 · 每路 3,001 点",
                 "playback": "/portfolio/assets/projects/dme-atr-simulink/atr-feed-timeseries.playback.json"
               }
             ]
           },
           {
             "label": "运行复核",
-            "title": "复算曲线与版本回归",
-            "lead": "原版复算用来读反应器输出和限幅行为。基础块版另与原版逐信号对照，核查替换前后的数值一致性。",
+            "title": "限幅与版本回归",
+            "lead": "",
             "facts": [
               [
                 "输出采样",
@@ -1987,30 +1969,30 @@
               ]
             ],
             "points": [
-              "温度有 162 点达到代码限幅。默认视图在这些时间戳断开，可切换至原始曲线。",
-              "归档回归对照 24 路日志，最大绝对差约 2.22 × 10⁻¹⁶。"
+              "162 个温度限幅点。",
+              "24 路信号通过回归，最大绝对差 2.22 × 10⁻¹⁶。"
             ],
             "visuals": [
               {
                 "label": "温度与产氢",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/atr-reactor-clean.webp",
                 "alt": "重绘的反应器出口温度和产氢曲线",
-                "caption": "出口温度的 162 个限幅采样默认在原时间位置留空，勾选可恢复原始温度。",
-                "source": "MATLAB R2023a 实际复算 · DME React / MATLAB Function3 输出 1、3",
+                "caption": "",
+                "source": "MATLAB R2023a · DME React / MATLAB Function3 输出 1、3",
                 "playback": "/portfolio/assets/projects/dme-atr-simulink/atr-reactor-clean.playback.json"
               },
               {
                 "label": "基础块版",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/feed-mixer-basic.webp",
                 "alt": "基础块版 FeedMixer 的状态延时、开关、限幅和乘积连接",
-                "caption": "把进料控制中的状态、限幅和乘积拆成可逐块核对的 Simulink 模块。",
+                "caption": "",
                 "source": "优化模型归档 · result.slx / FeedMixer 数学模型子系统"
               },
               {
                 "label": "版本误差",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/atr-regression.webp",
                 "alt": "原版与基础块版 PID 输出对照及容差带",
-                "caption": "24 路全量日志均通过原回归判据，出口温度和产氢的版本最大绝对差为 0。",
+                "caption": "",
                 "source": "MATLAB R2023a 原版与基础块版的逐点回归日志",
                 "playback": "/portfolio/assets/projects/dme-atr-simulink/atr-regression.playback.json"
               }
