@@ -3,6 +3,75 @@ const brEscape = value => String(value ?? '').replace(/[&<>"']/g, character =>
 
 const brNumber = index => String(index + 1).padStart(2, '0');
 
+function briefingVideoUrl(source) {
+  if (typeof source !== 'string' || !source.trim()) return '';
+  try {
+    const url = new URL(source, location.origin);
+    const directory = new URL('./assets/projects/', import.meta.url).pathname;
+    return url.origin === location.origin && !url.username && !url.password &&
+      url.pathname.startsWith(directory) && /\.(?:mp4|webm)$/i.test(url.pathname) ? url.href : '';
+  } catch {
+    return '';
+  }
+}
+
+function bindBriefingVideo(media, source) {
+  const picture = media.querySelector('[data-br-zoom]');
+  const video = media.querySelector('.br-video');
+  const control = media.querySelector('[data-br-video]');
+  const status = media.querySelector('[data-br-video-status]');
+  const lifecycle = new AbortController();
+  const {signal} = lifecycle;
+  const normalLabel = control.textContent;
+  let attempt = 0;
+
+  function unload() {
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+  }
+
+  function restorePicture() {
+    if (signal.aborted || !video.hasAttribute('src')) return;
+    video.hidden = true;
+    picture.hidden = false;
+    unload();
+    control.textContent = normalLabel;
+    status.textContent = '视频暂时无法播放，已恢复静态图。';
+    status.hidden = false;
+  }
+
+  control.addEventListener('click', async () => {
+    if (!video.paused) {
+      attempt++;
+      video.pause();
+      return;
+    }
+    const ticket = ++attempt;
+    status.hidden = true;
+    picture.hidden = true;
+    video.hidden = false;
+    control.textContent = '暂停视频';
+    if (!video.hasAttribute('src')) video.src = source;
+    if (video.ended) video.currentTime = 0;
+    try {
+      await video.play();
+    } catch {
+      if (ticket === attempt) restorePicture();
+    }
+  }, {signal});
+  video.addEventListener('pause', () => {
+    if (!video.hidden && video.paused) control.textContent = video.ended ? '重播视频' : '继续播放视频';
+  }, {signal});
+  video.addEventListener('ended', () => { control.textContent = '重播视频'; }, {signal});
+  video.addEventListener('error', restorePicture, {signal});
+
+  return () => {
+    lifecycle.abort();
+    if (video.hasAttribute('src')) unload();
+  };
+}
+
 export function projectBriefingMarkup() {
   return `<section id="project-briefing" class="project-briefing" aria-labelledby="project-briefing-title">
     <div class="br-heading">
@@ -38,6 +107,7 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
   let request = 0;
   let disposeModel;
   let disposePlayback;
+  let disposeVideo;
   let opener;
 
   tabs.innerHTML = stages.map((stage, i) => `<button type="button" role="tab" id="br-stage-${i}" aria-controls="project-briefing-slide" data-br-stage="${i}"><span>${brNumber(i)}</span>${e(stage.label)}</button>`).join('');
@@ -49,6 +119,8 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
     disposeModel = undefined;
     disposePlayback?.();
     disposePlayback = undefined;
+    disposeVideo?.();
+    disposeVideo = undefined;
   }
 
   function renderVisual() {
@@ -58,24 +130,29 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
     const media = panel.querySelector('[data-br-media]');
     const path = imageUrl ? imageUrl(view.src) : view.src;
     const animation = view.animation && (imageUrl ? imageUrl(view.animation) : view.animation);
+    const video = !modelMode && briefingVideoUrl(view.video);
     const modelAvailable = view.scene && loadScene && mountModel;
     const interactive = view.playback && mountPlayback;
     const description = view.caption?.trim() === view.label?.trim() ? '' : view.caption?.trim();
     const mediaActions = `${modelAvailable ? `<button type="button" data-br-model-mode>${modelMode ? '图示' : '旋转模型'}</button>` : ''}
-      ${interactive ? '<button type="button" data-br-interactive aria-expanded="false">查看动态曲线</button>' : animation && !modelAvailable ? '<button type="button" data-br-playback>播放 GIF</button>' : ''}`.trim();
+      ${video ? '<button type="button" data-br-video>播放仿真视频</button>' : ''}
+      ${interactive ? '<button type="button" data-br-interactive aria-expanded="false">查看动态曲线</button>' : animation && !modelAvailable && !video ? '<button type="button" data-br-playback>播放 GIF</button>' : ''}`.trim();
     media.innerHTML = `
       <div class="br-visual-choices" role="group" aria-label="汇报图档">
         ${stage.visuals.length > 1 ? stage.visuals.map((item, i) => `<button type="button" data-br-visual="${i}" aria-pressed="${i === visualIndex}">${e(item.label)}</button>`).join('') : ''}
       </div>
       <div class="br-media-model" data-br-model>
         <button class="br-picture" type="button" data-br-zoom aria-label="放大图档 ${e(view.alt)}"><img src="${e(path)}" alt="${e(view.alt)}"></button>
+        ${video ? `<video class="br-video" poster="${e(path)}" aria-label="${e(view.label)}仿真视频" preload="none" playsinline muted disablepictureinpicture hidden></video>` : ''}
       </div>
       ${description || mediaActions ? `<div class="br-caption">
         ${description ? `<p>${e(description)}</p>` : ''}
         ${mediaActions}
       </div>` : ''}
+      ${video ? '<p class="br-model-status" data-br-video-status aria-live="polite" hidden></p>' : ''}
       ${interactive ? '<div class="trace-slot" hidden></div>' : ''}
       <p class="br-model-status" data-br-status aria-live="polite" hidden></p>`;
+    if (video) disposeVideo = bindBriefingVideo(media, video);
     if (interactive) {
       const control = media.querySelector('[data-br-interactive]');
       const slot = media.querySelector('.trace-slot');
@@ -136,7 +213,8 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
 
   function chooseVisual(index) {
     visualIndex = index;
-    modelMode = Boolean(stages[stageIndex].visuals[index].scene);
+    const view = stages[stageIndex].visuals[index];
+    modelMode = Boolean(view.scene && !briefingVideoUrl(view.video));
     renderVisual();
   }
 

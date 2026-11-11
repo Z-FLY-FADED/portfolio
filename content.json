@@ -2188,6 +2188,7 @@
                 "label": "三路进料曲线",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/atr-feed-timeseries.webp",
                 "animation": "/portfolio/assets/projects/dme-atr-simulink/atr-feed-playback.gif",
+                "video": "/portfolio/assets/projects/dme-atr-simulink/atr-feed-timeseries-matlab.mp4",
                 "alt": "原版仿真的二甲醚、蒸汽和氧气进料流量",
                 "caption": "",
                 "source": "MATLAB R2023a · FeedMixer 输出 1–3 · 每路 3,001 点",
@@ -2217,6 +2218,7 @@
               {
                 "label": "温度与产氢",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/atr-reactor-clean.webp",
+                "video": "/portfolio/assets/projects/dme-atr-simulink/atr-reactor-clean-matlab.mp4",
                 "alt": "重绘的反应器出口温度和产氢曲线",
                 "caption": "",
                 "source": "MATLAB R2023a · DME React / MATLAB Function3 输出 1、3",
@@ -2232,6 +2234,7 @@
               {
                 "label": "版本误差",
                 "src": "/portfolio/assets/projects/dme-atr-simulink/atr-regression.webp",
+                "video": "/portfolio/assets/projects/dme-atr-simulink/atr-regression-matlab.mp4",
                 "alt": "原版与基础块版 PID 输出对照及容差带",
                 "caption": "",
                 "source": "MATLAB R2023a 原版与基础块版的逐点回归日志",
