@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 660" preserveAspectRatio="none">
+  <defs>
+    <pattern id="minor" x="18" y="18" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M22 0H0V22" fill="none" stroke="#b3bfd1" stroke-width="1"/>
+    </pattern>
+    <pattern id="major" x="18" y="18" width="88" height="88" patternUnits="userSpaceOnUse">
+      <path d="M88 0H0V88" fill="none" stroke="#95a7c1" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <path d="M18 18H458V106H546V546H458V634H106V546H18Z" fill="#e4e8ee"/>
+  <path d="M18 18H458V106H546V546H458V634H106V546H18Z" fill="url(#minor)"/>
+  <path d="M18 18H458V106H546V546H458V634H106V546H18Z" fill="url(#major)"/>
+  <g fill="none" stroke="#6e85a8" stroke-width="1.25">
+    <path d="M18 126V18H126M438 18h20v88h88v102M546 438v108h-88v88H350M216 634H106v-88H18V438"/>
+    <path d="M4 330h27m-13-13v26M532 330h26m-12-13v26M266 18h28m-14-14v28M266 634h28m-14-14v28"/>
+    <path d="M37 546a69 69 0 0 1 69-69m0 105a37 37 0 0 1-37-37M476 106a70 70 0 0 0 70 70m-88-34a36 36 0 0 1 36-36"/>
+    <path d="M18 236H4v176h14m518-170h20v164h-20" stroke-dasharray="3 5"/>
+  </g>
+  <g fill="#2456d6">
+    <circle cx="18" cy="18" r="3"/>
+    <circle cx="546" cy="106" r="3"/>
+    <circle cx="106" cy="634" r="3"/>
+    <circle cx="458" cy="634" r="3"/>
+  </g>
+</svg>

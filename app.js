@@ -1,31 +1,118 @@
-import {homeMarkup,mountHomeDashboard} from './home.js';
-import {mountDownloads} from './downloads.js';
-import {mountPortfolio} from './portfolio.js';
-import {loadContent} from './content-source.js';
-import {mountSkills} from './skills.js';
-import {projectCard,initProjectCards,initProjectFilters,enhanceExperience,isEditorialPlaceholder} from './ui.js';
+import {homeMarkup,mountHomeDashboard} from '/portfolio/home.js';
+import {mountDownloads} from '/portfolio/downloads.js';
+import {carouselMarkup,mountPhotoCarousel} from '/portfolio/photos.js';
+import {loadContent} from '/portfolio/content-source.js';
+import {mountSkills} from '/portfolio/skills.js';
+import {projectCard,projectHref,projectArchiveHref,publicProjects,initProjectFilters,enhanceExperience,isEditorialPlaceholder} from '/portfolio/ui.js';
+import {projectBriefingMarkup,mountProjectBriefing} from '/portfolio/project-briefing.js';
+import {mountEngineeringModel} from '/portfolio/engineering-model.js';
+import {mountPlayback} from '/portfolio/project-playback.js';
 const data = await loadContent({localPreview:['127.0.0.1','localhost','[::1]'].includes(location.hostname)});
 const e=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const prose=(text,cls='')=>!String(text??'').trim()||isEditorialPlaceholder(text)?'':`<p${cls?` class="${cls}"`:''}>${e(text)}</p>`;
 const safeUrl=(s,embed=false)=>{if(!String(s??'').trim())return '';try{const u=new URL(s,location.origin);return (['http:','https:'].includes(u.protocol)&&(!embed||u.protocol==='https:'))?e(u.href):'';}catch{return '';}};
-const img=(src,alt,cls='')=>`<img src="${safeUrl(src)||'/portfolio/assets/assembly.svg'}" alt="${e(alt)}" class="${cls}" loading="lazy">`;
+const img=(src,alt,cls='')=>`<img src="${safeUrl(src)||'/portfolio/assets/assembly.svg'}" alt="${e(alt)}" class="${cls}" loading="lazy" decoding="async">`;
 const icon=(name,cls='')=>`<svg class="icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${({arrow:'<path d="M5 12h14m-6-6 6 6-6 6"/>',up:'<path d="M6 18 18 6M6 6h12v12"/>',cube:'<path d="m12 3 9 5v9l-9 5-9-5V8zM3 8l9 5 9-5M12 13v9M7 5l10 6"/>',code:'<path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18"/>',sim:'<path d="M3 3v18h18M6 16l5-7 5 4 5-8"/><circle cx="11" cy="9" r="1.5"/>',mail:'<rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/>',flip:'<path d="M20 8a8 8 0 0 0-14-3L3 8m0-5v5h5m-4 8a8 8 0 0 0 14 3l3-3m0 5v-5h-5"/>',menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',download:'<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',check:'<path d="m5 12 4 4L19 6"/>',link:'<path d="m10 13 4-4m-6 6-2 2a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m4 2 2-2a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0" transform="translate(1 0)"/>'})[name]||''}</svg>`;
-const path=location.pathname.slice(new URL(".", import.meta.url).pathname.length - 1).replace(/\/+$/,'')||'/';
+const path=location.pathname.slice(new URL('.', import.meta.url).pathname.length-1).replace(/\/index\.html$/, '/').replace(/\/+$/,'')||'/';
 const isProjects=path.startsWith('/projects');
 const button=(text,href,secondary=false,ico='arrow')=>`<a class="button ${secondary?'secondary':''}" href="${e(href)}">${e(text)}${icon(ico)}</a>`;
 const unavailable=(text,ico='up')=>`<button class="button secondary" data-unset="该资料暂未公开。">${e(text)}${icon(ico)}</button>`;
 const external=(label,url,cls='')=>safeUrl(url)?`<a class="${cls}" href="${safeUrl(url)}" target="_blank" rel="noopener noreferrer">${e(label)}${icon('up')}</a>`:unavailable(label);
-const logo=`<a class="brand" href="/portfolio/" aria-label="欢迎来到赵鹏飞的个人主页"><span class="brand-mark">${icon('cube')}</span><span class="brand-wordmark"><strong>欢迎来到赵鹏飞的个人主页</strong><small>WELCOME TO ZHAO PENGFEI’S PERSONAL HOMEPAGE</small></span></a>`;
-function header(){return `<header class="header"><div class="container header-inner">${logo}<span class="brand-caption">ENGINEERING PORTFOLIO</span><button class="menu-button" aria-label="打开导航" aria-expanded="false" aria-controls="navigation">${icon('menu')}</button><nav id="navigation" aria-label="主导航"><a href="/portfolio/" ${path==='/'?'aria-current="page"':''}>首页 <small>Home</small></a><a href="/portfolio/projects/" ${isProjects?'aria-current="page"':''}>项目 <small>Projects</small></a><a href="/portfolio/about/" ${path==='/about'?'aria-current="page"':''}>关于我 <small>About</small></a><a class="nav-contact" href="${path==='/about'?'#contact':'/portfolio/about/#contact'}">联系我 ${icon('up')}</a></nav></div></header>`;}
-function footer(){return `<footer class="footer"><div class="container"><div class="footer-main"><div>${logo}<p>让想法有形，让设计可验证。</p></div><div class="footer-links"><a href="/portfolio/projects/">浏览项目 ${icon('arrow')}</a><a href="/portfolio/about/">关于我 ${icon('arrow')}</a><a href="/portfolio/about/#contact">联系方式 ${icon('arrow')}</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} ${e(data.site.copyright)} · Engineering Portfolio</span><span>DESIGNED WITH PRECISION <span class="tiny-cross">+</span></span><button class="motion-toggle" aria-pressed="false">减少动态效果</button></div></div></footer>`;}
-const sectionHead=(num,eyebrow,title,sub='',right='')=>`<div class="section-head reveal"><div><p class="eyebrow"><span>${num}</span> ${eyebrow}</p><h2>${title}</h2>${sub?`<p class="section-description">${sub}</p>`:''}</div>${right}</div>`;
-function card(p,i){return projectCard(p,i,{e,img,icon});}
-const abilities=[['cube','01','机械设计','Mechanical Design','结构构思 / 三维建模 / 工程制图'],['sim','02','仿真分析','Simulation & Analysis','模型建立 / 网格划分 / 结果验证'],['code','03','代码开发','Code & Development','工程计算 / 工具开发 / 数据可视化']];
-function contact(){const email=data.site.email;return `<section class="contact-band" id="contact"><div><p class="eyebrow">LET’S CONNECT</p><h2>下一次交流，<br>从一个想法开始。</h2><p>欢迎交流工程设计、开发与仿真的想法。</p></div><div class="contact-actions">${email?`<a class="button" href="mailto:${e(email)}">${icon('mail')}${e(email)}</a>`:unavailable('联系方式待公布','mail')}${data.site.resume?external('查看简历',data.site.resume,'button secondary'):unavailable('简历暂未提供','download')}</div></section>`;}
-function home(){return homeMarkup(data,{e,img,icon});}
-function projects(){return `<main id="main" class="container"><section class="page-heading reveal"><p class="eyebrow">THE PROJECT ARCHIVE</p><h1>我的工程项目<span class="heading-dot">.</span></h1></section><div class="filter-row"><div class="filters" role="group" aria-label="项目分类">${['全部','机械设计','仿真分析','代码开发'].map((c,i)=>`<button class="filter ${i?'':'active'}" data-filter="${c}" aria-pressed="${!i}">${c}</button>`).join('')}</div><span class="project-count" aria-live="polite">${data.projects.length} 个项目占位</span></div><div class="project-grid archive">${data.projects.map(card).join('')}</div><div class="archive-end"><span class="tiny-cross">+</span><p>每个想法，都值得被认真记录。</p><span>MORE WORK TO COME</span></div></main>`;}
-function model(p){return `<div class="model-viewer">${p.viewerUrl&&safeUrl(p.viewerUrl,true)?`<iframe src="${safeUrl(p.viewerUrl,true)}" title="${e(p.title)} 三维模型查看器" loading="lazy" sandbox="allow-scripts allow-same-origin allow-pointer-lock" allow="fullscreen" referrerpolicy="no-referrer" allowfullscreen></iframe>`:img(p.modelImage,p.modelAlt)}</div>`;}
-function detail(p){const index=data.projects.indexOf(p);const s=p.sections;return `<main id="main" class="container detail"><a class="breadcrumb" href="/portfolio/projects/">← 返回项目列表</a><section class="detail-heading reveal"><div><p class="eyebrow">PROJECT ${String(index+1).padStart(2,'0')} / ${e(p.category)}</p><h1>${e(p.title)}</h1>${prose(p.summary)}<div class="tags">${p.tags.map(t=>`<span>${e(t)}</span>`).join('')}</div></div><span class="detail-index">${String(index+1).padStart(2,'0')}</span></section><figure class="detail-cover reveal">${img(p.cover,p.coverAlt)}</figure><section class="meta-grid reveal">${[['项目时间',p.time],['个人角色',p.role],['使用工具',p.tools],['项目状态','占位模板 / 待填充']].map(([l,v])=>`<div><span>${l}</span><p>${e(v)}</p></div>`).join('')}</section><div class="detail-layout"><aside class="detail-toc" aria-label="项目目录"><p>项目目录 / CONTENTS</p>${['项目背景','目标与约束','设计过程','三维模型','工程图与过程','仿真结果','代码实现','成果与验证','贡献与复盘','相关链接'].map((t,i)=>`<a href="#module-${i}"><span>${String(i+1).padStart(2,'0')}</span>${t}</a>`).join('')}</aside><div class="detail-body">${s.slice(0,3).map((sec,i)=>`<section class="detail-section reveal" id="module-${i}"><p class="eyebrow">${String(i+1).padStart(2,'0')} / ENGINEERING NOTES</p><h2>${e(sec.title)}</h2>${prose(sec.body,'body-copy')}</section>`).join('')}<section class="detail-section reveal" id="module-3"><p class="eyebrow">04 / MODEL EXPLORATION</p><h2>三维模型展示</h2>${model(p)}</section><section class="detail-section reveal" id="module-4"><p class="eyebrow">05 / DESIGN DOCUMENTATION</p><h2>工程图与设计过程</h2><div class="image-gallery">${p.gallery.map(g=>`<figure>${img(g.src,g.alt)}${isEditorialPlaceholder(g.caption)?'':`<figcaption>${e(g.caption)}</figcaption>`}</figure>`).join('')}</div></section><section class="detail-section reveal" id="module-5"><p class="eyebrow">06 / SIMULATION STUDY</p><h2>仿真结果展示</h2><div class="simulation"><div role="tablist" aria-label="仿真展示类型" class="sim-tabs">${p.simulations.map((t,i)=>`<button role="tab" id="sim-tab-${i}" aria-controls="sim-panel-${i}" aria-selected="${!i}" tabindex="${i?-1:0}" data-tab="${i}">${e(t.label)}</button>`).join('')}</div>${p.simulations.map((t,i)=>`<div id="sim-panel-${i}" role="tabpanel" aria-labelledby="sim-tab-${i}" ${i?'hidden':''}>${img(t.src,t.alt)}</div>`).join('')}</div></section><section class="detail-section reveal" id="module-6"><p class="eyebrow">07 / TECHNICAL IMPLEMENTATION</p><h2>代码与技术实现</h2>${prose(p.codeDescription,'body-copy')}<div class="repo-card">${icon('code')}<div><h3>公开代码仓库</h3><p>源代码、使用说明与运行环境</p></div>${external('查看仓库',p.repository,'text-link')}</div></section>${s.slice(3,5).map((sec,i)=>`<section class="detail-section reveal" id="module-${i+7}"><p class="eyebrow">${String(i+8).padStart(2,'0')} / PROJECT REFLECTION</p><h2>${e(sec.title)}</h2>${prose(sec.body,'body-copy')}</section>`).join('')}<section class="detail-section reveal" id="module-9"><p class="eyebrow">10 / PROJECT RESOURCES</p><h2>相关链接</h2><div class="resource-links">${p.links.length?p.links.map(l=>external(l.label,l.url,'text-link')).join(''):unavailable('暂无公开资料','link')}</div></section></div></div><nav class="project-pagination" aria-label="相邻项目">${index>0?`<a href="/portfolio/projects/${e(data.projects[index-1].slug)}/"><small>← 上一个项目</small><span>${e(data.projects[index-1].title)}</span></a>`:'<span></span>'}${index<data.projects.length-1?`<a href="/portfolio/projects/${e(data.projects[index+1].slug)}/"><small>下一个项目 →</small><span>${e(data.projects[index+1].title)}</span></a>`:'<a href="/portfolio/projects/"><small>全部项目 →</small><span>返回项目列表</span></a>'}</nav></main>`;}
+const logo=`<a class="brand" href="/portfolio/" aria-label="${e(data.about.name)}的首页"><span class="brand-mark" aria-hidden="true"></span><span>${e(data.about.name)}</span></a>`;
+const hasContact=['email','github','wechat','phone','qq'].some(key=>String(data.site[key]||'').trim());
+function header(){
+  const links=[['/portfolio/','首页',path==='/'],['/portfolio/projects/','项目档案',isProjects],['/portfolio/about/','关于我',path==='/about']];
+  return `<header class="header nav"><div class="container wrap header-inner">${logo}<button class="menu-button" aria-label="打开导航" aria-expanded="false" aria-controls="navigation">${icon('menu')}</button><nav class="nav__links" id="navigation" aria-label="主导航">${links.map(([href,label,current])=>`<a href="${href}"${current?' aria-current="page"':''}>${label}</a>`).join('')}<a href="/portfolio/about/#skill-map">技能图谱</a>${hasContact?`<a class="nav-contact" href="${path==='/'?'#contact':'/portfolio/#contact'}">联系方式 ${icon('up')}</a>`:''}</nav></div></header>`;
+}
+function footer(){
+  return `<footer class="footer"><div class="container wrap footer-bottom"><span>© ${new Date().getFullYear()} ${e(data.site.copyright)}</span><a href="#main" class="back-to-top">回到顶部 ${icon('up')}</a><button class="motion-toggle" aria-pressed="false">减少动态效果</button></div></footer>`;
+}
+function projects(){
+  const records=publicProjects(data.projects);
+  return `<main id="main" class="container wrap archive-page">
+    <section class="hero inner-hero" data-enter aria-labelledby="archive-title"><h1 id="archive-title" data-enter-whole>项目档案</h1><p>记录机械设计、工程仿真、智能车和软件整合实践。</p></section>
+    ${records.length?`<section aria-labelledby="archive-list-title"><h2 id="archive-list-title" class="sr-only">已公开项目</h2><div class="filter-row"><div class="filters" role="group" aria-label="项目分类">${['全部',...new Set(records.map(p=>p.category))].map((c,i)=>`<button class="filter ${i?'':'active'}" data-filter="${e(c)}" aria-pressed="${!i}">${e(c)}</button>`).join('')}</div><span class="project-count" role="status">${records.length} 个项目</span></div><div class="project-index-grid">${records.map((p,i)=>projectCard(p,{e,img,icon},i+1)).join('')}</div></section>`:
+    `<section class="archive-empty" aria-labelledby="archive-list-title"><h2 id="archive-list-title">项目详情暂未公开</h2><p>已公开的研究成果与实践经历可在首页查看。</p><div class="home-actions">${Array.isArray(data.publications)&&data.publications.some(p=>p?.title?.trim())?button('查看论文','/portfolio/#publications'):''}${data.workExperience?.length?button('查看工作经历','/portfolio/#experience',true):button('查看个人简介','/portfolio/about/',true)}</div></section>`}
+  </main>`;
+}
+const detailCopy=value=>String(value??'').trim().split(/\r?\n\s*\r?\n/).map(part=>prose(part,'body-copy')).join('');
+const caption=value=>value&&!isEditorialPlaceholder(value)?`<figcaption>${e(value)}</figcaption>`:'';
+function galleryMarkup(items){
+  const groups=new Map();
+  for(const item of items){
+    const topic=item.topic||'';
+    if(!groups.has(topic))groups.set(topic,[]);
+    groups.get(topic).push(item);
+  }
+  return [...groups].map(([topic,group])=>{
+    const figures=group.map(item=>{
+      const description=item.analysis||item.source
+        ?`<figcaption class="evidence-caption"><strong data-evidence-title>${e(item.caption||item.alt)}</strong>${detailCopy(item.analysis)}${item.source?`<small>${e(item.source)}</small>`:''}</figcaption>`
+        :caption(item.caption);
+      return `<figure${item.wide?' class="gallery-wide"':''}>${img(item.src,item.alt)}${description}</figure>`;
+    }).join('');
+    const grid=`<div class="image-gallery">${figures}</div>`;
+    return topic?`<div class="evidence-set"><h3>${e(topic)}</h3>${grid}</div>`:grid;
+  }).join('');
+}
+function model(p){
+  const viewer=safeUrl(p.viewerUrl,true);
+  if(viewer)return `<div class="model-viewer"><iframe src="${viewer}" title="${e(p.title)} 三维模型查看器" loading="lazy" sandbox="allow-scripts allow-same-origin allow-pointer-lock" allow="fullscreen" referrerpolicy="no-referrer" allowfullscreen></iframe></div>`;
+  return `<figure class="model-viewer">${img(p.modelImage,p.modelAlt)}${caption(p.modelCaption)}</figure>`;
+}
+function simulationMarkup(items){
+  return `<div class="simulation">
+    <div role="tablist" aria-label="仿真展示类型" class="sim-tabs">${items.map((item,i)=>`<button role="tab" id="sim-tab-${i}" aria-controls="sim-panel-${i}" aria-selected="${!i}" tabindex="${i?-1:0}" data-tab="${i}">${e(item.label)}</button>`).join('')}</div>
+    ${items.map((item,i)=>`<div id="sim-panel-${i}" role="tabpanel" aria-labelledby="sim-tab-${i}"${i?' hidden':''}>${item.playback?`<div class="project-trace"><div class="trace-poster">${img(item.src,item.alt)}</div><div data-playback="${e(item.playback)}"></div></div>`:img(item.src,item.alt)}${prose(item.caption)}</div>`).join('')}
+  </div>`;
+}
+function detail(p){
+  const publicRecords=publicProjects(data.projects);
+  const template=!publicRecords.includes(p);
+  const hasPlayback=p.simulations.some(item=>item.playback);
+  const records=template?data.projects:publicRecords;
+  const index=records.indexOf(p);
+  const category=!template&&new URLSearchParams(location.search).get('category')===p.category?p.category:'';
+  const archive=projectArchiveHref(category);
+  const neighbors=category?records.filter(record=>record.category===category):records;
+  const neighborIndex=neighbors.indexOf(p);
+  const returnLabel=`返回${category||'项目'}列表`;
+  const number=i=>String(i+1).padStart(2,'0');
+  const modules=[];
+  const add=(id,title,short,kicker,body)=>modules.push({id:`module-${id}`,title,short,kicker,body});
+  const note=(i,id,short,kicker='ENGINEERING NOTES')=>{
+    const section=p.sections[i];
+    if(section?.title)add(id,section.title,section.shortTitle||short,kicker,detailCopy(section.body));
+  };
+  const addSimulation=()=>add(5,p.simulationTitle||'仿真结果展示',hasPlayback?'仿真数据回放':'仿真展示','SIMULATION STUDY',simulationMarkup(p.simulations));
+  if(hasPlayback)addSimulation();
+  note(0,0,'项目背景');
+  note(1,1,'目标与约束');
+  note(2,2,'实施过程');
+  if(p.modelImage||safeUrl(p.viewerUrl,true))add(3,'三维模型展示','三维模型','MODEL EXPLORATION',model(p));
+  if(p.gallery.length)add(4,p.galleryTitle||'工程图与设计过程',template?'工程图与过程':'项目图档','PROJECT DOCUMENTATION',galleryMarkup(p.gallery));
+  if(p.simulations.length&&!hasPlayback)addSimulation();
+  if(template||p.repository||detailCopy(p.codeDescription)){
+    const repository=(template||safeUrl(p.repository))?`<div class="repo-card">${icon('code')}<div><h3>公开代码仓库</h3><p>源代码、使用说明与运行环境</p></div>${external('查看仓库',p.repository,'text-link')}</div>`:'';
+    add(6,p.implementationTitle||'代码与技术实现','技术实现','TECHNICAL IMPLEMENTATION',detailCopy(p.codeDescription)+repository);
+  }
+  note(3,7,'成果与验证','RESULTS');
+  note(4,8,'个人贡献','CONTRIBUTION');
+  if(template||p.links.length||p.attachments?.length)add(9,'相关资料','相关资料','PROJECT RESOURCES',`<div class="resource-links">${p.links.length?p.links.map(l=>external(l.label,l.url,'text-link')).join(''):template?unavailable('暂无公开资料','link'):''}</div>`);
+  const facts=[['项目时间',p.time],['个人角色',p.role],['使用工具',p.tools],['展示内容',p.status||(template?'编辑模板':'')]].filter(([,value])=>String(value??'').trim());
+  const adjacent=(record,label)=>record?`<a href="${e(projectHref(record.slug,category))}"><small>${label}</small><span>${e(record.title)}</span></a>`:'';
+  return `<main id="main" class="container detail${template?'':' project-case'}">
+    <a class="breadcrumb" href="${e(archive)}">← ${e(returnLabel)}</a>
+    <section class="detail-heading hero" data-enter><div><p class="eyebrow">PROJECT ${number(index)} / ${e(p.category)}</p><h1 data-enter-whole>${e(p.title)}</h1>${prose(p.summary)}<div class="tags">${p.tags.map(t=>`<span>${e(t)}</span>`).join('')}</div></div><span class="detail-index" aria-hidden="true">${number(index)}</span></section>
+    ${p.briefing?.stages?.length?projectBriefingMarkup():p.cover?`<figure class="detail-cover reveal">${img(p.cover,p.coverAlt)}${caption(p.coverCaption)}</figure>`:''}
+    ${facts.length?`<section class="meta-grid reveal" aria-label="项目信息">${facts.map(([label,value])=>`<div><span>${label}</span><p>${e(value)}</p></div>`).join('')}</section>`:''}
+    <div class="detail-layout">
+      <aside class="detail-toc" aria-label="项目目录"><p>项目目录 / CONTENTS</p>${modules.map((item,i)=>`<a href="#${item.id}"><span>${number(i)}</span>${e(item.short)}</a>`).join('')}</aside>
+      <div class="detail-body">${modules.map((item,i)=>`<section class="detail-section reveal" id="${item.id}"><p class="eyebrow">${number(i)} / ${item.kicker}</p><h2>${e(item.title)}</h2>${item.body}</section>`).join('')}</div>
+    </div>
+    <nav class="project-pagination" aria-label="相邻项目">${adjacent(neighbors[neighborIndex-1],'← 上一个项目')||'<span></span>'}${adjacent(neighbors[neighborIndex+1],'下一个项目 →')||`<a href="${e(archive)}"><span>${e(returnLabel)} →</span></a>`}</nav>
+  </main>`;
+}
 const pills=s=>String(s).split(/[,，]/).filter(Boolean).map(t=>`<span>${e(t.trim())}</span>`).join('');
 function profileDetails(){
   const education=Array.isArray(data.education)?data.education:[];
@@ -33,14 +120,50 @@ function profileDetails(){
   const entry=(title,period,summary='')=>`<div class="profile-fact"><div class="profile-fact-heading"><h4>${e(title)}</h4>${period?`<span>${e(period)}</span>`:''}</div>${summary?`<p>${e(summary)}</p>`:''}</div>`;
   return `<div class="profile-facts">${education.length?`<section aria-labelledby="profile-education-title"><h3 id="profile-education-title">教育经历</h3>${education.map(item=>entry([item.school,item.degree,item.major].filter(Boolean).join('-'),item.period)).join('')}</section>`:''}${work.length?`<section aria-labelledby="profile-work-title"><h3 id="profile-work-title">工作经历</h3>${work.map(item=>entry([item.company,item.position].filter(Boolean).join('-'),item.period,item.summary)).join('')}</section>`:''}</div>`;
 }
-function about(){const a=data.about;return `<main id="main" class="container"><section class="page-heading reveal"><p class="eyebrow">THE PERSON BEHIND THE PROCESS</p><h1>关于我<span class="heading-dot">.</span></h1></section><section class="about-profile reveal"><div class="portrait">${a.portrait?img(a.portrait,a.portraitAlt):`<div class="portrait-placeholder">${icon('cube')}<span>YOUR PORTRAIT HERE</span><small>个人照片占位</small></div>`}</div><div class="profile-copy"><p class="eyebrow">HELLO, I’M</p><h2>${e(a.name)}</h2><p class="profile-role">${e(a.role)}</p><p class="body-copy">${e(a.bio)}</p>${profileDetails()}<div class="profile-actions">${data.site.resume?external('查看我的简历',data.site.resume,'button secondary'):unavailable('简历暂未提供','download')}</div></div></section><section class="about-skills"><div class="reveal"><p class="eyebrow">01 / FOCUS</p><h2>专业方向</h2><div class="tags large-tags">${pills(a.directions)}</div></div><div class="reveal"><p class="eyebrow">02 / CAPABILITIES</p><h2>技能标签</h2><div class="tags large-tags">${pills(a.skills)}</div></div><div class="reveal"><p class="eyebrow">03 / TOOLKIT</p><h2>软件工具</h2><div class="tags large-tags">${pills(a.tools)}</div></div></section><section class="experience reveal"><p class="eyebrow">04 / EXPERIENCE</p><h2>项目经历</h2>${isEditorialPlaceholder(a.experience)?'':`<div class="experience-placeholder"><span class="status-dot"></span><p>${e(a.experience)}</p></div>`}<a href="/portfolio/projects/" class="text-link">浏览项目框架 ${icon('arrow')}</a></section>${contact()}</main>`;}
+function about(){
+  const a=data.about;
+  const portrait=carouselMarkup(a,{e,icon});
+  const lists=[['专业方向',a.directions],['软件工具',a.tools]].map(([label,value])=>{
+    const items=String(value||'').split(/[,，]/).map(item=>item.trim()).filter(item=>item&&!item.startsWith('['));
+    return items.length?`<div><dt>${label}</dt><dd>${items.map(e).join(' / ')}</dd></div>`:'';
+  }).join('');
+  return `<main id="main" class="container wrap about-page">
+    <section class="hero about-profile${portrait?'':' about-profile--text'}" data-enter aria-labelledby="about-title">
+      <div class="profile-copy">
+        <h1 id="about-title" data-enter-whole>关于我</h1>
+        <h2>${e(a.name)}</h2>
+        <p class="profile-role">${e(a.role)}</p>
+        ${prose(a.bio,'body-copy')}
+        ${profileDetails()}
+        ${lists?`<dl class="profile-fields">${lists}</dl>`:''}
+        ${data.site.resume?external('查看简历',data.site.resume,'button secondary'):''}
+      </div>
+      ${portrait}
+    </section>
+    ${hasContact?`<section class="about-contact" id="contact" aria-labelledby="about-contact-title"><h2 class="section-title" id="about-contact-title">联系方式</h2><a href="/portfolio/#contact" class="text-link">查看联系方式 ${icon('arrow')}</a></section>`:''}
+  </main>`;
+}
 const project=data.projects.find(p=>path==='/projects/'+p.slug);
-const content=path==='/'?home():path==='/projects'?projects():path==='/about'?about():project?detail(project):`<main id="main" class="container page-heading"><p class="eyebrow">404 / PAGE NOT FOUND</p><h1>这个页面尚未建立。</h1>${button('返回首页','/portfolio/')}</main>`;
+const content=path==='/'?homeMarkup(data,{e,img,icon}):path==='/projects'?projects():path==='/about'?about():project?detail(project):`<main id="main" class="container page-heading"><p class="eyebrow">404 / PAGE NOT FOUND</p><h1>这个页面尚未建立。</h1>${button('返回首页','/portfolio/')}</main>`;
+document.body.dataset.page=path==='/'?'home':path==='/about'?'about':path==='/projects'?'projects':'detail';
 document.querySelector('#app').innerHTML=header()+content+footer()+`<div class="toast" role="status" aria-live="polite"></div>`;
+if(project?.briefing?.stages?.length){
+  mountProjectBriefing(document.getElementById('project-briefing'),project.briefing,{
+    imageUrl:safeUrl,
+    loadScene:async source=>{
+      if(!/^\/portfolio\/assets\/projects\/[a-z0-9-]+\/[a-z0-9-]+\.scene\.json$/.test(source))throw new Error('模型路径无效');
+      const response=await fetch(source);
+      if(!response.ok)throw new Error('三维模型未找到');
+      return response.json();
+    },
+    mountModel:mountEngineeringModel,
+    mountPlayback,
+  });
+}
 enhanceExperience(data,{e,img,icon},project);
 mountSkills(data,{e,icon});
 mountDownloads(data,{e,icon},project);
-mountPortfolio(data,{e,icon});
+mountPhotoCarousel();
 mountHomeDashboard(data,{e,img,icon});
 const menuButton=document.querySelector('.menu-button');
 const navigation=document.querySelector('#navigation');
@@ -57,11 +180,37 @@ document.addEventListener('keydown',event=>{
   menuButton.focus();
 });
 let toastTimer;document.addEventListener('click',ev=>{const b=ev.target.closest('[data-unset]');if(!b)return;const t=document.querySelector('.toast');t.textContent=b.dataset.unset;t.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('visible'),4000);});
-initProjectCards();
 initProjectFilters();
-const tabs=[...document.querySelectorAll('[data-tab]')];const selectTab=b=>{tabs.forEach(t=>{const selected=t===b;t.setAttribute('aria-selected',selected);t.tabIndex=selected?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!selected;});};tabs.forEach((b,i)=>{b.onclick=()=>selectTab(b);b.onkeydown=ev=>{let n;if(ev.key==='ArrowRight')n=(i+1)%tabs.length;if(ev.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;if(ev.key==='Home')n=0;if(ev.key==='End')n=tabs.length-1;if(n!==undefined){ev.preventDefault();selectTab(tabs[n]);tabs[n].focus();}};});
+const tabs=[...document.querySelectorAll('.sim-tabs [data-tab]')];
+let selectedSimulation;
+let stopSimulation;
+function selectTab(button){
+  if(selectedSimulation===button)return;
+  stopSimulation?.();
+  selectedSimulation=button;
+  tabs.forEach(tab=>{
+    const selected=tab===button;
+    tab.setAttribute('aria-selected',selected);
+    tab.tabIndex=selected?0:-1;
+    document.getElementById(tab.getAttribute('aria-controls')).hidden=!selected;
+  });
+  const host=document.getElementById(button.getAttribute('aria-controls')).querySelector('[data-playback]');
+  stopSimulation=host?mountPlayback(host,host.dataset.playback):undefined;
+}
+tabs.forEach((button,index)=>{
+  button.onclick=()=>selectTab(button);
+  button.onkeydown=event=>{
+    const next={ArrowRight:(index+1)%tabs.length,ArrowLeft:(index-1+tabs.length)%tabs.length,Home:0,End:tabs.length-1}[event.key];
+    if(next===undefined)return;
+    event.preventDefault();
+    selectTab(tabs[next]);
+    tabs[next].focus();
+  };
+});
+if(tabs.length)selectTab(tabs[0]);
 let motion=false;try{motion=localStorage.getItem('bluelab-reduce-motion')==='true';}catch{}const motionBtn=document.querySelector('.motion-toggle');const applyMotion=()=>{document.documentElement.classList.toggle('reduce-motion',motion);motionBtn.setAttribute('aria-pressed',motion);motionBtn.textContent=motion?'动态效果已减少':'减少动态效果';};applyMotion();motionBtn.onclick=()=>{motion=!motion;applyMotion();try{localStorage.setItem('bluelab-reduce-motion',motion);}catch{}};
-if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(v=>{if(v.isIntersecting){v.target.classList.add('in-view');observer.unobserve(v.target);}}),{threshold:.07});document.querySelectorAll('.reveal').forEach(el=>{el.classList.add('will-reveal');observer.observe(el);});}
+import('/portfolio/assets/motion/motion.js').then(({refresh})=>refresh());
+if(document.querySelector('[data-moment]'))import('/portfolio/assets/moments/moments.js');
 
 // Resolve deep links after asynchronous content and reusable sections have mounted.
 if(location.hash){requestAnimationFrame(()=>{try{document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView({behavior:"instant",block:"start"});}catch{}});}

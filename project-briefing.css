@@ -1,0 +1,170 @@
+.project-briefing {
+  --br-paper: #fbfaf6;
+  --br-panel: #eef2f7;
+  --br-ink: #21334b;
+  --br-muted: #52637a;
+  --br-rule: #cdd7e4;
+  --br-accent: #2457a6;
+  min-width: 0;
+  margin: 24px 0 46px;
+  border: 1px solid var(--br-rule);
+  border-radius: 14px;
+  background: var(--br-paper);
+  color: var(--br-ink);
+  scroll-margin-top: 86px;
+}
+.project-briefing [hidden] { display: none !important; }
+.project-briefing button { font: inherit; color: inherit; cursor: pointer; }
+.project-briefing button:focus-visible, .project-briefing canvas:focus-visible {
+  outline: 2px solid var(--br-accent);
+  outline-offset: 3px;
+}
+.project-briefing .br-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px clamp(16px, 3vw, 32px);
+  border-bottom: 1px solid var(--br-rule);
+}
+.project-briefing .br-heading h2 { margin: 3px 0 0; font-size: clamp(24px, 2.8vw, 34px); line-height: 1.2; }
+.project-briefing .br-eyebrow {
+  margin: 0;
+  color: var(--br-accent);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+}
+.project-briefing .br-stages {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px clamp(16px, 3vw, 32px);
+  gap: 6px;
+  border-bottom: 1px solid var(--br-rule);
+  background: var(--br-panel);
+}
+.project-briefing :is(.br-stages, .br-navigation, .br-visual-choices, .br-model-controls, .br-caption) > button,
+.project-briefing [data-br-fullscreen],
+.project-briefing [data-br-close] {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 6px 11px;
+  background: transparent;
+  min-height: 34px;
+  font-size: .85rem;
+}
+.project-briefing .br-stages button span { margin-right: 7px; color: var(--br-muted); font-variant-numeric: tabular-nums; }
+.project-briefing button[aria-selected="true"], .project-briefing button[aria-pressed="true"] {
+  border-color: var(--br-rule);
+  background: #fff;
+  color: var(--br-accent);
+}
+.project-briefing .br-navigation > button,
+.project-briefing [data-br-fullscreen],
+.project-briefing [data-br-model-mode],
+.project-briefing [data-br-playback],
+.project-briefing [data-br-close] { border-color: var(--br-rule); }
+.project-briefing button:disabled { opacity: .4; cursor: default; }
+.project-briefing .br-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(260px, 1fr);
+  gap: clamp(18px, 3vw, 34px);
+  padding: clamp(16px, 3vw, 32px);
+}
+.project-briefing .br-copy { min-width: 0; }
+.project-briefing .br-copy h3 { margin: 7px 0 12px; font-size: clamp(21px, 2.4vw, 30px); line-height: 1.35; }
+.project-briefing .br-lead { margin: 0; font-size: .96rem; line-height: 1.72; }
+.project-briefing .br-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 110px), 1fr));
+  gap: 10px;
+  margin: 16px 0 0;
+  padding: 12px 0;
+  border-block: 1px solid var(--br-rule);
+}
+.project-briefing .br-facts dt { margin: 0; font-size: .78rem; color: var(--br-muted); }
+.project-briefing .br-facts dd { margin: 3px 0 0; font-size: 1.12rem; font-weight: 650; line-height: 1.3; }
+.project-briefing .br-points { margin: 16px 0 0; padding-inline-start: 1.12em; font-size: .9rem; line-height: 1.7; }
+.project-briefing .br-points li + li { margin-top: 6px; }
+.project-briefing :is(.br-visual-choices, .br-model-controls) { display: flex; flex-wrap: wrap; gap: 4px; }
+.project-briefing .br-visual-choices:not(:empty) { margin-bottom: 8px; }
+.project-briefing .br-visual-choices > button { background: var(--br-panel); }
+.project-briefing .br-media-model {
+  min-width: 0;
+  border: 1px solid var(--br-rule);
+  border-radius: 8px;
+  background: var(--br-panel);
+}
+.project-briefing :is(.br-picture, .br-media-model canvas) {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/10;
+  border: 0;
+  border-radius: 7px;
+}
+.project-briefing .br-picture { padding: 0; background: transparent; cursor: zoom-in; }
+.project-briefing .br-picture img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 7px; }
+.project-briefing .br-media-model canvas { touch-action: none; cursor: grab; }
+.project-briefing .br-media-model canvas:active { cursor: grabbing; }
+.project-briefing .br-model-controls { padding: 6px 7px; border-top: 1px solid var(--br-rule); }
+.project-briefing .br-model-controls button:hover { background: #fff; }
+.project-briefing .br-model-layers button::before {
+  content: "";
+  display: inline-block;
+  width: .64em;
+  height: .64em;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: var(--part-color);
+}
+.project-briefing .br-caption {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 9px 0 0;
+}
+.project-briefing .br-caption p, .project-briefing .br-model-status { margin: 0; font-size: .85rem; line-height: 1.65; }
+.project-briefing .br-caption small { display: block; margin-top: 3px; color: var(--br-muted); font-size: .76rem; }
+.project-briefing .br-caption button { flex-shrink: 0; }
+.project-briefing .br-model-status { color: var(--br-muted); margin-top: 6px; }
+.project-briefing .br-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid var(--br-rule);
+  padding: 12px clamp(16px, 3vw, 32px);
+  font-variant-numeric: tabular-nums;
+}
+.project-briefing .br-dialog {
+  position: fixed;
+  width: min(94vw, 1280px);
+  max-height: 94vh;
+  padding: 12px;
+  border: 1px solid var(--br-rule);
+  border-radius: 8px;
+  background: var(--br-paper);
+  color: var(--br-ink);
+  overflow: auto;
+}
+.project-briefing .br-dialog::backdrop { background: #182737aa; }
+.project-briefing .br-dialog img { display: block; width: 100%; max-height: 78vh; object-fit: contain; }
+.project-briefing .br-dialog > p { margin: 8px 0 0; font-size: .9rem; }
+.project-briefing .br-dialog button { display: block; margin: 0 0 8px auto; }
+.project-briefing:fullscreen {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  overflow: auto;
+}
+.project-briefing:fullscreen > *:not(dialog) { max-width: 1500px; margin-inline: auto; }
+
+@media (max-width: 760px) {
+  .project-briefing .br-layout { grid-template-columns: minmax(0, 1fr); }
+  .project-briefing .br-stages { gap: 3px; }
+  .project-briefing .br-stages > button { padding-inline: 7px; }
+}
+@media (pointer: coarse) {
+  .project-briefing button { min-height: 42px; }
+}

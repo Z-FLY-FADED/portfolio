@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300">
+  <defs>
+    <pattern id="mesh" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0 20V0h20" fill="none" stroke="#7893a7" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <path d="M152 0h528v201H546v54H399v-36H276v-52H152Z" fill="#b7c9d4" opacity=".14"/>
+  <path d="M152 0h528v201H546v54H399v-36H276v-52H152Z" fill="url(#mesh)" opacity=".31"/>
+  <g fill="none" stroke="#68869c" stroke-width="1.2" opacity=".59">
+    <path d="M152 43v124h124v52h123v36h147v-54h134M170 43v106h124v52h123v36h111v-54h152"/>
+    <path d="M134 43v142h124v52h123v36h183v-54h116" stroke-dasharray="3 6"/>
+    <path d="M143 43h18m-9-9v18m116 115h16m-8-8v16m114 80h18m-9-9v18m138-9h18m-9-9v18"/>
+    <path d="M319 85h107m-53-53v106m-36-89 72 72m0-72-72 72"/>
+    <circle cx="373" cy="85" r="28"/>
+    <circle cx="373" cy="85" r="7"/>
+  </g>
+</svg>

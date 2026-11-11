@@ -37,7 +37,7 @@ export function mountDownloads(data,{e,icon},project){
         const prefix='/storage/v1/object/public/portfolio-files/';
         if(!url.hostname.endsWith('.supabase.co')||!url.pathname.startsWith(prefix))throw error;
         // A static mirror exists only for files also included in the GitHub publication.
-        blob=await get('/portfolio/'+url.pathname.slice(prefix.length));
+        blob=await get('/'+url.pathname.slice(prefix.length));
       }
       if(preview&&previewBody){
         if(!dialog.open)return;

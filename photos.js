@@ -1,16 +1,49 @@
-const safeImage=src=>{try{const url=new URL(src,location.origin);return src&&['http:','https:'].includes(url.protocol)?url.href:'';}catch{return '';}};
+const photoPreviews={
+  '/portfolio/assets/photos/portrait-color-v1.png':952,
+  '/portfolio/assets/photos/taishan-color-v1.png':907,
+  '/portfolio/assets/photos/selfie-color-v1.png':536
+};
 
-export function photoMarkup(about,{e,icon}) {
-  const photos=(Array.isArray(about.photos)?about.photos:[]).filter(p=>safeImage(p.src));
-  if(!photos.length&&safeImage(about.portrait))photos.push({src:about.portrait,alt:about.portraitAlt||'个人照片',caption:'个人照片',position:'50% 0%'});
-  if(!photos.length)return '<figure class="home-photo"><div class="home-photo-empty"><span>照片</span><small>个人照片待补充</small></div></figure>';
+const safeImage=src=>{
+  if(!src)return '';
+  try {
+    const url=new URL(src,location.origin);
+    return ['http:','https:'].includes(url.protocol)?url.href:'';
+  } catch {return '';}
+};
+
+function photosOf(about) {
+  const photos=(Array.isArray(about.photos)?about.photos:[]).filter(p=>safeImage(p?.src));
+  if(!photos.length&&safeImage(about.portrait))photos.push({src:about.portrait,alt:about.portraitAlt});
+  return photos;
+}
+
+export function carouselMarkup(about,{e,icon}) {
+  const photos=photosOf(about);
+  if(!photos.length)return '';
   const images=photos.map((p,i)=>{
     const position=/^\d{1,3}% \d{1,3}%$/.test(p.position||'')?p.position:'50% 50%';
-    return '<div class="photo-slide" data-photo-card="'+i+'" data-depth="'+Math.min(i,2)+'" aria-hidden="'+(i!==0)+'" role="group" aria-roledescription="照片" aria-label="第 '+(i+1)+' 张，共 '+photos.length+' 张：'+e(p.caption||'个人照片')+'" data-caption="'+e(p.caption||'个人照片')+'"><img src="'+e(safeImage(p.src))+'" alt="'+e(p.alt||p.caption||'个人照片')+'" style="object-position:'+e(position)+'" '+(i===0?'fetchpriority="high"':'loading="lazy"')+' draggable="false"></div>';
+    const original=safeImage(p.src);
+    const height=photoPreviews[p.src];
+    const preview=height?p.src.replace(/\.png$/,'.webp'):original;
+    const caption=e(p.caption||'个人照片');
+    return `<div class="photo-slide" ${i===0?'data-moment="picture-develops"':''} data-photo-card="${i}" data-depth="${Math.min(i,2)}" aria-hidden="${i!==0}" role="group" aria-roledescription="照片" aria-label="第 ${i+1} 张，共 ${photos.length} 张：${caption}" data-caption="${caption}" data-original="${e(original)}">
+      <img src="${e(preview)}" alt="${e(p.alt||p.caption||'个人照片')}" ${height?`width="680" height="${height}"`:''} style="object-position:${e(position)}" ${i===0?'fetchpriority="high"':''} decoding="async" draggable="false">
+    </div>`;
   }).join('');
   const dots=photos.length>1?'<div class="photo-dots" role="group" aria-label="选择个人照片">'+photos.map((p,i)=>'<button aria-label="切换到第 '+(i+1)+' 张：'+e(p.caption||'个人照片')+'" aria-pressed="'+(!i)+'" data-photo-index="'+i+'"><span></span></button>').join('')+'</div>':'';
   const arrows=photos.length>1?'<button class="photo-arrow photo-prev" aria-label="上一张照片">‹</button><button class="photo-arrow photo-next" aria-label="下一张照片">›</button>':'';
-  return '<figure class="home-photo photo-carousel" aria-label="'+e(about.name)+'的个人相册" aria-roledescription="堆叠式轮播图"><div class="photo-stage"><div class="photo-track" tabindex="0" role="group" aria-label="堆叠照片，左右滑动或按方向键切换">'+images+'</div><button class="photo-zoom" data-lightbox="'+e(safeImage(photos[0].src))+'" data-image-alt="'+e(photos[0].alt||'个人照片')+'" data-image-caption="'+e(photos[0].caption||'个人照片')+'" aria-haspopup="dialog" aria-label="放大当前照片">'+icon('up')+'</button>'+arrows+dots+'</div><span class="sr-only photo-counter" role="status" aria-live="polite">第 1 张，共 '+photos.length+' 张</span></figure>';
+  const first=photos[0];
+  return `<div class="photo-composition">
+    <figure class="home-photo photo-carousel" data-visual aria-label="${e(about.name)}的个人相册" aria-roledescription="堆叠式轮播图">
+      <div class="photo-stage">
+        <div class="photo-track" tabindex="0" role="group" aria-label="堆叠照片，左右滑动或按方向键切换">${images}</div>
+        <button class="photo-zoom" data-lightbox="${e(safeImage(first.src))}" data-image-alt="${e(first.alt||'个人照片')}" data-image-caption="${e(first.caption||'个人照片')}" aria-haspopup="dialog" aria-label="放大当前照片">${icon('up')}</button>
+        ${arrows}${dots}
+      </div>
+      <span class="sr-only photo-counter" role="status" aria-live="polite">第 1 张，共 ${photos.length} 张</span>
+    </figure>
+  </div>`;
 }
 
 export function mountPhotoCarousel() {
@@ -22,13 +55,13 @@ export function mountPhotoCarousel() {
     const render=()=>{
       slides.forEach((slide,i)=>{
         const depth=(i-selected+slides.length)%slides.length;
-        slide.dataset.depth=String(Math.min(depth,2));slide.style.zIndex=String(slides.length-depth);
+        slide.dataset.depth=String(Math.min(depth,2));slide.style.zIndex=String(Math.max(0,3-depth));
         slide.setAttribute('aria-hidden',String(i!==selected));slide.classList.remove('is-leaving');
       });
       dots.forEach((dot,i)=>dot.setAttribute('aria-pressed',String(i===selected)));
       root.querySelector('.photo-counter').textContent='第 '+(selected+1)+' 张，共 '+slides.length+' 张';
       const image=slides[selected].querySelector('img');
-      zoom.dataset.lightbox=image.src;zoom.dataset.imageAlt=image.alt;zoom.dataset.imageCaption=slides[selected].dataset.caption;
+      zoom.dataset.lightbox=slides[selected].dataset.original;zoom.dataset.imageAlt=image.alt;zoom.dataset.imageCaption=slides[selected].dataset.caption;
       root.dataset.photoIndex=String(selected);pose(0);
     };
     const select=(index,direction=-1)=>{
@@ -74,4 +107,3 @@ export function mountPhotoCarousel() {
     render();
   });
 }
-

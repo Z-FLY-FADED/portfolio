@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" width="360" height="200">
+  <defs>
+    <linearGradient id="steel" x2="0" y2="1">
+      <stop stop-color="#f7fbff"/>
+      <stop offset=".48" stop-color="#cfdfed"/>
+      <stop offset="1" stop-color="#829ebc"/>
+    </linearGradient>
+    <linearGradient id="flange" x2="1" y2="1">
+      <stop stop-color="#f4f8fc"/>
+      <stop offset="1" stop-color="#9cb8ce"/>
+    </linearGradient>
+    <linearGradient id="core" x2="0" y2="1">
+      <stop stop-color="#304d6b"/>
+      <stop offset="1" stop-color="#192e47"/>
+    </linearGradient>
+    <pattern id="grid" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M0 12V0h12" fill="none" stroke="#a5bbcb" stroke-width=".65"/>
+    </pattern>
+    <pattern id="section" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(43)">
+      <path d="M0 0v5" stroke="#b56e45" stroke-width="1.6"/>
+    </pattern>
+    <pattern id="channels" width="11" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5" r="1.55" fill="#82a8c4"/>
+    </pattern>
+  </defs>
+
+  <path d="M16 115h74v67H16zm251-97h77v64h-77z" fill="url(#grid)" opacity=".54"/>
+  <path d="M16 40V21h19m290 160h19v-19M24 145h48m214-105h49"
+        fill="none" stroke="#9cb1c3" stroke-width="1" stroke-dasharray="3 4"/>
+  <ellipse cx="175" cy="156" rx="109" ry="11" fill="#254966" opacity=".095"/>
+
+  <!-- Axonometric treatment of a conceptual longitudinal section. -->
+  <g transform="rotate(-11 180 100)" stroke="#2e5073" stroke-width="1.65" stroke-linejoin="round">
+    <path d="M23 94h70v12H23zm248 0h65v12h-65z" fill="url(#steel)"/>
+    <path d="M96 60h167c14 0 23 18 23 40s-9 40-23 40H96z" fill="url(#steel)"/>
+    <path d="M107 65h146m-143 69h143" fill="none" stroke="#f1f7fd"/>
+    <ellipse cx="263" cy="100" rx="20" ry="40" fill="url(#flange)"/>
+    <path d="M265 69c8 5 13 17 13 31s-5 25-13 31" fill="none" stroke="#7597b6"/>
+    <ellipse cx="96" cy="100" rx="18" ry="40" fill="url(#flange)"/>
+    <ellipse cx="96" cy="100" rx="12" ry="32" fill="#bcd0e0"/>
+    <ellipse cx="96" cy="100" rx="6" ry="13" fill="#466a89"/>
+    <circle cx="95" cy="73" r="2" fill="#f1f7fd"/>
+    <circle cx="95" cy="127" r="2" fill="#f1f7fd"/>
+
+    <rect x="112" y="73" width="136" height="54" rx="3" fill="#ebc6ad"/>
+    <path d="M113 74h134v9H113zm0 43h134v9H113z" fill="url(#section)" stroke="none"/>
+    <path d="M112 83h136v34H112z" fill="url(#core)"/>
+    <rect x="120" y="87" width="120" height="26" rx="2" fill="url(#channels)" stroke="#7d9fbb" stroke-width="1"/>
+    <path d="M131 94h97m-7-4 7 4-7 4m-90 8h97m-7-4 7 4-7 4"
+          fill="none" stroke="#cceaff" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M30 100h45m-7-4 7 4-7 4m224-4h36m-7-4 7 4-7 4"
+          fill="none" stroke="#285885" stroke-width="1.65" stroke-linecap="round"/>
+  </g>
+
+  <path d="M150 62c5-5-2-9 2-14m15 10c5-5-2-9 2-14m15 10c5-5-2-9 2-14"
+        fill="none" stroke="#a8613d" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M108 161h83l19-13h69M116 157v8m162-21v8" fill="none" stroke="#819cb2" stroke-width="1.15"/>
+  <circle cx="210" cy="148" r="2.5" fill="#ae6b46"/>
+</svg>

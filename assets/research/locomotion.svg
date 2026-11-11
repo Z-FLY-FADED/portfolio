@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" width="360" height="200">
+  <defs>
+    <linearGradient id="armor" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f6fbff"/>
+      <stop offset=".55" stop-color="#cfdfec"/>
+      <stop offset="1" stop-color="#89abc4"/>
+    </linearGradient>
+    <linearGradient id="shadow-steel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#93b2c9"/>
+      <stop offset="1" stop-color="#496c8b"/>
+    </linearGradient>
+    <pattern id="grid" width="11" height="11" patternUnits="userSpaceOnUse">
+      <path d="M0 11V0h11" fill="none" stroke="#b3c8d9" stroke-width=".7"/>
+    </pattern>
+  </defs>
+
+  <path d="M15 21h95v59H15zm258 82h71v59h-71z" fill="url(#grid)" opacity=".54"/>
+  <path d="M17 160h327l-18 23H37Z" fill="#dde8f0"/>
+  <path d="M17 160h327m-302 14h281m-235-14-10 23m90-23-4 23m92-23 3 23"
+        fill="none" stroke="#a8becf" stroke-width=".9"/>
+  <ellipse cx="178" cy="164" rx="94" ry="9" fill="#315979" opacity=".13"/>
+
+  <!-- Earlier pose, drawn faintly behind the main figure. -->
+  <g fill="none" stroke="#8ca8bc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".67">
+    <path d="M79 45q0-6 7-6h9l6 6v11l-6 6H84l-5-6Zm13 4h9m-12 13v7"/>
+    <path d="m77 72 16-5 13 8-6 19-15 5-12-11Zm8 27 13-5 5 11-12 7-10-5Z"/>
+    <path d="M79 77 64 95l-14-7m50-11 13 18 13-7M88 108 70 130l-6 26h15m17-49 18 20 9 21h14"/>
+    <circle cx="70" cy="130" r="3.5"/><circle cx="114" cy="127" r="3.5"/>
+    <path d="M20 63h39m-28 10h28m52-42h34" stroke-dasharray="3 5"/>
+  </g>
+
+  <!-- Motion arc and foot placements are illustrative, with no measured scale. -->
+  <g fill="none" stroke="#608aaa" stroke-width="1.3" stroke-linecap="round">
+    <path d="M227 139q37-42 77-25" stroke-dasharray="3 5"/>
+    <path d="m297 108 7 6-9 1"/>
+    <path d="M36 187h274m-7-4 7 4-7 4" opacity=".8"/>
+  </g>
+  <g fill="#7297b0" opacity=".45">
+    <path d="m45 170 14-3 10 2-3 4-19 2zm232-6 16-4 11 2-2 4-22 3zm33-9 14-4 10 2-2 4-20 3z"/>
+  </g>
+
+  <!-- Far limbs and their drive joints. -->
+  <g stroke="#365b79" stroke-width="1.55" stroke-linejoin="round">
+    <path d="m173 62 11 7-16 22-8-6zm-10 21 5 7-26 3-7-8 6-3Z" fill="url(#shadow-steel)"/>
+    <circle cx="164" cy="87" r="4.7" fill="#a9c3d5"/>
+    <path d="m168 98 14 11-31 29-13-8zm-26 28 9 10-33 21-11-10z" fill="url(#shadow-steel)"/>
+    <path d="m110 146 10 5-3 8-26 6-4-5z" fill="#6b8ea9"/>
+    <circle cx="145" cy="132" r="5.6" fill="#a9c3d5"/>
+    <path d="m148 139-26 13" fill="none" stroke="#d1e2ed" stroke-linecap="round"/>
+  </g>
+
+  <!-- Lead leg, chassis, and forward arm. -->
+  <g stroke="#264b6c" stroke-width="1.7" stroke-linejoin="round">
+    <path d="m183 97 46 15-4 15-13 3-39-17z" fill="url(#armor)"/>
+    <path d="m218 118 13-4 14 42-15 6-14-32z" fill="url(#armor)"/>
+    <path d="m232 153 12-2 6 8 15 4v6h-38v-7z" fill="#a1bfd4"/>
+    <path d="M229 165h35m-40-40 12 28m-47-49 27 10" fill="none" stroke="#edf7ff" stroke-linecap="round"/>
+    <circle cx="223" cy="122" r="6.4" fill="#aac9de"/>
+    <circle cx="223" cy="122" r="2.55" fill="#b56e45" stroke="none"/>
+    <circle cx="237" cy="154" r="4.3" fill="#d9e9f4"/>
+
+    <path d="m169 92 21-5 11 10-6 13-20 5-12-10z" fill="url(#shadow-steel)"/>
+    <circle cx="182" cy="104" r="5.4" fill="#dae8f2"/>
+    <path d="m177 57 22-7 17 13-5 23-21 14-20-10-3-16z" fill="url(#armor)"/>
+    <path d="m179 63 18-7 11 9-4 15-16 10-13-8z" fill="#a2c1d8"/>
+    <path d="m182 67 14-5 5 6-5 8-13 5-5-5z" fill="#325b7e"/>
+    <path d="m184 72 12-5m-10 9 9-4" fill="none" stroke="#bce8ff" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="m176 86 12 7 13-8" fill="none" stroke="#f0f8ff" stroke-linecap="round"/>
+
+    <path d="m208 60 10 3 19 16-9 10-24-16z" fill="url(#armor)"/>
+    <path d="m227 79 7-6 17-16 9 7-20 22-10 2z" fill="url(#armor)"/>
+    <circle cx="211" cy="68" r="6.1" fill="#adcce2"/>
+    <circle cx="232" cy="82" r="5.3" fill="#e3f0f8"/>
+    <path d="m248 61 3-7 9-2 5 6-4 7-7 1z" fill="#9dbcd2"/>
+
+    <path d="m194 47 11 2-3 11-12-3z" fill="#547c9d"/>
+    <path d="M191 33q2-8 10-9l13-1 9 7-2 15-8 10-14-1-11-8Z" fill="url(#armor)"/>
+    <path d="m201 32 13-3 7 5-2 8-14 3-7-5z" fill="#284966"/>
+    <path d="m205 37 12-3" fill="none" stroke="#c4f2ff" stroke-width="1.45" stroke-linecap="round"/>
+    <path d="m193 42 4 6 10 2" fill="none" stroke="#eaf5fd" stroke-linecap="round"/>
+  </g>
+
+  <circle cx="180" cy="187" r="2.8" fill="#b56e45"/>
+</svg>

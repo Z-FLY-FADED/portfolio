@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" role="img" aria-labelledby="title desc">
+  <title id="title">航天智慧物流智能车系统分工</title>
+  <desc id="desc">上位机与下位机通过 TCP 双向通信；视觉识别和激光导航分别使用 YOLOv5、SLAM 与 A*。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="m1 1 7 4-7 4" fill="none" stroke="#3264bd" stroke-width="1.3"/></marker>
+  </defs>
+  <rect width="1200" height="580" fill="#edf0f4"/>
+  <g fill="#23354f" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+    <text x="55" y="61" font-size="18" letter-spacing="2" fill="#465b78">SMART VEHICLE / SYSTEM MAP</text>
+    <text x="55" y="119" font-size="41" font-weight="600">控制、感知与导航</text>
+    <path d="M55 145h1090M55 278h1090M55 401h1090M55 524h1090" fill="none" stroke="#b7c5d8"/>
+    <g font-size="19" fill="#465b78">
+      <text x="55" y="184">01 / 车端通信</text><text x="55" y="306">02 / 视觉感知</text><text x="55" y="429">03 / 激光导航</text>
+    </g>
+    <g font-size="29" font-weight="600">
+      <text x="55" y="238">Qt 上位机</text><text x="440" y="238">TCP 双向通信</text><text x="825" y="238">下位机</text>
+      <text x="55" y="361">赛道图像</text><text x="440" y="361">YOLOv5 检测</text><text x="825" y="361">交通信号灯</text>
+      <text x="55" y="484">激光雷达</text><text x="440" y="484">SLAM 建图</text><text x="825" y="484">A* 全局路径规划</text>
+    </g>
+    <g fill="none" stroke="#3264bd" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M291 228h92" marker-start="url(#arrow)"/><path d="M675 228h92" marker-start="url(#arrow)"/>
+      <path d="M291 351h92"/><path d="M675 351h92"/><path d="M291 474h92"/><path d="M675 474h92"/>
+    </g>
+    <text x="55" y="556" font-size="16" fill="#465b78">根据项目经历绘制，表示功能分工。</text>
+  </g>
+</svg>

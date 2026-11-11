@@ -1,1 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://z-fly-faded.github.io/portfolio/</loc></url><url><loc>https://z-fly-faded.github.io/portfolio/projects/</loc></url><url><loc>https://z-fly-faded.github.io/portfolio/about/</loc></url><url><loc>https://z-fly-faded.github.io/portfolio/projects/project-01/</loc></url><url><loc>https://z-fly-faded.github.io/portfolio/projects/project-02/</loc></url><url><loc>https://z-fly-faded.github.io/portfolio/projects/project-03/</loc></url><url><loc>https://z-fly-faded.github.io/portfolio/projects/project-04/</loc></url><url><loc>https://z-fly-faded.github.io/portfolio/projects/project-05/</loc></url><url><loc>https://z-fly-faded.github.io/portfolio/projects/project-06/</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://z-fly-faded.github.io/portfolio/</loc></url>
+  <url><loc>https://z-fly-faded.github.io/portfolio/about/</loc></url>
+  <url><loc>https://z-fly-faded.github.io/portfolio/projects/</loc></url>
+  <url><loc>https://z-fly-faded.github.io/portfolio/projects/piston-ring-station/</loc></url>
+  <url><loc>https://z-fly-faded.github.io/portfolio/projects/aerospace-logistics-car/</loc></url>
+  <url><loc>https://z-fly-faded.github.io/portfolio/projects/ammonia-diesel-combustion/</loc></url>
+  <url><loc>https://z-fly-faded.github.io/portfolio/projects/bms-thermal-model/</loc></url>
+  <url><loc>https://z-fly-faded.github.io/portfolio/projects/tooling-static-fea/</loc></url>
+  <url><loc>https://z-fly-faded.github.io/portfolio/projects/peak-mod-integration/</loc></url>
+  <url><loc>https://z-fly-faded.github.io/portfolio/projects/dme-atr-simulink/</loc></url>
+</urlset>

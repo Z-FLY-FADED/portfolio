@@ -5,14 +5,19 @@ export function awardsMarkup(data,{e,icon}) {
   const awards=(Array.isArray(data.awards)?data.awards:[]).filter(a=>a&&a.title&&imageUrl(a.cover));
   if(!awards.length)return '';
   const categories=[...new Set(awards.map(a=>a.type||'其他荣誉'))];
-  const slides=awards.map((a,i)=>{
+  const slides=awards.map(a=>{
     const angle=rotation(a.imageRotation),src=imageUrl(a.cover),alt=a.coverAlt||a.title;
+    const preview=/^\/portfolio\/assets\/awards\/certificate-(?:0[1-9]|1[0-9]|2[0-6])\.jpg$/.test(a.cover)
+      ? a.cover.replace('/awards/','/awards/preview/').replace(/\.jpg$/,'.webp')
+      : src;
     const heading=[a.title,a.recognition].filter(Boolean).join(' - ');
     const date=String(a.date||'').trim();
     const ratio=Number(a.imageAspectRatio),aspect=Number.isFinite(ratio)&&ratio>0?ratio:4/3;
-    return `<article class="home-award-slide" style="--award-aspect:${aspect}" data-award-type="${e(a.type||'其他荣誉')}"><button class="home-award-image ${Math.abs(angle)===90?'is-sideways':''}" style="--award-angle:${angle}deg" data-lightbox="${e(src)}" data-image-rotation="${angle}" data-image-alt="${e(alt)}" data-image-caption="${e(heading)}" aria-haspopup="dialog" aria-label="放大证书：${e(heading)}"><span class="home-award-picture"><img src="${e(src)}" alt="${e(alt)}" loading="lazy" decoding="async" draggable="false"></span><span class="home-award-zoom" aria-hidden="true">${icon('up')}</span></button><div class="home-award-caption"><h3>${e(heading)}</h3><p class="home-award-date">${date?`<time${/^\d{4}(?:-\d{2}){0,2}$/.test(date)?` datetime="${e(date)}"`:''}>${e(date.replaceAll('-','.'))}</time>`:'日期待补充'}</p></div></article>`;
+    const rawAspect=Math.abs(angle)===90?1/aspect:aspect;
+    const intrinsicWidth=Math.max(1,Math.round(rawAspect*1000));
+    return `<article class="home-award-slide" style="--award-aspect:${aspect}" data-award-type="${e(a.type||'其他荣誉')}"><button class="home-award-image ${Math.abs(angle)===90?'is-sideways':''}" style="--award-angle:${angle}deg" data-lightbox="${e(src)}" data-image-rotation="${angle}" data-image-alt="${e(alt)}" data-image-caption="${e(heading)}" aria-haspopup="dialog" aria-label="放大证书：${e(heading)}"><span class="home-award-picture"><img src="${e(preview)}" alt="${e(alt)}" width="${intrinsicWidth}" height="1000" loading="lazy" decoding="async" draggable="false"></span><span class="home-award-zoom" aria-hidden="true">${icon('up')}</span></button><div class="home-award-caption"><h3>${e(heading)}</h3><p class="home-award-date">${date?`<time${/^\d{4}(?:-\d{2}){0,2}$/.test(date)?` datetime="${e(date)}"`:''}>${e(date.replaceAll('-','.'))}</time>` :''}</p></div></article>`;
   }).join('');
-  return `<section class="home-awards" id="awards" aria-labelledby="home-awards-title"><div class="home-projects-heading"><div><span>HONORS & AWARDS</span><h2 id="home-awards-title">获得奖项</h2></div><div class="home-awards-heading-actions"><span class="home-awards-total">${awards.length} 张证书</span><a href="#award-gallery-track" data-award-all aria-expanded="false" aria-controls="award-gallery-track"><span>完整奖项</span> ${icon('up')}</a></div></div><div class="home-awards-toolbar"><div class="home-award-filters" role="group" aria-label="证书分类">${['全部',...categories].map((c,i)=>`<button data-award-filter="${e(c)}" aria-pressed="${!i}">${e(c)}</button>`).join('')}</div></div><div class="home-awards-track" tabindex="0" role="region" aria-label="获奖证书图片，使用左右方向键浏览">${slides}</div><div class="home-awards-navigation"><div class="home-awards-progress" aria-hidden="true"><span></span></div><button class="home-awards-autoplay" data-award-autoplay aria-pressed="true" aria-label="暂停奖项自动滚动">暂停滚动</button><span class="home-awards-position" role="status" aria-live="polite" aria-atomic="true"></span><div class="home-awards-arrows"><button data-award-prev aria-label="上一张奖项证书" aria-controls="award-gallery-track">←</button><button data-award-next aria-label="下一张奖项证书" aria-controls="award-gallery-track">→</button></div></div></section>`;
+  return `<section class="home-section home-awards" id="awards" aria-labelledby="home-awards-title"><div class="container wrap"><div class="section-bar"><h2 class="section-title" id="home-awards-title">奖项与证书</h2><div class="home-awards-heading-actions"><span class="home-awards-total">${awards.length} 张证书</span><a href="#award-gallery-track" data-award-all aria-expanded="false" aria-controls="award-gallery-track"><span>完整奖项</span> ${icon('up')}</a></div></div><div class="home-awards-toolbar"><div class="home-award-filters" role="group" aria-label="证书分类">${['全部',...categories].map((c,i)=>`<button data-award-filter="${e(c)}" aria-pressed="${!i}">${e(c)}</button>`).join('')}</div></div><div class="home-awards-track" tabindex="0" role="region" aria-label="获奖证书图片，使用左右方向键浏览">${slides}</div><div class="home-awards-navigation"><div class="home-awards-progress" aria-hidden="true"><span></span></div><button class="home-awards-autoplay" data-award-autoplay aria-pressed="true" aria-label="暂停奖项自动滚动">暂停滚动</button><span class="home-awards-position" role="status" aria-live="polite" aria-atomic="true"></span><div class="home-awards-arrows"><button data-award-prev aria-label="上一张奖项证书" aria-controls="award-gallery-track">←</button><button data-award-next aria-label="下一张奖项证书" aria-controls="award-gallery-track">→</button></div></div></div></section>`;
 }
 
 export function mountAwardGallery() {
@@ -56,9 +61,9 @@ export function mountAwardGallery() {
   };
   const autoButton=root.querySelector('[data-award-autoplay]');
   // Continuous motion is explicitly requested; the site motion toggle still stops it.
-  let autoEnabled=!document.documentElement.classList.contains('reduce-motion'),hovered=false,inView=false,manualUntil=0;
+  let autoEnabled=!reduced(),inView=false,manualUntil=0;
   const manual=()=>{manualUntil=Date.now()+2500;};
-  const canAdvance=()=>autoEnabled&&inView&&!hovered&&!drag&&!root.classList.contains('is-expanded')&&!document.hidden&&!document.querySelector('dialog[open]')&&!track.contains(document.activeElement)&&Date.now()>manualUntil;
+  const canAdvance=()=>autoEnabled&&inView&&!drag&&!root.classList.contains('is-expanded')&&!document.hidden&&!document.querySelector('dialog[open]')&&!track.contains(document.activeElement)&&Date.now()>manualUntil;
   const updateAuto=()=>{
     autoButton.setAttribute('aria-pressed',String(autoEnabled));
     autoButton.setAttribute('aria-label',autoEnabled?'暂停奖项自动滚动':'开启奖项自动滚动');
@@ -67,8 +72,6 @@ export function mountAwardGallery() {
     root.dataset.autoplay=autoEnabled?'enabled':'disabled';
   };
   autoButton.addEventListener('click',()=>{autoEnabled=!autoEnabled;manualUntil=0;updateAuto();});
-  track.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')hovered=true;});
-  track.addEventListener('pointerleave',()=>hovered=false);
   if('IntersectionObserver'in window)new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;},{threshold:.15}).observe(root);else inView=true;
   const pixelsPerSecond=180;
   let animationFrame=0,lastFrame=0,autoPosition=null;
@@ -145,7 +148,7 @@ export function mountAwardGallery() {
     if(!original)return;
     const sideways=Math.abs(Number(original.querySelector('.home-award-image').dataset.imageRotation))===90;
     const ratio=sideways?image.naturalHeight/image.naturalWidth:image.naturalWidth/image.naturalHeight;
-    if(Math.abs(Number(original.style.getPropertyValue('--award-aspect'))-ratio)<.00001)return;
+    if(Math.abs(Number(original.style.getPropertyValue('--award-aspect'))-ratio)<.002)return;
     original.style.setProperty('--award-aspect',String(ratio));
     if(!layoutQueued){layoutQueued=true;requestAnimationFrame(()=>{layoutQueued=false;rebuildLoop();autoPosition=null;render();});}
   };

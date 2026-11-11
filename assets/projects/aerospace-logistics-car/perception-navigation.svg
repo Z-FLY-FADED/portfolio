@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 610" role="img" aria-labelledby="title desc">
+<title id="title">感知与导航的两条实施线</title>
+<desc id="desc">YOLOv5 信号灯识别和 SLAM 建图、A* 全局路径规划各自的实施步骤。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="m1 1 7 4-7 4" fill="none" stroke="#3763a7" stroke-width="1.5"/></marker></defs>
+<rect width="1240" height="610" fill="#edf1f7"/>
+<g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+<text x="55" y="55" font-size="19" fill="#536b88" font-weight="400">航天智慧物流智能车</text>
+<text x="55" y="116" font-size="38" fill="#263851" font-weight="600">感知与导航的两条实施线</text>
+<path d="M55 143h1130" stroke="#b8c8dc"/>
+<text x="55" y="200" font-size="24" fill="#536b88" font-weight="400">信号灯检测</text>
+<path d="M55 322h1130" stroke="#bdcce0"/>
+<text x="55" y="280" font-size="27" fill="#263851" font-weight="600">样本增强</text>
+<path d="M252 269h67" stroke="#3763a7" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="345" y="280" font-size="27" fill="#263851" font-weight="600">YOLOv5 训练</text>
+<path d="M542 269h67" stroke="#3763a7" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="635" y="280" font-size="27" fill="#263851" font-weight="600">参数与后处理</text>
+<path d="M832 269h67" stroke="#3763a7" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="925" y="280" font-size="27" fill="#263851" font-weight="600">部署到工程</text>
+<text x="55" y="381" font-size="24" fill="#536b88" font-weight="400">激光导航</text>
+<path d="M55 503h1130" stroke="#bdcce0"/>
+<text x="55" y="461" font-size="27" fill="#263851" font-weight="600">激光雷达</text>
+<path d="M252 450h67" stroke="#3763a7" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="345" y="461" font-size="27" fill="#263851" font-weight="600">SLAM 建图</text>
+<path d="M542 450h67" stroke="#3763a7" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="635" y="461" font-size="27" fill="#263851" font-weight="600">A* 全局规划</text>
+<path d="M832 450h67" stroke="#3763a7" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="925" y="461" font-size="27" fill="#263851" font-weight="600">检查冗余路径</text>
+<text x="55" y="578" font-size="18" fill="#536b88" font-weight="400">依据简历中记载的项目工作绘制</text>
+</g></svg>

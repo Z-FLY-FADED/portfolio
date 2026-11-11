@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 760">
+  <defs>
+    <path id="contour" d="M-150 718C45 718 189 678 333 598c127-71 187-162 255-259 91-129 170-157 303-183 125-25 193-72 300-160"/>
+    <linearGradient id="contour-fade">
+      <stop stop-color="white" stop-opacity="0"/>
+      <stop offset=".28" stop-color="white"/>
+    </linearGradient>
+    <linearGradient id="contour-bottom" x2="0" y2="1">
+      <stop offset=".93" stop-color="black" stop-opacity="0"/>
+      <stop offset="1" stop-color="black"/>
+    </linearGradient>
+    <mask id="contour-edge" maskUnits="userSpaceOnUse" x="0" y="0" width="1120" height="760" mask-type="luminance">
+      <rect width="1120" height="760" fill="url(#contour-fade)"/>
+      <rect width="1120" height="760" fill="url(#contour-bottom)"/>
+    </mask>
+  </defs>
+  <g mask="url(#contour-edge)">
+    <path d="M185 760c153-43 279-108 391-232 107-118 112-198 256-265 94-43 197-48 288-100v597Z" fill="#91b0c6" opacity=".12"/>
+    <g fill="none" stroke="#537e9e" stroke-width="1.25" opacity=".32">
+      <use href="#contour" transform="translate(-140 -135)"/>
+      <use href="#contour" transform="translate(-118 -114)"/>
+      <use href="#contour" transform="translate(-96 -93)"/>
+      <use href="#contour" transform="translate(-74 -72)"/>
+      <use href="#contour" transform="translate(-52 -51)"/>
+      <use href="#contour" transform="translate(-30 -30)"/>
+      <use href="#contour" transform="translate(-8 -9)"/>
+      <use href="#contour" transform="translate(14 12)"/>
+      <use href="#contour" transform="translate(36 33)"/>
+      <use href="#contour" transform="translate(58 54)"/>
+      <use href="#contour" transform="translate(80 75)"/>
+      <use href="#contour" transform="translate(102 96)"/>
+      <use href="#contour" transform="translate(124 117)"/>
+    </g>
+    <g fill="none" stroke="#537e9e" stroke-width="1.15" opacity=".54">
+      <path d="M452 135h84v-35h158M888 544h128v-42h84M174 648h99m-20-16v32" stroke-dasharray="4 6"/>
+      <path d="M428 135h25m-13-12v24m248-47h17m-8-8v16M869 544h25m-12-12v24"/>
+      <circle cx="536" cy="135" r="4"/>
+      <circle cx="1016" cy="544" r="4"/>
+    </g>
+  </g>
+</svg>
