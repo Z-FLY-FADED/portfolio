@@ -1,15 +1,16 @@
 .project-briefing {
-  --br-paper: #fbfaf6;
-  --br-panel: #eef2f7;
+  --br-paper: #fff;
+  --br-panel: #f3f7fc;
   --br-ink: #21334b;
   --br-muted: #52637a;
-  --br-rule: #cdd7e4;
+  --br-rule: #dfe7f1;
   --br-accent: #2457a6;
   min-width: 0;
   margin: 24px 0 46px;
   border: 1px solid var(--br-rule);
   border-radius: 14px;
   background: var(--br-paper);
+  box-shadow: var(--frame-shadow);
   color: var(--br-ink);
   scroll-margin-top: 86px;
 }

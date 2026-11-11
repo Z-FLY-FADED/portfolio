@@ -2,9 +2,9 @@
 .project-trace:has(.trace-player) > .trace-poster { display: none; }
 .trace-player {
   color: #183831;
-  background: #f7faf8;
-  border: 1px solid #cfded7;
-  border-radius: 12px;
+  background: #f8fbff;
+  border: 1px solid #dfe7f1;
+  border-radius: var(--frame-radius, 14px);
   padding: clamp(12px, 2vw, 22px);
   min-width: 0;
   font-size: .875rem;
@@ -26,7 +26,7 @@
 .trace-controls .trace-raw { display: flex; align-items: center; gap: 6px; min-height: 44px; }
 .trace-player input:focus-visible { outline: 2px solid #176056; outline-offset: 3px; }
 .trace-player input { accent-color: #176056; }
-.trace-panel { min-width: 0; padding: 12px 0 6px; border-top: 1px solid #d8e3de; }
+.trace-panel { min-width: 0; padding: 12px 0 6px; border-top: 1px solid #dfe7f1; }
 .trace-panel .trace-panel-title { font-size: .94rem; margin: 0 0 6px; }
 .trace-panel-title small { padding-left: .35rem; color: #536863; font-weight: 500; }
 .trace-player .trace-readout { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-bottom: 6px; }
@@ -43,7 +43,7 @@
   flex-wrap: wrap;
   margin-bottom: 14px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #d8e3de;
+  border-bottom: 1px solid #dfe7f1;
   gap: 8px 24px;
 }
 .trace-facts div { flex: 1 1 120px; min-width: 0; overflow-wrap: anywhere; }
