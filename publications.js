@@ -3,13 +3,13 @@ const researchTopics=[
     name:'二甲醚自热重整制氢',
     matches:/(?=.*(?:二甲醚|dimethyl ether|\bDME\b)).*(?:重整|reform)/i,
     art:'reformer',
-    alt:'二甲醚重整反应器概念剖面，显示筒体、内部通道与流向。'
+    alt:'二甲醚自热重整反应器概念剖面，显示筒体、催化芯体与气体流向。'
   },
   {
     name:'人形机器人运动',
     matches:/(?=.*(?:人形机器人|humanoid)).*(?:运动|步态|locomotion|gait|motion)/i,
     art:'locomotion',
-    alt:'人形机器人迈步概念图，以淡色姿态、足迹和虚线轨迹示意运动方向。'
+    alt:'人形机器人迈步概念图，显示关节结构、前脚着地与后脚蹬地的姿态。'
   }
 ];
 
@@ -59,7 +59,7 @@ export function publicationsMarkup(data,{e,icon}) {
           <h3 id="publication-topic-${art}">${name}</h3>
           <div class="publication-topic-links">${links}</div>
         </div>
-        <img class="publication-topic-art" src="/portfolio/assets/research/${art}.svg" alt="${alt}" width="360" height="200" loading="lazy" decoding="async">
+        <img class="publication-topic-art" src="/portfolio/assets/research/${art}.webp" alt="${alt}" width="360" height="200" loading="lazy" decoding="async">
       </div>
       <div class="publication-papers">${cards}</div>
     </section>`;
