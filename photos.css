@@ -8,8 +8,8 @@
   place-items: center;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  color: var(--blue);
-  background: var(--bg);
+  color: var(--accent);
+  background: var(--ground-muted);
   transition: transform .18s;
 }
 .photo-zoom:hover { transform: translateY(-2px); }
@@ -53,10 +53,10 @@
   bottom: 10px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--bg);
+  background: var(--ground-muted);
   transition: opacity .2s;
 }
-.photo-arrow { display: grid; place-items: center; width: 44px; height: 44px; color: var(--blue); font-size: 24px; line-height: 1; }
+.photo-arrow { display: grid; place-items: center; width: 44px; height: 44px; color: var(--accent); font-size: 24px; line-height: 1; }
 .photo-arrow:hover, .photo-stage .photo-zoom:hover { background: var(--pale); }
 .photo-prev { left: 10px; }
 .photo-next { right: 10px; }
@@ -64,7 +64,7 @@
 .photo-dots button { flex: 0 0 44px; height: 44px; display: grid; place-items: center; background: transparent; border: 0; padding: 0; }
 .photo-dots button:focus-visible { outline-offset: -3px; }
 .photo-dots button > span { display: block; width: 6px; height: 6px; border-radius: 50%; background: #77766e; }
-.photo-dots button[aria-pressed="true"] > span { width: 15px; border-radius: 4px; background: var(--blue); }
+.photo-dots button[aria-pressed="true"] > span { width: 15px; border-radius: 4px; background: var(--accent); }
 .photo-carousel:is(.is-dragging, .is-animating) :is(.photo-arrow, .photo-zoom, .photo-dots) { opacity: 0; pointer-events: none; }
 @media (max-width: 760px) {
   .photo-composition::before { inset: -15px -13px -14px -13px; }
