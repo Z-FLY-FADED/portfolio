@@ -45,6 +45,54 @@ function resumeLink(site,name,e,icon) {
   } catch {return '';}
 }
 
+function homeProjectsMarkup(projects,{e,img,icon}) {
+  if(!projects.length)return '';
+  const byCategory=new Map(['机械设计','代码开发','仿真建模','仿真分析'].map(name=>[name,[]]));
+  for(const project of projects){
+    const category=project.category||'其他项目';
+    if(!byCategory.has(category))byCategory.set(category,[]);
+    byCategory.get(category).push(project);
+  }
+  const groups=[...byCategory].filter(([,items])=>items.length);
+  const filters=[['全部',projects.length],...groups.map(([name,items])=>[name,items.length])];
+  return `<section class="home-section home-projects" id="selected" aria-labelledby="home-projects-title">
+    <div class="container wrap">
+      <div class="section-bar"><h2 class="section-title" id="home-projects-title">参与项目</h2><a class="text-link" href="/portfolio/projects/">浏览项目档案 ${icon('arrow')}</a></div>
+      <div class="home-project-toolbar">
+        <div class="home-project-filters" role="group" aria-label="项目分类">
+          ${filters.map(([name,count],index)=>`<button type="button" data-home-project-filter="${e(name)}" aria-pressed="${!index}" aria-controls="home-project-groups">${e(name)} <span aria-hidden="true">${count}</span></button>`).join('')}
+        </div>
+        <span class="home-project-count" data-home-project-count role="status">${projects.length} 个项目</span>
+      </div>
+      <div class="home-project-groups" id="home-project-groups">
+        ${groups.map(([name,items],index)=>`<section class="home-project-group" data-home-project-group="${e(name)}" data-project-count="${items.length}" style="--project-columns:${Math.min(items.length,4)}" aria-labelledby="home-project-group-${index}">
+          <h3 id="home-project-group-${index}">${e(name)}</h3>
+          <div class="home-project-card-grid">${items.map(project=>projectCard(project,{e,img,icon,grouped:true})).join('')}</div>
+        </section>`).join('')}
+      </div>
+    </div>
+  </section>`;
+}
+
+function mountHomeProjectFilters(){
+  const section=document.getElementById('selected');
+  if(!section)return;
+  const buttons=[...section.querySelectorAll('[data-home-project-filter]')];
+  const groups=[...section.querySelectorAll('[data-home-project-group]')];
+  const status=section.querySelector('[data-home-project-count]');
+  for(const button of buttons)button.addEventListener('click',()=>{
+    if(button.getAttribute('aria-pressed')==='true')return;
+    const selected=button.dataset.homeProjectFilter;
+    for(const item of buttons)item.setAttribute('aria-pressed',String(item===button));
+    let count=0;
+    for(const group of groups){
+      group.hidden=selected!=='全部'&&group.dataset.homeProjectGroup!==selected;
+      if(!group.hidden)count+=Number(group.dataset.projectCount);
+    }
+    status.textContent=`${count} 个项目`;
+  });
+}
+
 export function homeMarkup(data, {e, img, icon}) {
   const a=data.about;
   const education=Array.isArray(data.education)?data.education:[];
@@ -54,8 +102,6 @@ export function homeMarkup(data, {e, img, icon}) {
   const awards=awardsMarkup(data,{e,icon});
   const skills=String(a.skills||'').split(/[,，]/).map(skill=>skill.trim()).filter(Boolean);
   const resume=resumeLink(data.site,a.name,e,icon);
-  const featured=projects.slice(4).find(p=>p.cover&&p.category==='仿真分析');
-  const featuredResult=featured?.simulations?.find(result=>result.src);
   const indexLinks=[
     papers&&['#publications','发表论文'],
     projects.length&&['#selected','参与项目'],
@@ -105,16 +151,7 @@ export function homeMarkup(data, {e, img, icon}) {
       </div>
     </section>
     ${papers}
-    ${projects.length?`<section class="home-section home-projects" id="selected" aria-labelledby="home-projects-title">
-      <div class="container wrap">
-        <div class="section-bar"><h2 class="section-title" id="home-projects-title">参与项目</h2><a class="text-link" href="/portfolio/projects/">浏览项目档案 ${icon('arrow')}</a></div>
-        <div class="project-index-grid">${projects.slice(0,4).map((p,i)=>projectCard(p,{e,img,icon},i+1)).join('')}</div>
-        ${featured?`<a class="home-feature" href="/portfolio/projects/${e(featured.slug)}/">
-          <div class="home-feature-label"><span>${e(featured.category)}</span><h3>${e(featured.title)}</h3><p>${e(featured.summary)}</p><span class="home-feature-action">查看项目 ${icon('up')}</span></div>
-          <div class="home-feature-frame" data-visual>${img(featuredResult?.src||featured.cover,featuredResult?.alt||featured.coverAlt,'home-feature-image')}</div>
-        </a>`:''}
-      </div>
-    </section>`:''}
+    ${homeProjectsMarkup(projects,{e,img,icon})}
     ${workExperienceMarkup(work,e)}
     ${awards}
     ${contactMarkup?`<section class="home-section home-contact" id="contact" aria-labelledby="home-contact-title"><div class="container wrap"><h2 class="section-title" id="home-contact-title">联系方式</h2><div class="home-contact-grid">${contactMarkup}</div></div></section>`:''}
@@ -122,6 +159,7 @@ export function homeMarkup(data, {e, img, icon}) {
 }
 
 export function mountHomeDashboard(data, {e,icon}) {
+  mountHomeProjectFilters();
   const radar=document.querySelector('.home-radar-canvas');
   if(!radar)return;
   mountAwardGallery();

@@ -7,14 +7,15 @@ const categoryQuery=category=>category?`?${new URLSearchParams({category})}`:'';
 export const projectHref=(slug,category)=>`/portfolio/projects/${slug}/${categoryQuery(category)}`;
 export const projectArchiveHref=category=>`/portfolio/projects/${categoryQuery(category)}`;
 
-export function projectCard(project,{e,img,icon},index) {
+export function projectCard(project,{e,img,icon,grouped=false},index) {
   const href=projectHref(project.slug);
-  const number=String(index).padStart(2,'0');
+  const heading=grouped?'h4':'h3';
+  const label=grouped?'':`<div class="project-entry-label"><span aria-hidden="true">${String(index).padStart(2,'0')}</span><span>${e(project.category)}</span></div>`;
   return `<article class="project-entry" data-category="${e(project.category)}" data-project-slug="${e(project.slug)}">
     <a class="project-entry-link" href="${e(href)}" aria-label="查看详情：${e(project.title)}">
-      <div class="project-entry-label"><span aria-hidden="true">${number}</span><span>${e(project.category)}</span></div>
+      ${label}
       ${project.cover?`<div class="project-entry-image${project.coverCaption?' project-evidence-image':''}">${img(project.cover,project.coverAlt)}</div>`:''}
-      <div class="project-entry-text"><h3>${e(project.title)}</h3>${project.summary?`<p>${e(project.summary)}</p>`:''}<span class="project-entry-detail">查看详情 ${icon('arrow')}</span></div>
+      <div class="project-entry-text"><${heading}>${e(project.title)}</${heading}>${project.summary?`<p>${e(project.summary)}</p>`:''}<span class="project-entry-detail">查看详情 ${icon('arrow')}</span></div>
     </a>
     <button class="text-link" data-preview="${e(project.slug)}" aria-haspopup="dialog" aria-label="预览${e(project.title)}">预览项目 ${icon('up')}</button>
   </article>`;
