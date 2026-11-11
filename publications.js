@@ -50,10 +50,8 @@ export function publicationsMarkup(data,{e,icon}) {
   return `<section class="home-section home-publications" id="publications" aria-labelledby="home-publications-title">
     <div class="container wrap">
       <div class="section-bar"><h2 class="section-title" id="home-publications-title">发表论文</h2><span class="section-count">${papers.length} 篇论文</span></div>
-      <div class="publication-layout${map?' publication-layout--mapped':''}">
-        ${map}
-        <div class="home-publications-grid">${cards}</div>
-      </div>
+      <div class="home-publications-grid">${cards}</div>
+      ${map}
     </div>
   </section>`;
 }

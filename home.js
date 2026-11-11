@@ -41,7 +41,7 @@ function resumeLink(site,name,e,icon) {
   try {
     const url=new URL(site.resume,location.origin);
     if(!['http:','https:'].includes(url.protocol))return '';
-    return `<a href="${e(url.href)}" download="${e(site.resumeFilename||name+'-简历.pdf')}" class="button secondary">下载简历 ${icon('download')}</a>`;
+    return `<a href="${e(url.href)}" download="${e(site.resumeFilename||name+'-简历.pdf')}" class="home-resume-link">下载简历 ${icon('download')}</a>`;
   } catch {return '';}
 }
 
@@ -51,72 +51,72 @@ export function homeMarkup(data, {e, img, icon}) {
   const work=Array.isArray(data.workExperience)?data.workExperience:[];
   const projects=publicProjects(data.projects);
   const papers=publicationsMarkup(data,{e,icon});
-  const primary=projects.length?['#selected','浏览项目']:papers?['#publications','查看论文']:work.length?['#experience','查看工作经历']:['/portfolio/about/','查看个人简介'];
+  const awards=awardsMarkup(data,{e,icon});
+  const skills=String(a.skills||'').split(/[,，]/).map(skill=>skill.trim()).filter(Boolean);
+  const resume=resumeLink(data.site,a.name,e,icon);
   const featured=projects.slice(4).find(p=>p.cover&&p.category==='仿真分析');
   const featuredResult=featured?.simulations?.find(result=>result.src);
   const indexLinks=[
-    projects.length&&['#selected','参与项目'],
     papers&&['#publications','发表论文'],
-    work.length&&['#experience','工作经历']
+    projects.length&&['#selected','参与项目'],
+    work.length&&['#experience','工作经历'],
+    awards&&['#awards','奖项与证书']
   ].filter(Boolean);
   const contacts=[['email','邮箱','发送邮件'],['github','GitHub','访问 GitHub'],['wechat','微信','复制微信号'],['phone','手机','拨打电话'],['qq','QQ','复制 QQ 号']];
   const contactMarkup=contacts.map(([key,label,action])=>{
     const value=String(data.site[key]||'').trim();
     if(!value)return '';
-    const content=`<span>${label}</span><strong>${e(value)}</strong><span class="contact-action">${action} ${icon(key==='wechat'||key==='qq'?'link':'up')}</span>`;
+    const content=`<span class="home-contact-label">${label}</span><strong>${e(value)}</strong><span class="home-contact-action">${action}</span>`;
     if(key==='email')return `<a class="home-contact-item" href="mailto:${e(encodeURIComponent(value))}">${content}</a>`;
     if(key==='phone')return `<a class="home-contact-item" href="tel:${e(value.replace(/[^+\d]/g,''))}">${content}</a>`;
     if(key==='github')return `<a class="home-contact-item" href="https://github.com/${e(encodeURIComponent(value.replace(/^@/,'')))}" target="_blank" rel="noopener noreferrer">${content}</a>`;
     return `<button class="home-contact-item" data-contact-copy="${e(value)}">${content}</button>`;
   }).join('');
   const portrait=carouselMarkup(a,{e,icon});
-  return `<main id="main" class="home-dashboard">
-    <section class="hero home-hero${portrait?'':' home-hero--text'}" data-enter aria-labelledby="home-title">
-      <div class="container wrap home-hero-wrap">
-        <div class="home-hero-layout">
-          <div class="home-intro hero-text">
-            <h1 id="home-title" data-enter-whole>${e(a.name)}<span>的个人网站</span></h1>
-            ${a.role?`<p class="home-role">${e(a.role)}</p>`:''}
-            ${data.home.subtitle?`<p class="home-lead hero__lead">${e(data.home.subtitle)}</p>`:''}
-            <div class="home-actions hero__actions"><a class="button" href="${primary[0]}">${primary[1]} ${icon('arrow')}</a>${resumeLink(data.site,a.name,e,icon)}</div>
-          </div>
-          ${portrait?`<div class="home-portrait"><p class="home-portrait-label">个人相册</p>${portrait}</div>`:''}
+  return `<main id="main" class="home-dashboard container">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="home-intro">
+        <div>
+          <h1 id="home-title">${e(a.name)}</h1>
+          ${a.role?`<p class="home-role">${e(a.role)}</p>`:''}
+          ${data.home.subtitle?`<p class="home-lead">${e(data.home.subtitle)}</p>`:''}
         </div>
-        ${indexLinks.length?`<nav class="home-index" aria-label="首页目录">${indexLinks.map(([href,label],i)=>`<a href="${href}"><span aria-hidden="true">0${i+1}</span>${label}${icon('arrow')}</a>`).join('')}</nav>`:''}
+        ${indexLinks.length?`<nav class="home-jump-links" aria-label="首页章节">${indexLinks.map(([href,label])=>`<a href="${href}">${label}<span aria-hidden="true">↓</span></a>`).join('')}</nav>`:''}
+      </div>
+      <div class="home-overview${portrait?'':' home-overview--text'}">
+        ${portrait?`<div class="home-portrait">${portrait}</div>`:''}
+        <div class="home-center" id="profile">
+          ${education.length?`<section class="home-info" aria-labelledby="home-info-title">
+            <div class="home-panel-label"><h2 id="home-info-title">教育经历</h2><a href="/portfolio/about/">详细介绍 ${icon('up')}</a></div>
+            <div class="home-education-list">${educationMarkup(education,e)}</div>
+          </section>`:''}
+          <section class="home-skills" aria-labelledby="home-skills-title">
+            <div class="home-panel-label"><h2 id="home-skills-title">技能</h2><button class="home-text-button" data-open-skills aria-haspopup="dialog">展开技能树 ${icon('arrow')}</button></div>
+            ${skills.length?`<div class="home-skill-tags">${skills.map(skill=>`<button data-open-skills aria-haspopup="dialog" aria-label="查看${e(skill)}相关技能与实践">${e(skill)}</button>`).join('')}</div>`:''}
+          </section>
+        </div>
+        <aside class="home-sidebar" aria-label="能力与简历">
+          <section class="home-radar" aria-labelledby="home-radar-title">
+            <div class="home-panel-label"><h2 id="home-radar-title">能力雷达图</h2><a href="/portfolio/about/#skill-map" aria-label="查看完整技能图谱">${icon('up')}</a></div>
+            <div class="home-radar-canvas"></div>
+          </section>
+          ${resume?`<section class="home-resume"><div><span class="home-resume-format">PDF</span><h2>个人简历</h2></div>${resume}</section>`:''}
+        </aside>
       </div>
     </section>
+    ${papers}
     ${projects.length?`<section class="home-section home-projects" id="selected" aria-labelledby="home-projects-title">
       <div class="container wrap">
         <div class="section-bar"><h2 class="section-title" id="home-projects-title">参与项目</h2><a class="text-link" href="/portfolio/projects/">浏览项目档案 ${icon('arrow')}</a></div>
+        <div class="project-index-grid">${projects.slice(0,4).map((p,i)=>projectCard(p,{e,img,icon},i+1)).join('')}</div>
         ${featured?`<a class="home-feature" href="/portfolio/projects/${e(featured.slug)}/">
           <div class="home-feature-label"><span>${e(featured.category)}</span><h3>${e(featured.title)}</h3><p>${e(featured.summary)}</p><span class="home-feature-action">查看项目 ${icon('up')}</span></div>
           <div class="home-feature-frame" data-visual>${img(featuredResult?.src||featured.cover,featuredResult?.alt||featured.coverAlt,'home-feature-image')}</div>
         </a>`:''}
-        <div class="project-index-grid">${projects.slice(0,4).map((p,i)=>projectCard(p,{e,img,icon},i+1)).join('')}</div>
       </div>
     </section>`:''}
-    ${papers}
     ${workExperienceMarkup(work,e)}
-    <section class="home-section home-profile" id="profile" aria-labelledby="home-profile-title">
-      <div class="container wrap">
-        <h2 class="section-title" id="home-profile-title">${education.length?'教育与技能':'个人技能'}</h2>
-        <div class="home-profile-grid">
-          <div>
-            ${education.length?`<div class="home-education-list">${educationMarkup(education,e)}</div>`:''}
-            ${a.skills?`<p class="home-skill-list">${String(a.skills).split(/[,，]/).map(s=>e(s.trim())).filter(Boolean).join(' / ')}</p>`:''}
-            <button class="button secondary" data-open-skills aria-haspopup="dialog">查看技能树 ${icon('arrow')}</button>
-          </div>
-          <div class="home-radar">
-            <header class="home-radar-heading"><h3>八维能力自评</h3></header>
-            <div class="home-radar-canvas"></div>
-            <div class="home-radar-footer">
-              <a class="text-link" href="/portfolio/about/#skill-map">查看完整技能图谱 ${icon('arrow')}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    ${awardsMarkup(data,{e,icon})}
+    ${awards}
     ${contactMarkup?`<section class="home-section home-contact" id="contact" aria-labelledby="home-contact-title"><div class="container wrap"><h2 class="section-title" id="home-contact-title">联系方式</h2><div class="home-contact-grid">${contactMarkup}</div></div></section>`:''}
   </main>`;
 }
@@ -137,10 +137,14 @@ export function mountHomeDashboard(data, {e,icon}) {
   }));
   document.body.insertAdjacentHTML('beforeend',`<dialog class="viewer-dialog home-skill-dialog" id="home-skill-dialog" aria-labelledby="home-skill-dialog-title"><div class="dialog-toolbar"><div><h2 id="home-skill-dialog-title">技能与实践</h2></div><button class="dialog-close" aria-label="关闭技能弹窗" autofocus>×</button></div><div class="home-skill-dialog-body"><div class="skill-tree-panel"></div><a href="/portfolio/about/#skill-map" class="text-link">查看完整技能图谱 ${icon('arrow')}</a></div></dialog>`);
   const dialog=document.querySelector('#home-skill-dialog');
-  const opener=document.querySelector('[data-open-skills]');
+  let opener;
   mountSkillLibrary(dialog.querySelector('.skill-tree-panel'),data.skillLibrary||defaultSkillLibrary(),{e,icon});
-  opener.addEventListener('click',()=>{dialog.showModal();document.body.classList.add('dialog-open');});
+  document.querySelectorAll('[data-open-skills]').forEach(button=>button.addEventListener('click',()=>{
+    opener=button;
+    dialog.showModal();
+    document.body.classList.add('dialog-open');
+  }));
   dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();});
-  dialog.addEventListener('close',()=>{document.body.classList.remove('dialog-open');opener.focus({preventScroll:true});});
+  dialog.addEventListener('close',()=>{document.body.classList.remove('dialog-open');opener?.focus({preventScroll:true});});
 }

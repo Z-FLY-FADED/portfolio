@@ -18,7 +18,7 @@ const isProjects=path.startsWith('/projects');
 const button=(text,href,secondary=false,ico='arrow')=>`<a class="button ${secondary?'secondary':''}" href="${e(href)}">${e(text)}${icon(ico)}</a>`;
 const unavailable=(text,ico='up')=>`<button class="button secondary" data-unset="该资料暂未公开。">${e(text)}${icon(ico)}</button>`;
 const external=(label,url,cls='')=>safeUrl(url)?`<a class="${cls}" href="${safeUrl(url)}" target="_blank" rel="noopener noreferrer">${e(label)}${icon('up')}</a>`:unavailable(label);
-const logo=`<a class="brand" href="/portfolio/" aria-label="${e(data.about.name)}的首页"><span class="brand-mark" aria-hidden="true"></span><span>${e(data.about.name)}</span></a>`;
+const logo=`<a class="brand" href="/portfolio/" aria-label="${e(data.about.name)}的首页"><span class="brand-mark" aria-hidden="true">${icon('cube')}</span><span>${e(data.about.name)}的个人主页</span></a>`;
 const hasContact=['email','github','wechat','phone','qq'].some(key=>String(data.site[key]||'').trim());
 function header(){
   const links=[['/portfolio/','首页',path==='/'],['/portfolio/projects/','项目档案',isProjects],['/portfolio/about/','关于我',path==='/about']];
@@ -127,17 +127,19 @@ function about(){
     return items.length?`<div><dt>${label}</dt><dd>${items.map(e).join(' / ')}</dd></div>`:'';
   }).join('');
   return `<main id="main" class="container wrap about-page">
-    <section class="hero about-profile${portrait?'':' about-profile--text'}" data-enter aria-labelledby="about-title">
+    <section class="hero inner-hero" data-enter aria-labelledby="about-title">
+      <h1 id="about-title" data-enter-whole>关于我</h1>
+    </section>
+    <section class="about-profile${portrait?'':' about-profile--text'}" aria-labelledby="profile-name">
+      ${portrait}
       <div class="profile-copy">
-        <h1 id="about-title" data-enter-whole>关于我</h1>
-        <h2>${e(a.name)}</h2>
+        <h2 id="profile-name">${e(a.name)}</h2>
         <p class="profile-role">${e(a.role)}</p>
         ${prose(a.bio,'body-copy')}
         ${profileDetails()}
         ${lists?`<dl class="profile-fields">${lists}</dl>`:''}
         ${data.site.resume?external('查看简历',data.site.resume,'button secondary'):''}
       </div>
-      ${portrait}
     </section>
     ${hasContact?`<section class="about-contact" id="contact" aria-labelledby="about-contact-title"><h2 class="section-title" id="about-contact-title">联系方式</h2><a href="/portfolio/#contact" class="text-link">查看联系方式 ${icon('arrow')}</a></section>`:''}
   </main>`;
