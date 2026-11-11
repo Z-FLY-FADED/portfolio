@@ -47,7 +47,7 @@ function resumeLink(site,name,e,icon) {
 
 function homeProjectsMarkup(projects,{e,img,icon}) {
   if(!projects.length)return '';
-  const byCategory=new Map(['机械设计','代码开发','仿真建模','仿真分析'].map(name=>[name,[]]));
+  const byCategory=new Map(['机械设计','代码开发','仿真分析'].map(name=>[name,[]]));
   for(const project of projects){
     const category=project.category||'其他项目';
     if(!byCategory.has(category))byCategory.set(category,[]);
