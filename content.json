@@ -1748,7 +1748,7 @@
           },
           {
             "label": "长连杆",
-            "title": "长连杆能量变化",
+            "title": "长连杆仿真结果",
             "lead": "",
             "facts": [
               [
@@ -1766,23 +1766,25 @@
             "visuals": [
               {
                 "label": "长连杆",
-                "src": "/portfolio/assets/projects/liangan/long-rod.webp",
-                "alt": "长连杆的能量、接触能及能量误差曲线",
+                "src": "/portfolio/assets/projects/liangan/long-rod-fields.webp",
+                "alt": "长连杆等效应力和总变形云图",
                 "caption": "",
+                "video": "/portfolio/assets/projects/liangan/long-rod-fields.mp4",
                 "playback": "/portfolio/assets/projects/liangan/long-rod.playback.json"
               },
               {
                 "label": "长连杆（位移约束）",
-                "src": "/portfolio/assets/projects/liangan/long-rod-constrained.webp",
-                "alt": "长连杆（位移约束）的能量、接触能及能量误差曲线",
+                "src": "/portfolio/assets/projects/liangan/long-rod-constrained-fields.webp",
+                "alt": "长连杆位移约束工况的等效应力和总变形云图",
                 "caption": "",
+                "video": "/portfolio/assets/projects/liangan/long-rod-constrained-fields.mp4",
                 "playback": "/portfolio/assets/projects/liangan/long-rod-constrained.playback.json"
               }
             ]
           },
           {
             "label": "短连杆",
-            "title": "短连杆能量变化",
+            "title": "短连杆仿真结果",
             "lead": "",
             "facts": [
               [
@@ -1800,16 +1802,18 @@
             "visuals": [
               {
                 "label": "短连杆",
-                "src": "/portfolio/assets/projects/liangan/short-rod.webp",
-                "alt": "短连杆的能量、接触能及能量误差曲线",
+                "src": "/portfolio/assets/projects/liangan/short-rod-fields.webp",
+                "alt": "短连杆等效应力和总变形云图",
                 "caption": "",
+                "video": "/portfolio/assets/projects/liangan/short-rod-fields.mp4",
                 "playback": "/portfolio/assets/projects/liangan/short-rod.playback.json"
               },
               {
                 "label": "短连杆（位移约束）",
-                "src": "/portfolio/assets/projects/liangan/short-rod-constrained.webp",
-                "alt": "短连杆（位移约束）的能量、接触能及能量误差曲线",
+                "src": "/portfolio/assets/projects/liangan/short-rod-constrained-fields.webp",
+                "alt": "短连杆位移约束工况的等效应力和总变形云图",
                 "caption": "",
+                "video": "/portfolio/assets/projects/liangan/short-rod-constrained-fields.mp4",
                 "playback": "/portfolio/assets/projects/liangan/short-rod-constrained.playback.json"
               }
             ]
