@@ -442,15 +442,6 @@
           "wide": true
         },
         {
-          "src": "/portfolio/assets/projects/aerospace-logistics-car/resume-contribution.webp",
-          "alt": "项目负责人经历摘录",
-          "topic": "上位机、感知与导航",
-          "caption": "项目负责人经历",
-          "analysis": "2021 年 1 月至 2023 年 6 月，负责上位机、目标检测、激光建图与全局路径规划。",
-          "source": "个人简历 / 智能汽车竞赛项目段落",
-          "wide": true
-        },
-        {
           "src": "/portfolio/assets/awards/preview/certificate-01.webp",
           "alt": "第十六届全国大学生智能汽车竞赛全国总决赛获奖证书",
           "caption": "第十六届全国总决赛二等奖",
@@ -485,7 +476,7 @@
         }
       ],
       "simulations": [],
-      "codeDescription": "Qt 上位机封装运动指令、车辆状态与传感器数据的 TCP 双向通信。感知与导航链路分别输出信号灯检测结果、激光地图和 A* 全局路径。",
+      "codeDescription": "开发 Qt 上位机，封装 TCP 通信协议与数据解析模块，实现运动指令下发、车辆状态实时接收和传感器数据可视化。\n\n为 YOLOv5 信号灯检测模型加入训练样本增强，调整训练参数和检测后处理，并将模型部署到车载视觉模块。\n\n调试激光雷达 SLAM 建图，调整 A* 全局路径搜索策略，以减少冗余路径和规划耗时。",
       "repository": "",
       "links": [],
       "attachments": [],
@@ -517,8 +508,8 @@
           "body": "整车需联通运动控制、信号灯识别、激光建图与路径规划。上位机需向车端发送运动指令，并接收车辆状态和传感器数据。"
         },
         {
-          "title": "车端通信、感知与导航",
-          "body": "Qt 上位机下发运动指令，接收车辆状态并显示传感器数据。TCP 模块负责协议封装和数据解析。\n\n使用 YOLOv5 训练并部署信号灯检测模型，调整数据增强、模型参数和后处理。调试激光雷达 SLAM，优化 A* 搜索策略以减少冗余路径。"
+          "title": "整车联调",
+          "body": "在实车上联调上位机与车端通信，核对运动指令和车辆状态回传，并检查信号灯识别、地图和路径输出。"
         },
         {
           "title": "竞赛成绩",
@@ -526,7 +517,7 @@
         }
       ],
       "galleryTitle": "联调分工与竞赛凭证",
-      "implementationTitle": "从上位机到实车"
+      "implementationTitle": "核心代码改动"
     },
     {
       "slug": "ammonia-diesel-combustion",
