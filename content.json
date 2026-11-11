@@ -72,7 +72,7 @@
           "alt": "活塞与连杆装配",
           "topic": "缸孔与被装件",
           "caption": "活塞与连杆装配",
-          "analysis": "活塞环槽、活塞销连接区及连杆大端。",
+          "analysis": "",
           "source": "SolidWorks · piston y biela.SLDASM"
         },
         {
@@ -80,7 +80,7 @@
           "alt": "装气环组件的原始 CAD 视图",
           "caption": "四工位装气环组件",
           "topic": "压环与夹持",
-          "analysis": "四个带环槽工件沿托板布置。",
+          "analysis": "",
           "source": "SolidWorks · 装气环组件.SLDASM"
         },
         {
@@ -88,7 +88,7 @@
           "alt": "活塞环压缩器装配模型",
           "caption": "活塞环压缩器",
           "topic": "压环与夹持",
-          "analysis": "筒状约束件与侧置驱动、导向结构。",
+          "analysis": "",
           "source": "SolidWorks · 活塞环压缩器.SLDASM"
         },
         {
@@ -96,7 +96,7 @@
           "alt": "气环工装的弧形钳口与连杆",
           "topic": "压环与夹持",
           "caption": "气环工装的弧形钳口与连杆",
-          "analysis": "弧形板、销轴和带铰点的杆件。",
+          "analysis": "",
           "source": "SolidWorks · 气环工装.SLDASM"
         },
         {
@@ -120,7 +120,7 @@
           "alt": "升降机构的原始 CAD 视图",
           "caption": "升降机构支撑框架",
           "topic": "升降、调距与导向",
-          "analysis": "支撑框架、驱动件与作业侧布置。",
+          "analysis": "",
           "source": "SolidWorks · 升降机构.SLDASM"
         },
         {
@@ -137,7 +137,7 @@
           "alt": "前下滑块与弧形上件",
           "topic": "升降、调距与导向",
           "caption": "前下滑块与弧形上件",
-          "analysis": "底部通孔、端部安装面及弧形上件。",
+          "analysis": "",
           "source": "SolidWorks · 前下滑块装配bottoma.SLDASM"
         },
         {
@@ -145,7 +145,7 @@
           "alt": "侧下滑块与上方连板",
           "topic": "升降、调距与导向",
           "caption": "侧下滑块与上方连板",
-          "analysis": "侧下滑块的连板与销孔布局。",
+          "analysis": "",
           "source": "SolidWorks · 下滑块装配sidega.SLDASM"
         },
         {
@@ -236,14 +236,14 @@
                 "src": "/portfolio/assets/projects/piston-ring-station/station-index.webp",
                 "label": "总装定位",
                 "alt": "总装定位",
-                "caption": "上部执行件、活塞连杆、缸孔、弧形工装与导轨平台。",
+                "caption": "",
                 "source": "SolidWorks 零件与装配文件内嵌视图"
               },
               {
                 "label": "原始总装",
                 "src": "/portfolio/assets/projects/piston-ring-station/workstation.webp",
                 "alt": "SolidWorks 活塞环安装工作台总装，显示缸体、上方执行机构和移动底架",
-                "caption": "上下层板、立柱、工位及缸体布置。",
+                "caption": "",
                 "source": ""
               }
             ]
@@ -271,14 +271,14 @@
                 "src": "/portfolio/assets/projects/piston-ring-station/front-slider-assembly-detail.webp",
                 "label": "前滑块装配",
                 "alt": "前滑块装配",
-                "caption": "前滑块通孔、安装面与弧形上件。",
+                "caption": "",
                 "source": "SolidWorks 零件与装配文件内嵌视图"
               },
               {
                 "src": "/portfolio/assets/projects/piston-ring-station/workholding-interfaces.webp",
                 "label": "侧滑块及安装件",
                 "alt": "侧滑块及安装件",
-                "caption": "侧滑块、工装座与连接轴。",
+                "caption": "",
                 "source": "SolidWorks 零件与装配文件内嵌视图"
               },
               {
@@ -409,7 +409,7 @@
                 "src": "/portfolio/assets/projects/piston-ring-station/station-index.webp",
                 "label": "总装定位",
                 "alt": "总装定位",
-                "caption": "上部执行件、活塞连杆、缸孔、弧形工装与导轨平台。",
+                "caption": "",
                 "source": "SolidWorks 零件与装配文件内嵌视图"
               }
             ]
@@ -760,7 +760,7 @@
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/combustion-domain-model.webp",
                 "label": "计算域三维",
                 "alt": "计算域三维",
-                "caption": "缸套、顶面、活塞及进排气道。",
+                "caption": "",
                 "source": "CONVERGE 样例 surface.dat、boundary.in",
                 "scene": "/portfolio/assets/projects/ammonia-diesel-combustion/combustion-domain.scene.json"
               },
@@ -1081,7 +1081,7 @@
                 "src": "/portfolio/assets/projects/bms-thermal-model/idf-board-model.webp",
                 "label": "IDF 板级三维",
                 "alt": "IDF 板级三维",
-                "caption": "板基材、正背面封装与缺高器件。",
+                "caption": "",
                 "source": "Altium 导出 B.brd 与 B.pro / IDF 3.0",
                 "scene": "/portfolio/assets/projects/bms-thermal-model/idf-board.scene.json"
               },
@@ -1799,14 +1799,14 @@
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/atr-reactor-clean.webp",
           "alt": "重绘的反应器出口温度和产氢曲线",
-          "caption": "温度曲线默认留空 162 个限幅点。",
+          "caption": "",
           "label": "温度与产氢",
           "playback": "/portfolio/assets/projects/dme-atr-simulink/atr-reactor-clean.playback.json"
         },
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/atr-feed-timeseries.webp",
           "alt": "原版 FeedMixer 的二甲醚、蒸汽和氧气出口流量",
-          "caption": "每路 3,001 个同步采样点。",
+          "caption": "",
           "label": "三路进料",
           "playback": "/portfolio/assets/projects/dme-atr-simulink/atr-feed-timeseries.playback.json"
         },

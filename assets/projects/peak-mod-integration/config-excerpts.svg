@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
   <title id="title">PEAK 模组整合包配置摘录</title>
   <desc id="desc">多人插件配置 MaxPlayers 为 20，翻译插件目标语言为 zh，启用 UGUI 和 TextMeshPro。</desc>
-  <rect width="1200" height="580" fill="#edf0f4"/>
+  <rect width="1200" height="520" fill="#edf0f4"/>
   <g fill="#23354f" font-family="Microsoft YaHei, PingFang SC, sans-serif">
     <text x="55" y="61" font-size="18" letter-spacing="2" fill="#465b78">PEAK / CONFIGURATION</text>
     <text x="55" y="119" font-size="41" font-weight="600">多人房间与中文界面配置</text>
@@ -20,6 +20,5 @@
         <text x="645" y="426">EnableTextMeshPro=<tspan fill="#2354b0">True</tspan></text>
       </g>
     </g>
-    <text x="55" y="536" font-size="18" fill="#465b78">20 为人数上限设定值，未进行联机压力测试。</text>
   </g>
 </svg>
