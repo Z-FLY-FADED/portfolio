@@ -385,7 +385,6 @@ a.home-contact-item:hover, button.home-contact-item:hover { border-color: #a4c6f
 .project-case .evidence-caption { color: var(--ink); padding: 8px 0 14px; }
 .project-case .evidence-caption strong { display: block; margin-bottom: 3px; font-weight: 620; }
 .project-case .evidence-caption p { margin: 0; font-size: inherit; line-height: 1.7; }
-.project-case .evidence-caption small { display: block; margin-top: 6px; color: var(--muted); font-size: .76rem; }
 .project-case .model-viewer figcaption { margin: 0; padding: .8em 1.1em; border-top: 1px solid var(--line); }
 .project-case .body-copy + .body-copy { margin-top: 1em; }
 .project-case .detail-section .body-copy { color: #354f6f; }

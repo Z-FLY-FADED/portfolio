@@ -103,7 +103,7 @@ function buildPlayback(host, data) {
       <canvas role="img" aria-label="${e(panel.label)}曲线"></canvas>
       ${panel.reference ? `<p class="trace-reference">${e(panel.reference.label)}</p>` : ''}
     </div>`).join('')}</div>
-    <div class="trace-source"><p>${e(data.source)}</p>${data.note ? `<p>${e(data.note)}</p>` : ''}</div>
+    ${data.note ? `<p class="trace-note">${e(data.note)}</p>` : ''}
   </div>`;
   const play = host.querySelector('.trace-play');
   const plots = [...host.querySelectorAll('.trace-panel')].map((element, i) => {

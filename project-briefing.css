@@ -126,7 +126,6 @@
   padding: 9px 0 0;
 }
 .project-briefing .br-caption p, .project-briefing .br-model-status { margin: 0; font-size: .85rem; line-height: 1.65; }
-.project-briefing .br-caption small { display: block; margin-top: 3px; color: var(--br-muted); font-size: .76rem; }
 .project-briefing .br-caption button { flex-shrink: 0; }
 .project-briefing .br-model-status { color: var(--br-muted); margin-top: 6px; }
 .project-briefing .br-navigation {

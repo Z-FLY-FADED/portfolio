@@ -61,7 +61,6 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
     const modelAvailable = view.scene && loadScene && mountModel;
     const interactive = view.playback && mountPlayback;
     const description = view.caption?.trim() === view.label?.trim() ? '' : view.caption?.trim();
-    const details = description || view.source;
     const mediaActions = `${modelAvailable ? `<button type="button" data-br-model-mode>${modelMode ? '图示' : '旋转模型'}</button>` : ''}
       ${interactive ? '<button type="button" data-br-interactive aria-expanded="false">查看动态曲线</button>' : animation && !modelAvailable ? '<button type="button" data-br-playback>播放 GIF</button>' : ''}`.trim();
     media.innerHTML = `
@@ -71,8 +70,8 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
       <div class="br-media-model" data-br-model>
         <button class="br-picture" type="button" data-br-zoom aria-label="放大图档 ${e(view.alt)}"><img src="${e(path)}" alt="${e(view.alt)}"></button>
       </div>
-      ${details || mediaActions ? `<div class="br-caption">
-        ${details ? `<div>${description ? `<p>${e(description)}</p>` : ''}${view.source ? `<small>${e(view.source)}</small>` : ''}</div>` : ''}
+      ${description || mediaActions ? `<div class="br-caption">
+        ${description ? `<p>${e(description)}</p>` : ''}
         ${mediaActions}
       </div>` : ''}
       ${interactive ? '<div class="trace-slot" hidden></div>' : ''}

@@ -46,8 +46,9 @@ function galleryMarkup(items){
   }
   return [...groups].map(([topic,group])=>{
     const figures=group.map(item=>{
-      const description=item.analysis||item.source
-        ?`<figcaption class="evidence-caption">${item.caption?`<strong data-evidence-title>${e(item.caption)}</strong>`:''}${detailCopy(item.analysis)}${item.source?`<small>${e(item.source)}</small>`:''}</figcaption>`
+      const analysis=detailCopy(item.analysis);
+      const description=analysis
+        ?`<figcaption class="evidence-caption">${item.caption?`<strong data-evidence-title>${e(item.caption)}</strong>`:''}${analysis}</figcaption>`
         :caption(item.caption);
       return `<figure${item.wide?' class="gallery-wide"':''}>${img(item.src,item.alt)}${description}</figure>`;
     }).join('');

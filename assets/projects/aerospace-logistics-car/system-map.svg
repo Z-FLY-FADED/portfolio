@@ -21,6 +21,5 @@
       <path d="M291 228h92" marker-start="url(#arrow)"/><path d="M675 228h92" marker-start="url(#arrow)"/>
       <path d="M291 351h92"/><path d="M675 351h92"/><path d="M291 474h92"/><path d="M675 474h92"/>
     </g>
-    <text x="55" y="556" font-size="16" fill="#465b78">根据项目经历绘制，表示功能分工。</text>
   </g>
 </svg>

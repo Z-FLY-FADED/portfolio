@@ -20,6 +20,6 @@
         <text x="645" y="426">EnableTextMeshPro=<tspan fill="#2354b0">True</tspan></text>
       </g>
     </g>
-    <text x="55" y="536" font-size="18" fill="#465b78">摘自整合包配置。20 为人数上限设定值，未进行联机压力测试。</text>
+    <text x="55" y="536" font-size="18" fill="#465b78">20 为人数上限设定值，未进行联机压力测试。</text>
   </g>
 </svg>

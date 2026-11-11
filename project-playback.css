@@ -49,8 +49,7 @@
 .trace-facts div { flex: 1 1 120px; min-width: 0; overflow-wrap: anywhere; }
 .trace-facts dt { font-size: .75rem; color: #42665b; }
 .trace-facts dd { font-weight: 700; }
-.trace-source { padding-top: 8px; font-size: .78rem; color: #455f57; overflow-wrap: anywhere; }
-.trace-source p + p { margin-top: 5px; }
+.trace-note { padding-top: 8px; font-size: .78rem; color: #455f57; overflow-wrap: anywhere; }
 .trace-status { padding: 8px 0; margin: 0; font-size: .85rem; }
 .simulation .trace-poster img { display: block; width: 100%; height: auto; }
 .simulation [role="tabpanel"]:has(.trace-player) > p { display: none; }
