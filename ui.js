@@ -51,18 +51,39 @@ export function enhanceExperience(data,{e,img,icon},project) {
       ? `<a class="button secondary project-source-download" href="${e(source.url)}" download="${e(project.slug)}.zip" data-source-download>${icon('download')} ${e(source.label||'下载源文件')}</a>`
       : project.sourceArchivePending ? '<span class="project-source-pending">工程源文件待补充</span>' : '';
     document.querySelector('.detail-top').insertAdjacentHTML('beforeend',`<div class="detail-utilities">${sourceLink}${newTab('新标签页打开本项目',location.pathname+location.search)}</div>`);
-    const hasPlayback=project.simulations.some(item=>item.playback);
-    const simulations=['module-5','sim',hasPlayback?'数据回放':'仿真展示'];
-    const quickLinks=[...(hasPlayback?[simulations]:[]),['project-briefing','grid','项目汇报'],['module-3','cube','三维模型'],['module-4','grid','项目图档'],...(!hasPlayback?[simulations]:[]),['module-6','code','技术实现']]
+    const quickLinks=[['module-6','code','技术实现'],['module-3','cube','三维模型'],['module-4','grid','项目图档'],['module-5','sim','仿真数据'],['project-briefing','grid','项目汇报']]
       .filter(([id])=>document.getElementById(id))
       .map(([id,mark,label])=>`<a href="#${id}">${icon(mark)} ${label}</a>`).join('');
     if(quickLinks)document.querySelector('.detail-heading .tags').insertAdjacentHTML('afterend',`<div class="detail-quick-links">${quickLinks}</div>`);
     document.querySelector('.header').insertAdjacentHTML('beforeend','<div class="reading-progress" aria-hidden="true"><span></span></div>');
-    const progress=document.querySelector('.reading-progress>span');let queued=false;
-    const updateProgress=()=>{const height=document.documentElement.scrollHeight-innerHeight;progress.style.width=(height>0?Math.min(100,Math.max(0,scrollY/height*100)):0)+'%';queued=false;};
-    addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(updateProgress);}},{passive:true});addEventListener('resize',updateProgress);updateProgress();
+    const progress=document.querySelector('.reading-progress>span');
     const links=[...document.querySelectorAll('.detail-toc>a')];
-    if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting){for(const link of links){const current=link.hash==='#'+entry.target.id;link.classList.toggle('current-section',current);if(current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');}}},{rootMargin:'-12% 0px -65% 0px'});document.querySelectorAll('.detail-section').forEach(section=>observer.observe(section));}
+    const sections=links.map(link=>document.getElementById(link.hash.slice(1)));
+    let queued=false;
+    let activeLink;
+    function updateProgress(){
+      const height=document.documentElement.scrollHeight-innerHeight;
+      progress.style.width=(height>0?Math.min(100,Math.max(0,scrollY/height*100)):0)+'%';
+      const guide=(parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)||0)+24;
+      const index=height>0&&scrollY>=height-2?sections.length-1:sections.findLastIndex(section=>section.getBoundingClientRect().top<=guide);
+      const next=links[index];
+      if(next!==activeLink){
+        activeLink?.classList.remove('current-section');
+        activeLink?.removeAttribute('aria-current');
+        next?.classList.add('current-section');
+        next?.setAttribute('aria-current','location');
+        activeLink=next;
+      }
+      queued=false;
+    }
+    const queueProgress=()=>{
+      if(queued)return;
+      queued=true;
+      requestAnimationFrame(updateProgress);
+    };
+    addEventListener('scroll',queueProgress,{passive:true});
+    addEventListener('resize',queueProgress);
+    updateProgress();
   }
   document.querySelectorAll('.image-gallery figure,.detail-cover,.model-viewer,.simulation [role="tabpanel"]:not(:has(.project-trace)),.trace-poster').forEach(container=>{
     const image=container.querySelector('img');if(!image)return;

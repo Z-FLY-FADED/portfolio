@@ -381,7 +381,7 @@ a.home-contact-item:hover, button.home-contact-item:hover { border-color: #a4c6f
 .project-case .model-viewer figcaption { font-size: .82rem; line-height: 1.65; }
 .project-case .evidence-set { margin-top: clamp(22px, 4vw, 38px); }
 .project-case .evidence-set + .evidence-set { padding-top: 18px; border-top: 1px solid var(--line); }
-.project-case .evidence-set > h3 { margin: 0 0 12px; color: var(--ink); font-size: 1.03rem; }
+.project-case .evidence-set > h4 { margin: 0 0 12px; color: var(--ink); font-size: 1.03rem; }
 .project-case .evidence-caption { color: var(--ink); padding: 8px 0 14px; }
 .project-case .evidence-caption strong { display: block; margin-bottom: 3px; font-weight: 620; }
 .project-case .evidence-caption p { margin: 0; font-size: inherit; line-height: 1.7; }
@@ -436,6 +436,11 @@ a.home-contact-item:hover, button.home-contact-item:hover { border-color: #a4c6f
 .meta-grid p { font-size: 14px; }
 .detail-section .body-copy { font-size: 16px; line-height: 1.85; }
 .detail-section h2 { font-size: clamp(24px, 2.3vw, 33px); }
+.detail-subheading { margin: 0 0 12px; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.45; }
+.detail-subsection { margin-top: clamp(22px, 3vw, 36px); }
+.detail-subsection > .evidence-set:first-of-type { margin-top: 0; }
+.detail-section > .project-briefing:last-child { margin-bottom: 0; }
+.repo-card strong { display: block; margin-bottom: 4px; font-size: 15px; }
 .image-expand, .dialog-close { min-width: 44px; min-height: 44px; }
 .reading-progress > span { background: var(--blue); }
 

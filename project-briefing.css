@@ -28,7 +28,7 @@
   padding: 20px clamp(16px, 3vw, 32px);
   border-bottom: 1px solid var(--br-rule);
 }
-.project-briefing .br-heading h2 { margin: 3px 0 0; font-size: clamp(24px, 2.8vw, 34px); line-height: 1.2; }
+.project-briefing .br-heading h3 { margin: 3px 0 0; font-size: clamp(22px, 2.4vw, 29px); line-height: 1.2; }
 .project-briefing .br-eyebrow {
   margin: 0;
   color: var(--br-accent);
@@ -74,7 +74,7 @@
   padding: clamp(16px, 3vw, 32px);
 }
 .project-briefing .br-copy { min-width: 0; }
-.project-briefing .br-copy h3 { margin: 7px 0 12px; font-size: clamp(21px, 2.4vw, 30px); line-height: 1.35; }
+.project-briefing .br-copy h4 { margin: 7px 0 12px; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.35; }
 .project-briefing .br-lead { margin: 0; font-size: .96rem; line-height: 1.72; }
 .project-briefing .br-facts {
   display: grid;

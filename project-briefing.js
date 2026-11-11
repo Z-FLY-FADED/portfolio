@@ -75,7 +75,7 @@ function bindBriefingVideo(media, source) {
 export function projectBriefingMarkup() {
   return `<section id="project-briefing" class="project-briefing" aria-labelledby="project-briefing-title">
     <div class="br-heading">
-      <h2 id="project-briefing-title">项目汇报</h2>
+      <h3 id="project-briefing-title">项目汇报</h3>
       <button type="button" data-br-fullscreen hidden>全屏讲解</button>
     </div>
     <div class="br-stages" role="tablist" aria-label="汇报章节"></div>
@@ -230,7 +230,7 @@ export function mountProjectBriefing(root, briefing, { imageUrl, loadScene, moun
     panel.innerHTML = `<div class="br-layout">
       <div class="br-media" data-br-media></div>
       <div class="br-copy">
-        <h3>${e(stage.title)}</h3>
+        <h4>${e(stage.title)}</h4>
         ${stage.lead ? `<p class="br-lead">${e(stage.lead)}</p>` : ''}
         ${stage.facts?.length ? `<dl class="br-facts">${stage.facts.map(([label, value]) => `<div><dt>${e(label)}</dt><dd>${e(value)}</dd></div>`).join('')}</dl>` : ''}
         ${stage.points?.length ? `<ul class="br-points">${stage.points.map(point => `<li>${e(point)}</li>`).join('')}</ul>` : ''}

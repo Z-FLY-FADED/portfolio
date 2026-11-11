@@ -53,7 +53,7 @@ function galleryMarkup(items){
       return `<figure${item.wide?' class="gallery-wide"':''}>${img(item.src,item.alt)}${description}</figure>`;
     }).join('');
     const grid=`<div class="image-gallery">${figures}</div>`;
-    return topic?`<div class="evidence-set"><h3>${e(topic)}</h3>${grid}</div>`:grid;
+    return topic?`<div class="evidence-set"><h4>${e(topic)}</h4>${grid}</div>`:grid;
   }).join('');
 }
 function model(p){
@@ -70,7 +70,6 @@ function simulationMarkup(items){
 function detail(p){
   const publicRecords=publicProjects(data.projects);
   const template=!publicRecords.includes(p);
-  const hasPlayback=p.simulations.some(item=>item.playback);
   const records=template?data.projects:publicRecords;
   const category=!template&&new URLSearchParams(location.search).get('category')===p.category?p.category:'';
   const archive=projectArchiveHref(category);
@@ -79,36 +78,40 @@ function detail(p){
   const returnLabel=`返回${category||'项目'}列表`;
   const number=i=>String(i+1).padStart(2,'0');
   const modules=[];
-  const add=(id,title,short,body)=>modules.push({id:`module-${id}`,title,short,body});
-  const note=(i,id,short)=>{
-    const section=p.sections[i];
-    if(section?.title)add(id,section.title,section.shortTitle||short,detailCopy(section.body));
+  const add=(id,title,body)=>{
+    if(body||template)modules.push({id:`module-${id}`,title,body});
   };
-  const addSimulation=()=>add(5,p.simulationTitle||'仿真结果展示',hasPlayback?'仿真数据回放':'仿真展示',simulationMarkup(p.simulations));
-  if(hasPlayback)addSimulation();
-  note(0,0,'项目背景');
-  note(1,1,'目标与约束');
-  note(2,2,'实施过程');
-  if(p.modelImage||safeUrl(p.viewerUrl,true))add(3,'三维模型','三维模型',model(p));
-  if(p.gallery.length)add(4,p.galleryTitle||'工程图与设计过程',template?'工程图与过程':'项目图档',galleryMarkup(p.gallery));
-  if(p.simulations.length&&!hasPlayback)addSimulation();
-  if(template||p.repository||detailCopy(p.codeDescription)){
-    const repository=(template||safeUrl(p.repository))?`<div class="repo-card">${icon('code')}<div><h3>公开代码仓库</h3><p>源代码、使用说明与运行环境</p></div>${external('查看仓库',p.repository,'text-link')}</div>`:'';
-    add(6,p.implementationTitle||'代码与技术实现','技术实现',detailCopy(p.codeDescription)+repository);
-  }
-  note(3,7,'成果与验证');
-  note(4,8,'个人贡献');
-  if(template||p.links.length||p.attachments?.length)add(9,'相关资料','相关资料',`<div class="resource-links">${p.links.length?p.links.map(l=>external(l.label,l.url,'text-link')).join(''):template?unavailable('暂无公开资料','link'):''}</div>`);
+  const subheading=title=>title&&!isEditorialPlaceholder(title)?`<h3 class="detail-subheading">${e(title)}</h3>`:'';
+  const note=(index,heading)=>{
+    const section=p.sections[index];
+    const copy=detailCopy(section?.body);
+    return copy?(section.title===heading?'':subheading(section.title))+copy:'';
+  };
+  const subsection=(id,title,body)=>`<section class="detail-subsection" id="module-${id}">${subheading(title)}${body}</section>`;
+  const briefing=p.briefing?.stages?.length?projectBriefingMarkup():'';
+  const hasSimulation=p.simulations.length>0;
+  const visuals=p.modelImage||safeUrl(p.viewerUrl,true)?subsection(3,'三维模型',model(p)):'';
+  const drawings=p.gallery.length?subsection(4,p.galleryTitle||'项目图档',galleryMarkup(p.gallery)):'';
+  const code=detailCopy(p.codeDescription);
+  const repository=(template||safeUrl(p.repository))?`<div class="repo-card">${icon('code')}<div><strong>公开代码仓库</strong><p>源代码、使用说明与运行环境</p></div>${external('查看仓库',p.repository,'text-link')}</div>`:'';
+  const implementation=code||repository?subsection(6,p.implementationTitle||'代码与技术实现',code+repository):'';
+  add(0,'项目背景',note(0,'项目背景'));
+  add(1,'目标与约束',note(1,'目标与约束'));
+  add(2,'实施过程',note(2,'实施过程')+implementation+visuals+drawings+(hasSimulation?'':briefing));
+  if(hasSimulation)add(5,'仿真数据',subheading(p.simulationTitle)+simulationMarkup(p.simulations)+briefing);
+  add(7,'成果与验证',note(3,'成果与验证'));
+  add(8,'个人贡献',note(4,'个人贡献'));
+  const resources=template||p.links.length||p.attachments?.length?`<section class="detail-section reveal" id="module-9"><h2>相关资料</h2><div class="resource-links">${p.links.length?p.links.map(l=>external(l.label,l.url,'text-link')).join(''):template?unavailable('暂无公开资料','link'):''}</div></section>`:'';
   const facts=[['项目时间',p.time],['个人角色',p.role],['使用工具',p.tools]].filter(([,value])=>String(value??'').trim());
   const adjacent=(record,label)=>record?`<a href="${e(projectHref(record.slug,category))}"><small>${label}</small><span>${e(record.title)}</span></a>`:'';
   return `<main id="main" class="container detail${template?'':' project-case'}">
     <div class="detail-top"><a class="breadcrumb" href="${e(archive)}">← ${e(returnLabel)}</a></div>
     <section class="detail-heading hero" data-enter><div><p class="eyebrow">${e(p.category)}</p><h1 data-enter-whole>${e(p.title)}</h1>${prose(p.summary)}<div class="tags">${p.tags.map(t=>`<span>${e(t)}</span>`).join('')}</div></div></section>
-    ${p.briefing?.stages?.length?projectBriefingMarkup():p.cover?`<figure class="detail-cover reveal">${img(p.cover,p.coverAlt)}${caption(p.coverCaption)}</figure>`:''}
+    ${!briefing&&p.cover?`<figure class="detail-cover reveal">${img(p.cover,p.coverAlt)}${caption(p.coverCaption)}</figure>`:''}
     ${facts.length?`<section class="meta-grid reveal" aria-label="项目信息">${facts.map(([label,value])=>`<div><span>${label}</span><p>${e(value)}</p></div>`).join('')}</section>`:''}
     <div class="detail-layout">
-      <aside class="detail-toc" aria-label="项目目录"><p>项目目录</p>${modules.map((item,i)=>`<a href="#${item.id}"><span>${number(i)}</span>${e(item.short)}</a>`).join('')}</aside>
-      <div class="detail-body">${modules.map(item=>`<section class="detail-section reveal" id="${item.id}"><h2>${e(item.title)}</h2>${item.body}</section>`).join('')}</div>
+      <aside class="detail-toc" aria-label="项目目录"><p>项目目录</p>${modules.map((item,i)=>`<a href="#${item.id}"><span aria-hidden="true">${number(i)}</span>${e(item.title)}</a>`).join('')}</aside>
+      <div class="detail-body">${modules.map(item=>`<section class="detail-section reveal" id="${item.id}"><h2>${e(item.title)}</h2>${item.body}</section>`).join('')}${resources}</div>
     </div>
     <nav class="project-pagination" aria-label="相邻项目">${adjacent(neighbors[neighborIndex-1],'← 上一个项目')||'<span></span>'}${adjacent(neighbors[neighborIndex+1],'下一个项目 →')||`<a href="${e(archive)}"><span>${e(returnLabel)} →</span></a>`}</nav>
   </main>`;
