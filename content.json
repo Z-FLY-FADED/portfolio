@@ -671,7 +671,7 @@
       "cover": "/portfolio/assets/projects/ammonia-diesel-combustion/sample-thermodynamics.webp",
       "coverAlt": "归档样例上止点附近的缸内压力、全域压力与缸内累计放热曲线",
       "coverCaption": "缸压与累计放热 · 25 MPa 比较线",
-      "time": "2025.03（样例运行记录）",
+      "time": "2025.03",
       "role": "燃烧室建模与仿真分析",
       "tools": "CONVERGE 3.0.17 / GT-Power",
       "status": "算例、参数方案与交接说明",
