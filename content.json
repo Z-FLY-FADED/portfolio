@@ -55,6 +55,9 @@
   "projects": [
     {
       "slug": "piston-ring-station",
+      "sourceArchive": {
+        "url": "/portfolio/files/project-sources/piston-ring-station.zip"
+      },
       "modelImage": "",
       "modelAlt": "",
       "viewerUrl": "",
@@ -419,6 +422,7 @@
     },
     {
       "slug": "aerospace-logistics-car",
+      "sourceArchivePending": true,
       "modelImage": "",
       "modelAlt": "",
       "viewerUrl": "",
@@ -534,6 +538,9 @@
     },
     {
       "slug": "ammonia-diesel-combustion",
+      "sourceArchive": {
+        "url": "/portfolio/files/project-sources/ammonia-diesel-combustion.zip"
+      },
       "modelImage": "",
       "modelAlt": "",
       "viewerUrl": "",
@@ -889,6 +896,9 @@
     },
     {
       "slug": "bms-thermal-model",
+      "sourceArchive": {
+        "url": "/portfolio/files/project-sources/bms-thermal-model.zip"
+      },
       "modelImage": "",
       "modelAlt": "",
       "viewerUrl": "",
@@ -1199,6 +1209,9 @@
     },
     {
       "slug": "tooling-static-fea",
+      "sourceArchive": {
+        "url": "/portfolio/files/project-sources/tooling-static-fea.zip"
+      },
       "modelImage": "",
       "modelAlt": "",
       "viewerUrl": "",
@@ -1585,6 +1598,10 @@
     },
     {
       "slug": "peak-mod-integration",
+      "sourceArchive": {
+        "url": "/portfolio/files/project-sources/peak-mod-integration.zip",
+        "label": "下载配置源文件"
+      },
       "modelImage": "",
       "modelAlt": "",
       "viewerUrl": "",
@@ -1683,6 +1700,9 @@
     },
     {
       "slug": "dme-atr-simulink",
+      "sourceArchive": {
+        "url": "/portfolio/files/project-sources/dme-atr-simulink.zip"
+      },
       "title": "车载二甲醚重整制氢与电堆耦合模型",
       "category": "仿真分析",
       "tags": [

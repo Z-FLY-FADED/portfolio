@@ -102,7 +102,7 @@ function detail(p){
   const facts=[['项目时间',p.time],['个人角色',p.role],['使用工具',p.tools]].filter(([,value])=>String(value??'').trim());
   const adjacent=(record,label)=>record?`<a href="${e(projectHref(record.slug,category))}"><small>${label}</small><span>${e(record.title)}</span></a>`:'';
   return `<main id="main" class="container detail${template?'':' project-case'}">
-    <a class="breadcrumb" href="${e(archive)}">← ${e(returnLabel)}</a>
+    <div class="detail-top"><a class="breadcrumb" href="${e(archive)}">← ${e(returnLabel)}</a></div>
     <section class="detail-heading hero" data-enter><div><p class="eyebrow">${e(p.category)}</p><h1 data-enter-whole>${e(p.title)}</h1>${prose(p.summary)}<div class="tags">${p.tags.map(t=>`<span>${e(t)}</span>`).join('')}</div></div></section>
     ${p.briefing?.stages?.length?projectBriefingMarkup():p.cover?`<figure class="detail-cover reveal">${img(p.cover,p.coverAlt)}${caption(p.coverCaption)}</figure>`:''}
     ${facts.length?`<section class="meta-grid reveal" aria-label="项目信息">${facts.map(([label,value])=>`<div><span>${label}</span><p>${e(value)}</p></div>`).join('')}</section>`:''}

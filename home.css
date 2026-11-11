@@ -406,7 +406,17 @@ a.home-contact-item:hover, button.home-contact-item:hover { border-color: #a4c6f
 
 .detail.container { width: min(1120px, calc(100% - 2 * var(--edge))); }
 .project-case :is(.detail-section, .project-briefing) { scroll-margin-top: 0; }
-.breadcrumb { align-items: center; min-height: 44px; margin-top: clamp(16px, 3vw, 40px); color: var(--blue); font-size: 14px; }
+.detail-top { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; margin-top: clamp(16px,3vw,40px); }
+.detail-top .breadcrumb { align-items: center; min-height: 44px; margin-top: 0; color: var(--blue); font-size: 14px; }
+.detail-top .detail-utilities { flex-direction: column; align-items: flex-end; gap: 3px; padding: 0; margin-inline-start: auto; }
+.detail-top .project-source-download { min-height: 44px; gap: 8px; color: var(--blue); border-color: #ccdbee; background: #f3f7fc; font-size: 14px; }
+.detail-top .project-source-download:hover { border-color: var(--blue); background: var(--pale); }
+.detail-top .project-source-download .icon { width: 17px; height: 17px; }
+.project-source-pending { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); font-size: 13px; }
+@media (max-width: 360px) {
+  .detail-top { column-gap: 6px; }
+  .detail-top .project-source-download { padding-inline: 12px; }
+}
 .detail-heading { padding-block: clamp(24px, 5vw, 58px); }
 .detail-heading h1 { font-size: clamp(29px, 3.6vw, 44px); }
 .detail-heading > div > p:not(.eyebrow) { margin: 17px 0 20px; font-size: 16px; max-width: 64ch; }
@@ -422,7 +432,6 @@ a.home-contact-item:hover, button.home-contact-item:hover { border-color: #a4c6f
 .detail-toc > a { align-items: center; font-size: 14px; color: var(--muted); }
 .detail-toc > a.current-section { color: var(--blue); background: var(--pale); }
 .detail-toc > p, .meta-grid > div > span, .detail-utilities, .detail-utilities .utility-link { font-size: 13px; color: var(--muted); }
-.project-case .detail-utilities { justify-content: flex-end; }
 .project-case :is(.simulation, .model-viewer, .image-gallery figure) { border-radius: var(--frame-radius); }
 .meta-grid p { font-size: 14px; }
 .detail-section .body-copy { font-size: 16px; line-height: 1.85; }

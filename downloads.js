@@ -11,7 +11,7 @@ export function mountDownloads(data,{e,icon},project){
   if(dialog){const observer=new MutationObserver(()=>{const caption=dialog.querySelector('.lightbox-caption');if(!caption||caption.querySelector('[data-image-download]'))return;const image=dialog.querySelector('.lightbox-image>img'),href=safe(image?.getAttribute('src'));if(href)caption.insertAdjacentHTML('beforeend',`<a data-image-download class="utility-link" href="${e(downloadUrl(href,''))}" download>${icon('download')}下载图片</a>`);});observer.observe(dialog.querySelector('.dialog-body'),{childList:true});}
   document.addEventListener('click',async event=>{
     const link=event.target.closest('a[download],a[data-document-view]');
-    if(!link||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+    if(!link||link.hasAttribute('data-source-download')||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
     const url=new URL(link.href);
     if(!['http:','https:'].includes(url.protocol))return;
     event.preventDefault();

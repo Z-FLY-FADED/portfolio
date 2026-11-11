@@ -45,7 +45,12 @@ export function enhanceExperience(data,{e,img,icon},project) {
   // These controls are native anchors; opening a new tab happens only on a visitor's click.
   const newTab=(label,href)=>{let url;try{url=new URL(href,location.origin);if(!['http:','https:'].includes(url.protocol))return '';}catch{return '';}return `<a class="utility-link" href="${e(url.href)}" target="_blank" rel="noopener noreferrer">${icon('up')}${e(label)}<span class="sr-only">（新标签页）</span></a>`;};
   if(project){
-    document.querySelector('.breadcrumb').insertAdjacentHTML('afterend',`<div class="detail-utilities">${newTab('新标签页打开本项目',location.pathname+location.search)}</div>`);
+    const source=project.sourceArchive;
+    const archivePath=new URL(`./files/project-sources/${project.slug}.zip`,import.meta.url).pathname;
+    const sourceLink=source?.url===archivePath
+      ? `<a class="button secondary project-source-download" href="${e(source.url)}" download="${e(project.slug)}.zip" data-source-download>${icon('download')} ${e(source.label||'下载源文件')}</a>`
+      : project.sourceArchivePending ? '<span class="project-source-pending">工程源文件待补充</span>' : '';
+    document.querySelector('.detail-top').insertAdjacentHTML('beforeend',`<div class="detail-utilities">${sourceLink}${newTab('新标签页打开本项目',location.pathname+location.search)}</div>`);
     const hasPlayback=project.simulations.some(item=>item.playback);
     const simulations=['module-5','sim',hasPlayback?'数据回放':'仿真展示'];
     const quickLinks=[...(hasPlayback?[simulations]:[]),['project-briefing','grid','项目汇报'],['module-3','cube','三维模型'],['module-4','grid','项目图档'],...(!hasPlayback?[simulations]:[]),['module-6','code','技术实现']]
