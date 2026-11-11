@@ -100,7 +100,6 @@ function detail(p){
   add(2,'实施过程',note(2,'实施过程')+implementation+visuals+drawings+(hasSimulation?'':briefing));
   if(hasSimulation)add(5,'仿真数据',subheading(p.simulationTitle)+simulationMarkup(p.simulations)+briefing);
   add(7,'成果与验证',note(3,'成果与验证'));
-  add(8,'个人贡献',note(4,'个人贡献'));
   const resources=template||p.links.length||p.attachments?.length?`<section class="detail-section reveal" id="module-9"><h2>相关资料</h2><div class="resource-links">${p.links.length?p.links.map(l=>external(l.label,l.url,'text-link')).join(''):template?unavailable('暂无公开资料','link'):''}</div></section>`:'';
   const facts=[['项目时间',p.time],['个人角色',p.role],['使用工具',p.tools]].filter(([,value])=>String(value??'').trim());
   const adjacent=(record,label)=>record?`<a href="${e(projectHref(record.slug,category))}"><small>${label}</small><span>${e(record.title)}</span></a>`:'';

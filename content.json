@@ -203,10 +203,6 @@
         {
           "title": "试装方案",
           "body": "空载核对升降行程、调距极限和运动间隙。带件核对夹持姿态、入缸对中和气环通过性。配合公差、入缸力和节拍待图纸或实测确认。"
-        },
-        {
-          "title": "个人贡献",
-          "body": "完成压环、夹持、升降和调距的子装配划分及总装集成，核对孔位、安装面和运动间隙。"
         }
       ],
       "galleryTitle": "从定位基准到执行机构",
@@ -527,10 +523,6 @@
         {
           "title": "竞赛成绩",
           "body": "第十六届航天智慧物流组北区赛一等奖、全国总决赛二等奖。第十七届同组别中国南区赛二等奖。"
-        },
-        {
-          "title": "个人贡献",
-          "body": "负责 4 人团队的需求文档、方案评审与进度跟踪，开发 Qt 上位机和通信协议，完成检测模型训练部署、导航调试及整车联调。"
         }
       ],
       "galleryTitle": "联调分工与竞赛凭证",
@@ -691,10 +683,6 @@
         {
           "title": "仿真结果",
           "body": "缸内峰值压力 29.91 MPa（+7.71°CA），平均温度峰值 2,212 K（+15.23°CA），末点累计放热 12.48 kJ。全域压力峰值 4.97 MPa。\n\n归档 4,654 点，范围 −360°CA 至 +159.35°CA。三域单元数之和逐点等于全域单元数。缸套、燃烧室顶面和活塞的壁温分别为 433 K、523 K 和 553 K。网格独立性、完整循环 IMEP 和指示热效率待验证。"
-        },
-        {
-          "title": "算例与模型交接",
-          "body": "整理 38.3 和 39.3 两组几何、控制变量与交接设置。按实际喷油量和燃料热值校核 GT-Power 放热输入及一维、三维缸压。"
         }
       ],
       "galleryTitle": "燃烧室几何、运动与喷油设置",
@@ -1040,10 +1028,6 @@
         {
           "title": "稳态热点与数值复核",
           "body": "20 °C 和 40 °C 工况的 PCB 板体峰值分别为 93.62 °C 和 113.62 °C。T5 在两组中均为最高温器件，分别达到 148.02 °C 和 168.02 °C。环境升高 20 °C 后，报告中各对象的最高温度也约升高 20 °C。\n\n两组均保存了第 292 次迭代的稳态结果，末步连续性残差为 9.66 × 10⁻⁴，报告计算功耗均为 7.194 W。由网格面温度独立提取的板面峰值与 Icepak 报告一致。\n\n20 °C 瞬态求解中途终止，保留了 212 帧板面温度场。"
-        },
-        {
-          "title": "热模型建立",
-          "body": "完成板级热模型搭建，按位号核对原理图、坐标、封装与 Icepak 对象的对应关系。"
         }
       ],
       "galleryTitle": "原理图、板卡几何与导入复核",
@@ -1450,10 +1434,6 @@
         {
           "title": "求解与收敛",
           "body": "三组算例均完成载荷步 1、子步 1，警告数依次为 8、5、2。底座 PCG 未收敛，切换稀疏求解后完成。节点 332874 的 UY 小主元警告仍在。\n\n夹箍外表面应力峰值约 322.7 MPa（节点 104584），位移结果存在异常量级。夹箍日志记录接触单元重叠、探测半径偏小和初始间隙。\n\n气环工装位移在第 3 次达到判据，力在第 12 次达到判据。等效应力峰值约 1,591 MPa（节点 3738），位移峰值约 2.27 mm（节点 40）。强度判定待局部网格、接触、材料许用值及载荷复核。"
-        },
-        {
-          "title": "工况建模与异常定位",
-          "body": "整理三个算例的输入、网格、结果与日志，按节点编号回查异常自由度、接触对和受载区域。"
         }
       ],
       "simulationTitle": "静力结果与求解收敛",
@@ -1790,10 +1770,6 @@
           "title": "求解与接触",
           "shortTitle": "求解与接触",
           "body": "四套算例均到达设定终止条件，求解循环数依次为 358,063、427,459、36,809 和 427,442。短连杆与两套位移约束工况均记录了粘结接触未建立实际连接的警告。"
-        },
-        {
-          "title": "",
-          "body": ""
         }
       ],
       "briefing": {
@@ -1916,108 +1892,6 @@
       }
     },
     {
-      "slug": "peak-mod-integration",
-      "sourceArchive": {
-        "url": "/portfolio/files/project-sources/peak-mod-integration.zip",
-        "label": "下载配置源文件"
-      },
-      "modelImage": "",
-      "modelAlt": "",
-      "viewerUrl": "",
-      "gallery": [
-        {
-          "src": "/portfolio/assets/projects/peak-mod-integration/loader-source.webp",
-          "alt": "Doorstop 启动入口",
-          "topic": "加载与依赖",
-          "caption": "Doorstop 启动入口",
-          "analysis": "winhttp.dll 与 target_assembly 指定的 BepInEx 预加载程序集。",
-          "source": "整合包 / doorstop_config.ini 与 BepInEx/core",
-          "wide": true
-        },
-        {
-          "src": "/portfolio/assets/projects/peak-mod-integration/multiplayer-manifests.webp",
-          "alt": "三个多人相关插件的依赖声明",
-          "topic": "加载与依赖",
-          "caption": "多人插件依赖",
-          "analysis": "多人扩展和重连修复依赖 PEAK 专用 BepInEx 包，结算界面修复声明通用 BepInEx 依赖。",
-          "source": "整合包 / 三份插件 manifest.json",
-          "wide": true
-        },
-        {
-          "src": "/portfolio/assets/projects/peak-mod-integration/multiplayer-version-check.webp",
-          "alt": "多人配置模板与清单版本",
-          "topic": "多人和中文配置",
-          "caption": "多人插件版本与配置",
-          "analysis": "配置模板版本为 1.0.0，插件清单版本为 2.4.0。配置含人数上限 20 与额外道具开关。",
-          "source": "整合包 / PeakUnlimited.cfg 与插件清单",
-          "wide": true
-        },
-        {
-          "src": "/portfolio/assets/projects/peak-mod-integration/translation-source.webp",
-          "alt": "中文文本类型与输出目录",
-          "topic": "多人和中文配置",
-          "caption": "中文文本配置",
-          "analysis": "目标语言 zh，启用 UGUI 和 TextMeshPro，按语言划分输出目录。归档中翻译端点和字体覆盖字段留空。",
-          "source": "整合包 / AutoTranslatorConfig.ini",
-          "wide": true
-        },
-        {
-          "src": "/portfolio/assets/projects/peak-mod-integration/localization-resources.webp",
-          "alt": "中文菜单词条和字体回退配置",
-          "topic": "中文词条与字体",
-          "caption": "中文词条与回退字体",
-          "analysis": "Translation 目录含菜单、物品和提示词条。静态翻译启用，lenmonziti 为 TextMeshPro 回退字体。",
-          "source": "Menu.txt、AutoTranslatorConfig.ini 与随包字体文件",
-          "wide": true
-        }
-      ],
-      "simulations": [],
-      "codeDescription": "winhttp.dll 启动 Doorstop，target_assembly 指向 BepInEx 预加载程序集。多人和语言参数由配置文件管理，插件版本与依赖记录在各自的 manifest.json。",
-      "repository": "",
-      "links": [],
-      "attachments": [],
-      "title": "PEAK 多人模组与中文界面整合",
-      "category": "代码开发",
-      "tags": [
-        "BepInEx",
-        "Unity",
-        "XUnity.AutoTranslator",
-        "模组集成"
-      ],
-      "summary": "整合 PEAK 多人扩展、重连及结算修复与中文翻译，统一加载入口、插件依赖和配置。",
-      "cover": "/portfolio/assets/projects/peak-mod-integration/config-excerpts.svg",
-      "coverAlt": "PEAK 多人和翻译插件配置摘录，包含人数上限、目标语言和界面文本设置",
-      "coverCaption": "多人上限配置为 20，中文配置启用 UGUI 和 TextMeshPro。",
-      "time": "",
-      "role": "模组集成与配置整理",
-      "tools": "BepInEx / Unity Doorstop / XUnity.AutoTranslator",
-      "status": "本地整合包与配置",
-      "sections": [
-        {
-          "title": "模组结构",
-          "body": "整合包由 Doorstop、BepInEx 加载器、多人扩展、重连与结算修复插件、翻译插件及配置文件组成。"
-        },
-        {
-          "title": "加载入口与配置要求",
-          "body": "统一多人扩展、重连与结算修复和中文翻译的加载入口。多人参数和语言分别配置，保留插件的版本与依赖声明。"
-        },
-        {
-          "title": "启动与中文化",
-          "body": "Doorstop 指向 BepInEx 预加载程序集。插件位于 BepInEx 插件目录，多人参数与语言配置分别存放在配置目录。\n\n中文化配置选用 zh 词条，启用 UGUI、TextMeshPro 与静态翻译。Endpoint 留空，lenmonziti 为 TextMeshPro 回退字体。归档另含 zh-lenmon 词条。Menu.txt 覆盖创建房间、离线游玩及灵敏度。"
-        },
-        {
-          "title": "验证范围",
-          "body": "已核对启动入口、配置与插件清单。多人上限配置为 20，联机容量与游戏内中文显示待实测。"
-        },
-        {
-          "title": "个人贡献",
-          "body": "整合多人扩展、修复与翻译插件，核对加载入口、依赖及配置，记录配置模板与插件清单的版本差异。"
-        }
-      ],
-      "galleryTitle": "加载配置与第三方插件清单",
-      "implementationTitle": "加载链与版本复查"
-    },
-    {
       "slug": "dme-atr-simulink",
       "sourceArchive": {
         "url": "/portfolio/files/project-sources/dme-atr-simulink.zip"
@@ -2055,10 +1929,6 @@
         {
           "title": "限幅与版本回归",
           "body": "出口温度与产氢量各采样 3,001 点。温度曲线默认留空 162 个限幅点（150 K 共 71 点，1,300 K 共 91 点），产氢保留全量。需氢换算含 ×60 因子，跟踪误差须统一单位。\n\n按 |基础块版 − 原版| / max(1, |原版|) < 10⁻⁸ 逐点核对 24 路信号，全部通过。PID 第一路输出最大绝对差为 2.22 × 10⁻¹⁶，温度和产氢差值为 0。装置精度待实测验证。"
-        },
-        {
-          "title": "模型集成与模块替换",
-          "body": "集成反应器、电堆和车辆需氢信号，替换并验证 12 个函数模块。初始化时分别命名反应器总线和电堆 Cp 变量，两套模型可独立运行。"
         }
       ],
       "modelImage": "",

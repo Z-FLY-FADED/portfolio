@@ -1,7 +1,7 @@
 // BlueLab components: independently implemented from the design references in 设计参考与改进.md.
 export const isEditorialPlaceholder=value=>/^\s*\[(?:在此|填写|基础[：:]|应用[：:]|沉淀[：:]|项目介绍占位|项目经历待补充)/.test(String(value??''))||/占位\s*·\s*替换/.test(String(value??''));
 export const publicProjects=projects=>projects.filter(project=>
-  String(project.title||'').trim()&&!/项目占位|占位模板/.test(project.title)&&!isEditorialPlaceholder(project.summary)
+  project.published!==false&&String(project.title||'').trim()&&!/项目占位|占位模板/.test(project.title)&&!isEditorialPlaceholder(project.summary)
 );
 const categoryQuery=category=>category?`?${new URLSearchParams({category})}`:'';
 export const projectHref=(slug,category)=>`/portfolio/projects/${slug}/${categoryQuery(category)}`;
