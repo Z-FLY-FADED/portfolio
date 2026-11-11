@@ -1,6 +1,6 @@
 const researchTopics=[
   {
-    name:'二甲醚重整制氢',
+    name:'二甲醚自热重整制氢',
     matches:/(?=.*(?:二甲醚|dimethyl ether|\bDME\b)).*(?:重整|reform)/i,
     art:'reformer',
     alt:'二甲醚重整反应器概念剖面，显示筒体、内部通道与流向。'
