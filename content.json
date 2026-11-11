@@ -981,12 +981,33 @@
           "wide": true
         }
       ],
-      "simulations": [],
+      "simulations": [
+        {
+          "label": "板面温度",
+          "src": "/portfolio/assets/projects/bms-thermal-model/pcb-board-wall-temperature.webp",
+          "alt": "20 °C 和 40 °C 环境下的 PCB 板面稳态温度分布，白圈标出峰温位置",
+          "caption": "两组板面温度使用同一色标，白圈标出板面峰温。"
+        },
+        {
+          "label": "峰温对比",
+          "src": "/portfolio/assets/projects/bms-thermal-model/steady-peak-temperatures.webp",
+          "alt": "两组稳态工况下 PCB 板体和关键器件的最高温度对比，T5 最高",
+          "caption": ""
+        },
+        {
+          "label": "稳态残差",
+          "src": "/portfolio/assets/projects/bms-thermal-model/steady-residuals.webp",
+          "alt": "20 °C 和 40 °C 两组稳态工况的连续性和能量残差",
+          "caption": "",
+          "playback": "/portfolio/assets/projects/bms-thermal-model/steady-residuals.playback.json"
+        }
+      ],
+      "simulationTitle": "稳态温度与求解残差",
       "codeDescription": "",
       "repository": "",
       "links": [],
       "attachments": [],
-      "title": "BMS 电路板热仿真建模",
+      "title": "BMS 电路板热仿真",
       "category": "仿真建模",
       "tags": [
         "Ansys Icepak",
@@ -995,30 +1016,30 @@
         "ANF",
         "PCB 热管理"
       ],
-      "summary": "用 IDF 与封装库重建 BMS 板卡，按位号匹配 Altium 原理图、Icepak 导入日志及热模型对象。",
-      "cover": "/portfolio/assets/projects/bms-thermal-model/idf-placement.webp",
-      "coverAlt": "由 IDF 坐标绘制的 BMS 电路板正反面 334 处器件点位图",
-      "coverCaption": "器件点位 · 正面 258 处，背面 76 处",
+      "summary": "建立 BMS 板级热模型，对比 20 °C 和 40 °C 环境下的稳态温度，定位 PCB 板面及关键器件热点。",
+      "cover": "/portfolio/assets/projects/bms-thermal-model/pcb-board-wall-temperature.webp",
+      "coverAlt": "20 °C 和 40 °C 环境下的 PCB 板面稳态温度分布",
+      "coverCaption": "20 °C 与 40 °C 环境下的板面温度",
       "time": "2024.08–2025.01",
       "role": "独立完成热仿真建模",
       "tools": "Ansys Icepak / Altium Designer",
-      "status": "板级热模型与导入复核",
+      "status": "稳态求解与热点复核",
       "sections": [
         {
           "title": "板卡与输入文件",
-          "body": "板卡外形约 90.17 × 115.57 mm。输入包括 Altium 原理图、STEP 外形、IDF 坐标和封装库。"
+          "body": "BMS-S32K312 板卡外形约 90.17 × 115.57 mm。输入包括 Altium 原理图、STEP 外形、IDF 坐标和封装库。"
         },
         {
-          "title": "板厚、封装与铜层",
-          "body": "B.brd 和 B.pro 记录轮廓、板厚、贴装面和封装高度，IDF 板厚 0.778 mm。A.anf 记录 Top、GND、PWR、Bottom 四层铜厚。等效导热参数取决于层叠与材料。"
+          "title": "热负载与环境温度",
+          "body": "对比环境温度为 20 °C 和 40 °C 的稳态工况。两组设定总功耗均为 7.20 W，分配给 13 个器件，其中 T1–T5 各为 1.16 W。IDF 板厚为 0.778 mm，铜层为 Top、GND、PWR 和 Bottom。"
         },
         {
           "title": "Icepak 建模与对象匹配",
-          "body": "以 IDF 坐标与封装库重建板卡。导入 Icepak 后按位号关联 Altium 原理图、坐标、封装及热模型对象。缺高器件对应 source，其余器件对应 block。"
+          "body": "以 IDF 坐标与封装库重建板卡，按位号关联 Altium 原理图、封装及 Icepak 对象。初次导入的 334 个位号全部匹配，31 个缺少封装高度的器件以 source 对象表示，其余为 block。\n\n稳态模型使用 ODB++ 铜层映射，计算网格包含 368,368 个单元。两组工况分别求解并保存温度场。"
         },
         {
-          "title": "模型与导入复核",
-          "body": "334 个 IDF 位号全部匹配。31 个缺少封装高度的器件导入为 source（正面 24 个、背面 7 个），其余 303 个导入为 block。导入时有 323 个对象未启用。已核对 D8、U8、U10 的位号、坐标和对象类型。\n\n归档保存了稳态求解设置，未包含温度场或热流结果。"
+          "title": "稳态热点与数值复核",
+          "body": "20 °C 和 40 °C 工况的 PCB 板体峰值分别为 93.62 °C 和 113.62 °C。T5 在两组中均为最高温器件，分别达到 148.02 °C 和 168.02 °C。环境升高 20 °C 后，报告中各对象的最高温度也约升高 20 °C。\n\n两组均保存了第 292 次迭代的稳态结果，末步连续性残差为 9.66 × 10⁻⁴，报告计算功耗均为 7.194 W。由网格面温度独立提取的板面峰值与 Icepak 报告一致。\n\n20 °C 瞬态求解中途终止，保留了 212 帧板面温度场。"
         },
         {
           "title": "热模型建立",
@@ -1171,8 +1192,8 @@
             ]
           },
           {
-            "label": "求解准备",
-            "title": "稳态求解设置",
+            "label": "求解工况",
+            "title": "稳态工况与铜层映射",
             "lead": "",
             "facts": [
               [
@@ -1180,8 +1201,12 @@
                 "4 层"
               ],
               [
-                "归档求解设置",
-                "稳态"
+                "环境温度",
+                "20 / 40 °C"
+              ],
+              [
+                "设定总功耗",
+                "7.20 W"
               ]
             ],
             "points": [],
@@ -1206,6 +1231,78 @@
                 "alt": "BMS 原理图归档中的 PCB 版图页",
                 "caption": "",
                 "source": "原理图归档 PDF 第 4 页"
+              }
+            ]
+          },
+          {
+            "label": "稳态结果",
+            "title": "板面温度与器件峰温",
+            "facts": [
+              [
+                "板体峰值 · 20 °C",
+                "93.62 °C"
+              ],
+              [
+                "板体峰值 · 40 °C",
+                "113.62 °C"
+              ],
+              [
+                "T5 峰值 · 40 °C",
+                "168.02 °C"
+              ]
+            ],
+            "points": [
+              "T5 在两个工况下均为最高温器件。"
+            ],
+            "visuals": [
+              {
+                "label": "板面温度",
+                "src": "/portfolio/assets/projects/bms-thermal-model/pcb-board-wall-temperature.webp",
+                "alt": "20 °C 和 40 °C 环境下的 PCB 板面稳态温度分布",
+                "caption": ""
+              },
+              {
+                "label": "峰温对比",
+                "src": "/portfolio/assets/projects/bms-thermal-model/steady-peak-temperatures.webp",
+                "alt": "20 °C 和 40 °C 环境下 PCB 板体及关键器件峰温",
+                "caption": ""
+              },
+              {
+                "label": "稳态残差",
+                "src": "/portfolio/assets/projects/bms-thermal-model/steady-residuals.webp",
+                "alt": "两组稳态求解的连续性和能量残差",
+                "caption": "",
+                "playback": "/portfolio/assets/projects/bms-thermal-model/steady-residuals.playback.json"
+              }
+            ]
+          },
+          {
+            "label": "瞬态回放",
+            "title": "瞬态板面温度",
+            "facts": [
+              [
+                "环境温度",
+                "20 °C"
+              ],
+              [
+                "已保存温度场",
+                "212 帧"
+              ],
+              [
+                "末帧板面峰值",
+                "49.60 °C"
+              ]
+            ],
+            "points": [
+              "求解中途终止，回放覆盖已保存的温度场。"
+            ],
+            "visuals": [
+              {
+                "label": "板面温度回放",
+                "src": "/portfolio/assets/projects/bms-thermal-model/pcb-transient-board-temperature.webp",
+                "alt": "20 °C 环境下的瞬态 PCB 板面温度，固定色标 20–50 °C",
+                "caption": "",
+                "video": "/portfolio/assets/projects/bms-thermal-model/pcb-transient-board-temperature.mp4"
               }
             ]
           }
