@@ -779,6 +779,13 @@
                 "source": "CONVERGE 样例 / surface.dat、boundary.in"
               },
               {
+                "label": "X = 0 剖面",
+                "src": "/portfolio/assets/projects/ammonia-diesel-combustion/cfd-x-section.webp",
+                "alt": "燃烧计算域的 X = 0 剖开视图，显示进排气通道、缸套与活塞表面",
+                "caption": "",
+                "source": "CONVERGE 样例 / surface.dat、boundary.in"
+              },
+              {
                 "label": "算例设置",
                 "src": "/portfolio/assets/projects/ammonia-diesel-combustion/handover-2.webp",
                 "alt": "CONVERGE Case Setup 截图及反应机理、边界、喷油与网格加密的批注",
