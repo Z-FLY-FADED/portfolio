@@ -14,6 +14,7 @@ const researchTopics=[
 ];
 
 function safeUrl(value) {
+  if(typeof value==='string'&&/^\/(?!\/)[\w/-]+\.pdf(?:#page=[1-9]\d*)?$/i.test(value))return value;
   try {
     const url=new URL(value);
     return ['https:','http:'].includes(url.protocol)?url.href:'';
