@@ -65,7 +65,7 @@ function homeProjectsMarkup(projects,{e,img,icon}) {
         <span class="home-project-count" data-home-project-count role="status">${projects.length} 个项目</span>
       </div>
       <div class="home-project-groups" id="home-project-groups">
-        ${groups.map(([name,items],index)=>`<section class="home-project-group" data-home-project-group="${e(name)}" data-project-count="${items.length}" aria-labelledby="home-project-group-${index}">
+        ${groups.map(([name,items],index)=>`<section class="home-project-group" data-home-project-group="${e(name)}" data-project-count="${items.length}" style="--project-columns:${Math.min(items.length,4)}" aria-labelledby="home-project-group-${index}">
           <h3 id="home-project-group-${index}">${e(name)}</h3>
           <div class="home-project-card-grid">${items.map(project=>projectCard(project,{e,img,icon,grouped:true})).join('')}</div>
         </section>`).join('')}
@@ -127,7 +127,7 @@ export function homeMarkup(data, {e, img, icon}) {
           ${a.role?`<p class="home-role">${e(a.role)}</p>`:''}
           ${data.home.subtitle?`<p class="home-lead">${e(data.home.subtitle)}</p>`:''}
         </div>
-        ${indexLinks.length?`<nav class="home-jump-links" aria-label="首页章节">${indexLinks.map(([href,label])=>`<a href="${href}">${label}</a>`).join('')}</nav>`:''}
+        ${indexLinks.length?`<nav class="home-jump-links" aria-label="首页章节">${indexLinks.map(([href,label])=>`<a href="${href}">${label}<span aria-hidden="true">↓</span></a>`).join('')}</nav>`:''}
       </div>
       <div class="home-overview${portrait?'':' home-overview--text'}">
         ${portrait?`<div class="home-portrait">${portrait}</div>`:''}
@@ -146,7 +146,7 @@ export function homeMarkup(data, {e, img, icon}) {
             <div class="home-panel-label"><h2 id="home-radar-title">能力雷达图</h2><a href="/portfolio/about/#skill-map" aria-label="查看完整技能图谱">${icon('up')}</a></div>
             <div class="home-radar-canvas"></div>
           </section>
-          ${resume?`<section class="home-resume"><h2>个人简历</h2>${resume}</section>`:''}
+          ${resume?`<section class="home-resume"><div><span class="home-resume-format">PDF</span><h2>个人简历</h2></div>${resume}</section>`:''}
         </aside>
       </div>
     </section>
