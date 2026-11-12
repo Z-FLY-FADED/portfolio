@@ -65,7 +65,7 @@ function homeProjectsMarkup(projects,{e,img,icon}) {
         <span class="home-project-count" data-home-project-count role="status">${projects.length} 个项目</span>
       </div>
       <div class="home-project-groups" id="home-project-groups">
-        ${groups.map(([name,items],index)=>`<section class="home-project-group" data-home-project-group="${e(name)}" data-project-count="${items.length}" style="--project-columns:${Math.min(items.length,4)}" aria-labelledby="home-project-group-${index}">
+        ${groups.map(([name,items],index)=>`<section class="home-project-group" data-home-project-group="${e(name)}" data-project-count="${items.length}" aria-labelledby="home-project-group-${index}">
           <h3 id="home-project-group-${index}">${e(name)}</h3>
           <div class="home-project-card-grid">${items.map(project=>projectCard(project,{e,img,icon,grouped:true})).join('')}</div>
         </section>`).join('')}

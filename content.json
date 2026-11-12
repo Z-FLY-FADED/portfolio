@@ -159,6 +159,24 @@
           "analysis": "BSS1505-500、BSS1205-450 丝杠的支承端、螺母端及移动件接口。",
           "source": "SolidWorks 三个原始 SLDASM 内置预览",
           "wide": true
+        },
+        {
+          "src": "/portfolio/assets/projects/piston-ring-station/crankshaft-piston-original.webp",
+          "alt": "四组活塞、连杆和曲轴的装配模型",
+          "topic": "装配基准",
+          "caption": "曲轴与四缸活塞总成",
+          "analysis": "四组活塞与连杆沿曲轴排列，可对照四缸缸体查看工位对应关系。",
+          "source": "SolidWorks / cigueñal y piston.SLDASM",
+          "featured": true
+        },
+        {
+          "src": "/portfolio/assets/projects/piston-ring-station/lower-slide-original.webp",
+          "alt": "下滑块装配的安装面和孔位",
+          "topic": "导向与传动",
+          "caption": "基础下滑块装配",
+          "analysis": "补充下滑块基体的端面与孔位，用于对照前下滑块和侧下滑块的装配接口。",
+          "source": "SolidWorks / 下滑块装配ga.SLDASM",
+          "featured": true
         }
       ],
       "simulations": [],
@@ -418,7 +436,6 @@
     },
     {
       "slug": "aerospace-logistics-car",
-      "sourceArchivePending": true,
       "modelImage": "",
       "modelAlt": "",
       "viewerUrl": "",
@@ -430,16 +447,17 @@
           "caption": "Qt 与车端双向数据流",
           "analysis": "下发运动指令，回传设备状态及传感器数据。",
           "source": "个人简历 · Qt / TCP",
-          "wide": true
+          "wide": true,
+          "featured": true
         },
         {
-          "src": "/portfolio/assets/projects/aerospace-logistics-car/perception-navigation.svg",
-          "alt": "信号灯识别与激光导航流程",
-          "topic": "上位机、感知与导航",
-          "caption": "信号灯识别与激光导航",
-          "analysis": "YOLOv5 信号灯检测、激光雷达 SLAM 与 A* 全局路径规划。",
-          "source": "根据简历中的感知和导航工作整理",
-          "wide": true
+          "src": "/portfolio/assets/projects/aerospace-logistics-car/slam-occupancy-map.webp",
+          "alt": "ROS 工程保存的黑白灰占据栅格地图",
+          "topic": "ROS 建图与导航",
+          "caption": "SLAM 占据栅格地图",
+          "analysis": "归档地图为 384 × 384 像素，分辨率 0.05 m/像素。白色为自由区域，黑色为占据区域，灰色为未知区域。",
+          "source": "北部赛区最终代码 / qingzhou_nav/maps/map.pgm、map.yaml",
+          "featured": true
         },
         {
           "src": "/portfolio/assets/awards/preview/certificate-01.webp",
@@ -476,7 +494,7 @@
         }
       ],
       "simulations": [],
-      "codeDescription": "开发 Qt 上位机，封装 TCP 通信协议与数据解析模块，实现运动指令下发、车辆状态实时接收和传感器数据可视化。\n\n为 YOLOv5 信号灯检测模型加入训练样本增强，调整训练参数和检测后处理，并将模型部署到车载视觉模块。\n\n调试激光雷达 SLAM 建图，调整 A* 全局路径搜索策略，以减少冗余路径和规划耗时。",
+      "codeDescription": "项目履历记录了 Qt 上位机与车端的 TCP 双向通信，以及 YOLOv5 信号灯检测的训练与部署。\n\n归档 ROS 工程使用激光雷达的 scan 数据进行 Gmapping 建图，导航启动时加载地图并启动 AMCL 定位。GlobalPlanner 的 Dijkstra 开关为启用，局部规划使用 DWA。规划频率设为 1 Hz，控制频率设为 10 Hz。",
       "repository": "",
       "links": [],
       "attachments": [],
@@ -487,16 +505,17 @@
         "Qt",
         "TCP",
         "YOLOv5",
+        "ROS",
         "SLAM",
-        "A*"
+        "DWA"
       ],
-      "summary": "担任两届全国大学生智能汽车竞赛项目负责人，完成 Qt 上位机与车端通信、信号灯识别及激光导航联调。",
-      "cover": "/portfolio/assets/projects/aerospace-logistics-car/system-map.svg",
-      "coverAlt": "航天智慧物流智能车的通信、视觉识别和激光导航分工",
-      "coverCaption": "智能车控制、感知与导航架构",
+      "summary": "参与两届全国大学生智能汽车竞赛，完成车端通信、信号灯识别和激光导航联调。ROS 工程记录了建图、定位和路径规划配置。",
+      "cover": "/portfolio/assets/projects/aerospace-logistics-car/ros-navigation-pipeline.webp",
+      "coverAlt": "ROS 工程的 Gmapping 建图、AMCL 定位、Dijkstra 全局规划和 DWA 局部规划",
+      "coverCaption": "ROS 建图与导航",
       "time": "2021.01–2023.06",
       "role": "项目负责人",
-      "tools": "Qt / TCP / YOLOv5 / 激光雷达 SLAM / A*",
+      "tools": "Qt / TCP / YOLOv5 / ROS / Gmapping / AMCL",
       "status": "竞赛开发与实车调试",
       "sections": [
         {
@@ -544,7 +563,8 @@
           "caption": "活塞碗口 Y = 0 截线",
           "analysis": "",
           "source": "CONVERGE 样例 / surface.dat 的 BND_piston@",
-          "wide": true
+          "wide": true,
+          "featured": true
         },
         {
           "src": "/portfolio/assets/projects/ammonia-diesel-combustion/handover-1.webp",
@@ -552,7 +572,7 @@
           "caption": "喉口半径、凸台深度与斜面",
           "wide": true,
           "topic": "表面边界与活塞碗口",
-          "analysis": "",
+          "analysis": "基准喉口半径 37.3 mm、凸台深度 5.75 mm、压缩比 22.5。对比方案的喉口半径范围为 35.3–39.3 mm，凸台深度范围为 3.75–7.75 mm，压缩比取 21.7、22.5 和 23.7。",
           "source": "燃烧室计算交接说明 / 几何参数图"
         },
         {
@@ -598,6 +618,16 @@
           "caption": "缸套、顶面与活塞累计传热",
           "analysis": "",
           "source": "CONVERGE 壁面日志和 boundary.echo",
+          "wide": true
+        },
+        {
+          "src": "/portfolio/assets/projects/ammonia-diesel-combustion/combustion-species-mass.webp",
+          "alt": "上止点附近全域氨气、氧气、水和二氧化碳的质量曲线",
+          "topic": "燃烧过程",
+          "caption": "燃烧组分质量",
+          "analysis": "全域氨气质量从上止点附近的约 599 mg 降至 +30°CA 附近的约 159 mg，同期水的质量从约 250 mg 升至约 957 mg。",
+          "source": "CONVERGE / species_mass.out，按曲轴转角取邻近采样点",
+          "featured": true,
           "wide": true
         }
       ],
@@ -957,6 +987,26 @@
           "caption": "BMS PCB 版图",
           "analysis": "",
           "source": "《2024.1.11-原理图软件开发反馈版》PDF 第 4 页",
+          "wide": true
+        },
+        {
+          "src": "/portfolio/assets/projects/bms-thermal-model/idf-placement.webp",
+          "alt": "BMS 板正背面 IDF 器件坐标和板框",
+          "topic": "版图与热源定位",
+          "caption": "元器件位置分布",
+          "analysis": "IDF 坐标中正面记录 258 处器件，背面记录 76 处，可与板面热点位置对照。",
+          "source": "Altium IDF / B.brd",
+          "featured": true,
+          "wide": true
+        },
+        {
+          "src": "/portfolio/assets/projects/bms-thermal-model/device-power-inputs.webp",
+          "alt": "Icepak 稳态算例中 13 个器件的功耗设定柱状图",
+          "topic": "版图与热源定位",
+          "caption": "器件功耗设定",
+          "analysis": "13 个器件的设定总功耗为 7.20 W，T1–T5 各为 1.16 W，合计占 80.6%。",
+          "source": "Icepak 稳态结果 / temperature-summary.csv",
+          "featured": true,
           "wide": true
         }
       ],
@@ -1355,6 +1405,26 @@
           "analysis": "",
           "source": "气环工装 ANSYS solve.out",
           "wide": true
+        },
+        {
+          "src": "/portfolio/assets/projects/tooling-static-fea/case-solver-comparison.webp",
+          "alt": "底座、夹箍与气环工装的求解节点、单元、迭代和收敛判据对照",
+          "topic": "求解日志",
+          "caption": "三组静力求解对照",
+          "analysis": "三个算例分别有 447,537、70,047 和 5,956 个求解单元。底座和气环工装末次力判据比分别为 0.2626 和 0.490，夹箍日志未记录同一指标。",
+          "source": "ANSYS / 各算例 solve.out",
+          "featured": true,
+          "wide": true
+        },
+        {
+          "src": "/portfolio/assets/projects/tooling-static-fea/ring-fixture-peak-nodes.webp",
+          "alt": "气环工装外表面的应力与位移峰值节点分布",
+          "topic": "气环工装",
+          "caption": "气环工装峰值节点",
+          "analysis": "最后保存步中，外表面应力峰值位于节点 3738，位移峰值位于节点 40。",
+          "source": "ANSYS / 气环工装 file.rst",
+          "featured": true,
+          "wide": true
         }
       ],
       "simulations": [
@@ -1689,7 +1759,7 @@
       "time": "",
       "role": "",
       "tools": "ANSYS Workbench / AUTODYN 2022 R1",
-      "galleryTitle": "连杆模型",
+      "galleryTitle": "连杆模型与四工况结果",
       "gallery": [
         {
           "label": "加强长连杆",
@@ -1704,6 +1774,35 @@
           "alt": "带支承轴的短连杆 CAD 预览",
           "caption": "短连杆",
           "source": "SpaceClaim 工程预览"
+        },
+        {
+          "src": "/portfolio/assets/projects/liangan/case-peak-comparison.webp",
+          "alt": "加强长连杆与短连杆四工况的外表面等效应力和总位移峰值",
+          "topic": "应力与位移",
+          "caption": "四工况峰值对比",
+          "analysis": "四组工况的已保存帧分别统计杆件外表面峰值。加强长连杆两组工况的网格和停止条件也有差异。",
+          "source": "ANSYS AUTODYN / 四组原始结果文件",
+          "featured": true,
+          "wide": true
+        },
+        {
+          "src": "/portfolio/assets/projects/liangan/long-rod-fields.webp",
+          "alt": "加强长连杆原始工况的等效应力和总位移云图",
+          "topic": "应力与位移",
+          "caption": "加强长连杆结果云图",
+          "analysis": "该工况杆件外表面的已保存帧最大等效应力为 863.04 MPa，最大总位移为 8.993 mm。",
+          "source": "ANSYS AUTODYN / 加强长连杆结果文件",
+          "featured": true,
+          "wide": true
+        },
+        {
+          "src": "/portfolio/assets/projects/liangan/short-rod-fields.webp",
+          "alt": "短连杆原始工况的等效应力和总位移云图",
+          "topic": "应力与位移",
+          "caption": "短连杆结果云图",
+          "analysis": "该工况杆件外表面的已保存帧最大等效应力为 672.66 MPa，最大总位移为 4.718 mm。",
+          "source": "ANSYS AUTODYN / 短连杆结果文件",
+          "wide": true
         }
       ],
       "simulations": [
@@ -1919,7 +2018,7 @@
         },
         {
           "title": "限幅与版本回归",
-          "body": "出口温度与产氢量各采样 3,001 点。温度曲线默认留空 162 个限幅点（150 K 共 71 点，1,300 K 共 91 点），产氢保留全量。需氢换算含 ×60 因子，跟踪误差须统一单位。\n\n按 |基础块版 − 原版| / max(1, |原版|) < 10⁻⁸ 逐点核对 24 路信号，全部通过。PID 第一路输出最大绝对差为 2.22 × 10⁻¹⁶，温度和产氢差值为 0。装置精度待实测验证。"
+          "body": "出口温度与产氢量各采样 3,001 点。温度曲线默认留空 162 个限幅点（150 K 共 71 点，1,300 K 共 91 点），产氢保留全量。需氢换算含 ×60 因子，跟踪误差须统一单位。\n\n按 |基础块版 − 原版| / max(1, |原版|) < 10⁻⁸ 逐点核对 24 路信号，全部通过。PID 第一路输出最大绝对差为 2.22 × 10⁻¹⁶，温度和产氢差值为 0。装置精度待实测验证。\n\n12 个 MATLAB Function 模块均替换为基础块子系统，执行周期保持原值。模块级核对覆盖零进料、温度边界、控制限幅和积分复位等场景，共 3,892 个测试采样点，与原模块的输出绝对差均为 0。"
         }
       ],
       "modelImage": "",
@@ -1982,7 +2081,8 @@
           "caption": "反应器物料与能量平衡基础块",
           "analysis": "",
           "source": "基础块版 result.slx 的反应器归档图",
-          "wide": true
+          "wide": true,
+          "featured": true
         },
         {
           "src": "/portfolio/assets/projects/dme-atr-simulink/stack-current-basic-blocks.webp",
@@ -1991,6 +2091,16 @@
           "caption": "氢气流量–电堆电流基础块",
           "analysis": "输入包括氢气流量、电池数和分配系数。",
           "source": "基础块版 result.slx 的电流换算归档图",
+          "wide": true
+        },
+        {
+          "src": "/portfolio/assets/projects/dme-atr-simulink/reactor-unreacted-dme.webp",
+          "alt": "原版 Simulink 反应器出口剩余 DME 摩尔流量曲线",
+          "topic": "反应器输出",
+          "caption": "反应器出口剩余 DME",
+          "analysis": "出口剩余 DME 保留全部 3,001 个采样值，峰值为 0.0936 mol/s。",
+          "source": "Simulink 原版反应器第 2 路输出 / reactor_2.csv",
+          "featured": true,
           "wide": true
         }
       ],

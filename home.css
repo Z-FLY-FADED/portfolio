@@ -119,15 +119,16 @@ body[data-page="home"] .container { width: calc(100% - clamp(32px,5vw,88px)); }
 .home-project-groups {
   --project-card-gap: clamp(14px, 1.5vw, 24px);
   display: grid;
-  grid-template-columns: repeat(4,minmax(0,1fr));
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: clamp(22px, 2.8vw, 36px) var(--project-card-gap);
 }
 .home-project-group {
   display: grid;
-  grid-column: span var(--project-columns);
   grid-template-rows: auto 1fr;
   min-width: 0;
 }
+.home-project-group:not([data-project-count="1"]),
+.home-project-groups:has(> .home-project-group[hidden]) > .home-project-group { grid-column: 1 / -1; }
 .home-project-group[hidden] { display: none; }
 .home-project-group > h3 {
   margin: 0 0 10px;
@@ -136,7 +137,8 @@ body[data-page="home"] .container { width: calc(100% - clamp(32px,5vw,88px)); }
   font-size: clamp(16px, 1.4vw, 20px);
   line-height: 1.4;
 }
-.home-project-card-grid { display: grid; grid-template-columns: repeat(var(--project-columns),minmax(0,1fr)); gap: var(--project-card-gap); }
+.home-project-card-grid { display: flex; flex-wrap: wrap; gap: var(--project-card-gap); }
+.home-project-card-grid > .project-entry { flex: 1 1 calc((100% - 4 * var(--project-card-gap)) / 5); }
 .home-projects .section-bar > a { min-height: 44px; }
 .home-projects .project-entry { position: relative; }
 .home-projects .project-entry-link { display: flex; flex: 1; flex-direction: column; padding-bottom: 44px; }
@@ -148,6 +150,10 @@ body[data-page="home"] .container { width: calc(100% - clamp(32px,5vw,88px)); }
 .home-projects .project-entry-text { flex: 1; padding: 13px 14px 11px; }
 .home-projects .project-entry-text h4 { margin: 0 0 5px; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.45; }
 .home-projects .project-entry-text p { font-size: 14px; line-height: 1.62; }
+.project-entry-evidence { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; margin-top: 12px; }
+.project-entry-evidence figure { min-width: 0; margin: 0; }
+.project-entry-evidence img { width: 100%; aspect-ratio: 2; object-fit: contain; background: var(--ground-muted); border: 1px solid var(--line); }
+.project-entry-evidence figcaption { margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; }
 .home-projects :is(.project-entry-detail,.project-entry > .text-link) {
   position: absolute;
   bottom: 0;
@@ -448,19 +454,22 @@ a.home-contact-item:hover, button.home-contact-item:hover { border-color: #b7cbb
   .home-overview { grid-template-columns: minmax(210px,.9fr) minmax(0,1.45fr); }
   .home-sidebar { grid-column: 1 / -1; grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: auto; align-items: start; }
 }
-@media (max-width: 950px) {
-  .home-project-group { grid-column: 1 / -1; }
-  .home-project-card-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .home-project-group[data-project-count="1"] .home-project-card-grid { grid-template-columns: minmax(0,1fr); }
+@media (max-width: 1279px) {
+  .home-project-card-grid > .project-entry { flex-basis: calc((100% - 2 * var(--project-card-gap)) / 3); }
 }
-@media (min-width: 541px) and (max-width: 950px) {
+@media (max-width: 760px) {
+  .home-project-group { grid-column: 1 / -1; }
+  .home-project-card-grid > .project-entry { flex-basis: calc((100% - var(--project-card-gap)) / 2); }
+}
+@media (min-width: 541px) {
   .home-project-group[data-project-count="1"] .project-entry-link {
     display: grid;
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    align-items: center;
+    align-items: start;
   }
   .home-project-group[data-project-count="1"] .project-entry-image {
     align-self: stretch;
+    aspect-ratio: auto;
     border-radius: var(--frame-radius) 0 0 0;
     border-bottom: 0;
     border-right: 1px solid var(--line);
@@ -491,7 +500,8 @@ a.home-contact-item:hover, button.home-contact-item:hover { border-color: #b7cbb
 @media (max-width: 540px) {
   .brand { font-size: 16px; gap: 9px; }
   .inner-hero { padding: 20px; }
-  .project-index-grid, .home-project-card-grid, .home-contact-grid { grid-template-columns: minmax(0,1fr); }
+  .project-index-grid, .home-contact-grid { grid-template-columns: minmax(0,1fr); }
+  .home-project-card-grid > .project-entry { flex-basis: 100%; }
   .home-project-filters button { padding-inline: 7px; font-size: 13px; }
   .home-project-count { position: absolute; width: 1px; height: 1px; margin: 0; overflow: hidden; clip-path: inset(50%); }
   .home-contact-item { padding: 11px; }
