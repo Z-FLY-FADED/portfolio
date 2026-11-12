@@ -2362,155 +2362,146 @@
     ]
   },
   "skillLibrary": {
-    "title": "个人 Skill · 软件与知识",
+    "title": "软件与专业技能",
     "entries": [
       {
         "id": "software-01",
-        "name": "[CAD 软件]",
+        "name": "CAD 建模",
         "kind": "软件工具",
+        "summary": "SolidWorks、CATIA",
         "status": "待配置",
         "level": "待填写",
-        "description": "[填写实际会使用的软件、常用功能与使用场景。]",
+        "description": "使用 SolidWorks 和 CATIA 进行三维建模。活塞环安装工作台采用 SolidWorks 建立整机及子装配。",
         "tasks": [
           {
-            "label": "[基础：填写需要掌握的操作或知识点]",
-            "state": "待配置",
-            "link": ""
-          },
-          {
-            "label": "[应用：填写一个真实的实践任务]",
-            "state": "待配置",
-            "link": ""
-          },
-          {
-            "label": "[沉淀：填写笔记、案例或验证目标]",
-            "state": "待配置",
-            "link": ""
+            "label": "活塞环安装工作台 · 整机与子装配建模",
+            "state": "已完成",
+            "link": "/portfolio/projects/piston-ring-station/"
           }
         ]
       },
       {
         "id": "software-02",
-        "name": "[仿真软件]",
+        "name": "仿真软件",
         "kind": "软件工具",
+        "summary": "ANSYS、COMSOL、MATLAB / Simulink、CONVERGE",
         "status": "待配置",
         "level": "待填写",
-        "description": "[填写实际会使用的软件、常用功能与使用场景。]",
+        "description": "使用 ANSYS 进行结构分析和 PCB 热仿真，使用 MATLAB / Simulink 搭建制氢与电堆系统模型，使用 CONVERGE 分析发动机缸内燃烧。",
         "tasks": [
           {
-            "label": "[基础：填写需要掌握的操作或知识点]",
-            "state": "待配置",
-            "link": ""
+            "label": "BMS 电路板热仿真",
+            "state": "已完成",
+            "link": "/portfolio/projects/bms-thermal-model/"
           },
           {
-            "label": "[应用：填写一个真实的实践任务]",
-            "state": "待配置",
-            "link": ""
+            "label": "氨柴双燃料发动机燃烧室优化",
+            "state": "已完成",
+            "link": "/portfolio/projects/ammonia-diesel-combustion/"
           },
           {
-            "label": "[沉淀：填写笔记、案例或验证目标]",
-            "state": "待配置",
-            "link": ""
+            "label": "车载二甲醚重整制氢与电堆耦合模型",
+            "state": "已完成",
+            "link": "/portfolio/projects/dme-atr-simulink/"
           }
         ]
       },
       {
         "id": "software-03",
-        "name": "[编程工具]",
+        "name": "编程语言",
         "kind": "软件工具",
+        "summary": "Python、C++、C",
         "status": "待配置",
         "level": "待填写",
-        "description": "[填写实际会使用的软件、常用功能与使用场景。]",
+        "description": "使用 Python、C++ 和 C。智能车项目涉及 Qt 上位机与车端 TCP 通信、YOLOv5 信号灯识别，以及 ROS 建图和导航。",
         "tasks": [
           {
-            "label": "[基础：填写需要掌握的操作或知识点]",
-            "state": "待配置",
-            "link": ""
-          },
-          {
-            "label": "[应用：填写一个真实的实践任务]",
-            "state": "待配置",
-            "link": ""
-          },
-          {
-            "label": "[沉淀：填写笔记、案例或验证目标]",
-            "state": "待配置",
-            "link": ""
+            "label": "航天智慧物流智能车 · 通信、识别与导航",
+            "state": "已完成",
+            "link": "/portfolio/projects/aerospace-logistics-car/"
           }
         ]
       },
       {
-        "id": "knowledge-01",
-        "name": "[机械设计知识]",
-        "kind": "专业知识",
+        "id": "software-04",
+        "name": "Vibe Coding",
+        "kind": "软件工具",
+        "summary": "Codex、DeepSeek Harness",
         "status": "待配置",
         "level": "待填写",
-        "description": "[填写已掌握的专业知识、方法与应用范围。]",
+        "description": "使用 Codex 和 DeepSeek Harness 辅助代码编写、修改与调试。",
+        "tasks": []
+      },
+      {
+        "id": "software-05",
+        "name": "办公软件",
+        "kind": "软件工具",
+        "summary": "WPS、Office、飞书、钉钉",
+        "status": "待配置",
+        "level": "待填写",
+        "description": "使用 WPS 和 Office 处理文档、表格与演示材料，使用飞书和钉钉进行沟通与协作。",
+        "tasks": []
+      },
+      {
+        "id": "software-06",
+        "name": "图像与视频编辑",
+        "kind": "软件工具",
+        "summary": "PS、PR、剪映",
+        "status": "待配置",
+        "level": "待填写",
+        "description": "使用 Photoshop 处理图片，使用 Premiere Pro 和剪映编辑视频。",
+        "tasks": []
+      },
+      {
+        "id": "knowledge-01",
+        "name": "机械设计",
+        "kind": "专业知识",
+        "summary": "定位、夹持、升降与调距",
+        "status": "待配置",
+        "level": "待填写",
+        "description": "以四个缸孔为定位基准，设计活塞环压装、连杆夹持、升降与调距机构，核对装配接口。",
         "tasks": [
           {
-            "label": "[基础：填写需要掌握的操作或知识点]",
-            "state": "待配置",
-            "link": ""
-          },
-          {
-            "label": "[应用：填写一个真实的实践任务]",
-            "state": "待配置",
-            "link": ""
-          },
-          {
-            "label": "[沉淀：填写笔记、案例或验证目标]",
-            "state": "待配置",
-            "link": ""
+            "label": "活塞环安装工作台 · 机构设计",
+            "state": "已完成",
+            "link": "/portfolio/projects/piston-ring-station/"
           }
         ]
       },
       {
         "id": "knowledge-02",
-        "name": "[有限元知识]",
+        "name": "有限元分析",
         "kind": "专业知识",
+        "summary": "网格、载荷、接触与结果评估",
         "status": "待配置",
         "level": "待填写",
-        "description": "[填写已掌握的专业知识、方法与应用范围。]",
+        "description": "核对网格、载荷与约束，检查求解收敛、应力和位移分布。连杆显式动力学算例还检查了能量变化。",
         "tasks": [
           {
-            "label": "[基础：填写需要掌握的操作或知识点]",
-            "state": "待配置",
-            "link": ""
+            "label": "底座、夹箍与气环工装静力分析",
+            "state": "已完成",
+            "link": "/portfolio/projects/tooling-static-fea/"
           },
           {
-            "label": "[应用：填写一个真实的实践任务]",
-            "state": "待配置",
-            "link": ""
-          },
-          {
-            "label": "[沉淀：填写笔记、案例或验证目标]",
-            "state": "待配置",
-            "link": ""
+            "label": "长短连杆显式动力学分析",
+            "state": "已完成",
+            "link": "/portfolio/projects/liangan/"
           }
         ]
       },
       {
         "id": "knowledge-03",
-        "name": "[工程制图知识]",
+        "name": "工程制图",
         "kind": "专业知识",
+        "summary": "装配关系、基准与孔轴尺寸",
         "status": "待配置",
         "level": "待填写",
-        "description": "[填写已掌握的专业知识、方法与应用范围。]",
+        "description": "结合装配模型核对零部件的定位基准、连接关系及孔轴尺寸。",
         "tasks": [
           {
-            "label": "[基础：填写需要掌握的操作或知识点]",
-            "state": "待配置",
-            "link": ""
-          },
-          {
-            "label": "[应用：填写一个真实的实践任务]",
-            "state": "待配置",
-            "link": ""
-          },
-          {
-            "label": "[沉淀：填写笔记、案例或验证目标]",
-            "state": "待配置",
-            "link": ""
+            "label": "活塞环安装工作台 · 工装钳臂与销轴尺寸核对",
+            "state": "已完成",
+            "link": "/portfolio/projects/piston-ring-station/"
           }
         ]
       }
