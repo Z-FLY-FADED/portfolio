@@ -310,8 +310,8 @@ body[data-page="home"] .container { width: calc(100% - clamp(32px,5vw,88px)); }
 .home-education-item > span { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .home-education-item p, .home-education-empty { margin: 4px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
 .home-skills { padding: 14px clamp(16px,1.8vw,26px) 18px; }
-.home-skill-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 8px; }
-.home-skill-tags > button { font: inherit; background: var(--ground-muted); color: var(--accent); border: 1px solid var(--line); padding: 5px 10px; border-radius: var(--radius); min-height: 32px; font-size: 12px; cursor: pointer; transition: border-color .2s,background .2s,transform .2s; }
+.home-skill-tags { display: grid; grid-template-columns: minmax(0,1fr); gap: 7px; margin-top: 8px; }
+.home-skill-tags > button { font: inherit; background: var(--ground-muted); color: var(--accent); border: 1px solid var(--line); padding: 5px 10px; border-radius: var(--radius); min-height: 32px; font-size: 12px; text-align: left; overflow-wrap: anywhere; cursor: pointer; transition: border-color .2s,background .2s,transform .2s; }
 .home-skill-tags > button:hover { border-color: var(--accent-line); background: var(--pale); transform: translateY(-2px); }
 .home-sidebar { display: grid; grid-template-rows: 1fr auto; gap: 14px; min-width: 0; }
 .home-radar { --radar-a: var(--accent); --radar-b: #d97841; display: grid; grid-template-rows: auto 1fr; padding: 12px 16px 8px; }
