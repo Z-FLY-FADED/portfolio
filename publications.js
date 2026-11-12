@@ -25,7 +25,6 @@ function paperMarkup({paper,number}, heading, {e,icon}) {
   const url=safeUrl(paper.url)||(/^10\.\d{4,9}\/\S+$/i.test(doi)?`https://doi.org/${encodeURIComponent(doi)}`:'');
   const title=e(paper.title);
   return `<article class="home-paper-card" id="paper-${number}" tabindex="-1">
-    <span class="home-paper-index" aria-hidden="true">${number}</span>
     <div class="home-paper-body">
       <${heading} class="home-paper-title" lang="en">${url?`<a class="home-paper-title-link" href="${e(url)}" target="_blank" rel="noopener noreferrer">${title}<span aria-hidden="true"> ${icon('up')}</span><span class="sr-only">（在新标签页打开）</span></a>`:title}</${heading}>
       ${paper.titleZh?`<p class="home-paper-title-zh" lang="zh-CN">${e(paper.titleZh)}</p>`:''}
@@ -52,13 +51,9 @@ export function publicationsMarkup(data,{e,icon}) {
     const cards=entries.map(entry=>paperMarkup(entry,topic?'h4':'h3',{e,icon})).join('');
     if(!topic)return `<div class="publication-papers publication-papers--standalone">${cards}</div>`;
     const {name,art,alt}=topic;
-    const links=entries.map(({number})=>`<a href="#paper-${number}" aria-label="跳转到论文 ${number}">${number}</a>`).join('');
     return `<section class="publication-topic" aria-labelledby="publication-topic-${art}">
       <div class="publication-topic-visual">
-        <div class="publication-topic-header">
-          <h3 id="publication-topic-${art}">${name}</h3>
-          <div class="publication-topic-links">${links}</div>
-        </div>
+        <h3 id="publication-topic-${art}">${name}</h3>
         <img class="publication-topic-art" src="/portfolio/assets/research/${art}.webp" alt="${alt}" width="360" height="200" loading="lazy" decoding="async">
       </div>
       <div class="publication-papers">${cards}</div>
